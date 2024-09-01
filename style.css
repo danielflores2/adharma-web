@@ -124,7 +124,9 @@ a:hover {
     text-decoration: none;
 }
 
-
+#nav img {
+    height: 80px;
+}
 
 .page1 h1 {
     font-size: 11vw;
