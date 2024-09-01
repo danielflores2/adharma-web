@@ -61,15 +61,15 @@ function init() {
   const videoHome = document.getElementById('videoHome');
 
   document.getElementById('min1').addEventListener('mouseover', function() {
-    videoHome.src = 'Myzz-Mala_1080_h264_45000kbs.mp4';
+    videoHome.src = 'https://static.stratebi.com/proyectos/temp/Myzz-Mala_1080_h264_45000kbs.mp4';
   });
 
   document.getElementById('min2').addEventListener('mouseover', function() {
-    videoHome.src = 'Myzz-Medusa_1080_h264_45000kbs.mp4';
+    videoHome.src = 'https://static.stratebi.com/proyectos/temp/Myzz-Medusa_1080_h264_45000kbs.mp4';
   });
 
   document.getElementById('min3').addEventListener('mouseover', function() {
-    videoHome.src = 'Duality_1080_h264_45000kbs.mp4';
+    videoHome.src = 'https://static.stratebi.com/proyectos/temp/Duality_1080_h264_45000kbs.mp4';
   });
 
   // Los siguientes elementos están comentados; descoméntalos si es necesario
