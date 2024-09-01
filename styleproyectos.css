@@ -1,0 +1,144 @@
+/* Aseguramos que el fondo y el texto sean siempre negro y blanco respectivamente */
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: black; /* Fondo negro */
+    color: white; /* Texto blanco */
+}
+
+/* Estilos específicos para enlaces */
+a {
+    color: inherit; /* Hereda el color del texto */
+    text-decoration: none; /* Elimina el subrayado por defecto */
+    transition: color 0.5s ease; /* Suaviza la transición del color */
+}
+
+a:hover {
+    text-decoration: underline; /* Añade un subrayado al pasar el cursor */
+}
+
+/* Estilos para el logo */
+#logo-img {
+    height: 80px; /* Ajusta el tamaño según sea necesario */
+    transition: opacity 0.5s ease; /* Suaviza la transición del logo */
+}
+
+/* Establece el fondo de .main como transparente para heredar el color de body */
+.main {
+    background-color: transparent; /* Cambiar el color inicial a transparente */
+}
+
+/* Estilos para el div de navegación */
+#nav {
+    position: sticky; /* Hace que el div sea pegajoso */
+    top: 0; /* Pegado a la parte superior de la ventana */
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+    background-color: black; /* Fondo negro para la navegación */
+    height: 60px; /* Ajusta la altura según sea necesario */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px; /* Añade un poco de relleno si es necesario */
+    box-shadow: none; /* Elimina la sombra del navegador */
+}
+
+/* Resto del código existente */
+@import url("https://db.onlinewebfonts.com/c/127dbc95c7c30f178cc8909ce042a0ad?family=Thelorin");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+* {
+    font-family: "Poppins", Arial, Times, serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.page1 {
+    min-height: 100vh;
+    width: 100%;
+    padding-bottom: 70vh;
+    scroll-snap-type: mandatory;
+    scroll-snap-type: y mandatory;
+}
+
+#proyects-index {
+    position: fixed;
+    right: 0; /* Pegado al borde derecho de la ventana */
+    z-index: 10;
+    padding: 0px;
+    top: 0;
+    height: 100vh;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Alinea las miniaturas al borde derecho */
+    justify-content: center; /* Centra verticalmente */
+    overflow: hidden;
+}
+
+#proyects-index img {
+    height: auto;
+    width: 50%;
+    margin: 0px 0; /* Espacio entre las miniaturas */
+    transition: transform 200ms;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+}
+
+#proyects-index img:hover {
+    transform: scale(1.2) translateX(-15px);
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
+}
+
+#nav img {
+    height: 80px;
+}
+
+#nav-part2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25vw;
+}
+
+#nav h4 {
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font: bold;
+}
+
+#a {
+    border: none;
+    color: inherit; /* Hereda el color del padre */
+    display: flex;
+    font-weight: 1;
+    text-transform: uppercase;
+    font: bold;
+    text-decoration: none;
+}
+
+.page1 h1 {
+    font-size: 11vw;
+    font-family: "Thelorin";
+    font-weight: 150;
+    margin-top: 10vw;
+    margin-left: 25vw;
+    color: inherit; /* Hereda el color del padre */
+}
+
+.page1 h2 {
+    font-size: 7vw;
+    font-family: "Thelorin";
+    font-weight: 100;
+    margin-left: 50vw;
+    color: inherit; /* Hereda el color del padre */
+}
+
+.miniatura {
+    height: 30vw;
+    width: 30vw;
+    margin: 0px;
+}

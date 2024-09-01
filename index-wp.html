@@ -1,0 +1,307 @@
+<style>
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: white; /* Fondo blanco inicial */
+    color: black; /* Texto negro inicial */
+    transition: background-color 0.5s ease, color 0.5s ease; /* Transición suave para fondo y texto */
+}
+
+body.black-bg {
+    background-color: black;
+    color: white; /* Cambia el color del texto a blanco */
+}
+
+a {
+    color: inherit; /* Hereda el color del texto */
+    text-decoration: none; /* Elimina el subrayado por defecto */
+    transition: color 0.5s ease; /* Suaviza la transición del color */
+}
+
+a:hover {
+    text-decoration: underline; /* Añade un subrayado al pasar el cursor */
+}
+
+#logo-img {
+    height: 80px; /* Ajusta el tamaño según sea necesario */
+    transition: opacity 0.5s ease; /* Suaviza la transición del logo */
+}
+
+.main {
+    background-color: transparent; /* Cambiar el color inicial a transparente */
+    position: relative; /* Necesario para que los elementos absolutos se alineen en relación a este contenedor */
+    padding-top: 80px; /* Ajusta según la altura del nav */
+    margin-top: 0;
+    overflow: visible; /* Asegúrate de que el contenido no esté recortado */
+}
+
+/* Estilo del nav */
+#nav {
+    position: sticky;
+    top: 10;
+    z-index: 10000; /* Asegúrate de que esté por encima de otros elementos */
+    background-color: inherit; /* Asegura que tenga el mismo fondo que el resto del contenido */
+    height: 80px; /* Ajusta según sea necesario */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-shadow: none; /* Elimina la sombra del navegador si no la deseas */
+}
+
+@import url("https://db.onlinewebfonts.com/c/127dbc95c7c30f178cc8909ce042a0ad?family=Thelorin");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+* {
+    font-family: "Poppins", Arial, Times, serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.page1 {
+    min-height: 100vh;
+    width: 100%;
+    padding-bottom: 0px;
+    scroll-snap-type: mandatory;
+}
+
+#proyects-index {
+    position: absolute; /* Usa posición absoluta para colocar el contenedor en relación a .main */
+    right: 0; /* Pegado al borde derecho de la ventana */
+    top: 0; /* Empieza en la parte superior de .main */
+    height: 1080px; /* La misma altura que el video */
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Alinea las miniaturas al borde derecho */
+    justify-content: center; /* Centra las miniaturas verticalmente */
+    overflow: hidden;
+    background: transparent; /* Establece el fondo como transparente */
+    z-index: 10; /* Asegúrate de que el contenedor esté por encima de otros elementos */
+}
+
+#proyects-index img {
+    width: 80%; /* Ajusta el ancho de las miniaturas */
+    height: auto; /* Mantiene la relación de aspecto */
+    margin: 0px 0; /* Espacio entre las miniaturas */
+    object-fit: cover; /* Mantiene la relación de aspecto sin deformar */
+    transition: transform 200ms;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+#proyects-index img:hover {
+    transform: scale(1.2) translateX(-15px);
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
+}
+
+#nav img {
+    height: 80px;
+}
+
+#nav-part2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25vw;
+}
+
+#nav h4 {
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font: bold;
+}
+
+#a {
+    border: none;
+    color: inherit; /* Hereda el color del padre */
+    display: flex;
+    font-weight: 1;
+    text-transform: uppercase;
+    font: bold;
+    text-decoration: none;
+}
+
+.page1 h1 {
+    font-size: 11vw;
+    font-family: "Thelorin";
+    font-weight: 150;
+    margin-top: 10vw;
+    margin-left: 25vw;
+    color: inherit; /* Hereda el color del padre */
+}
+
+.page1 h2 {
+    font-size: 7vw;
+    font-family: "Thelorin";
+    font-weight: 100;
+    margin-left: 50vw;
+    color: inherit; /* Hereda el color del padre */
+}
+
+.adhrHead {
+    margin-bottom:32vh;
+}
+
+video {
+    width: 100%;
+    height: 1080px; /* Ajusta la altura del video */
+    margin: 0;
+    position: relative;
+    display: block;
+}
+
+.miniatura {
+    width: 80%; /* Ajusta el ancho de las miniaturas */
+    height: auto; /* Mantiene la relación de aspecto */
+    margin: 10px 0; /* Espacio entre las miniaturas */
+}
+
+.content {
+    padding: 20px; /* Espacio alrededor del contenido */
+    min-height: 2000px; /* Asegúrate de tener suficiente altura para el contenido, ajusta según necesites */
+}
+
+#videoHome {
+    margin-top: -130px;
+}</style>
+
+<div class="main" data-scroll-container="">
+    <div class="page1">
+        <div class="adhrHead">
+            <h1>Adharma</h1>
+            <h2>Collective</h2>
+        </div>
+        <div id="nav">
+            <!-- Añade un id al logo para facilitar la manipulación -->
+            <img id="logo-img" src="adhr_transparent_corrected.png" alt="Logo" />
+            <div id="nav-part2">
+                <h4>Home</h4>
+                &nbsp;
+                <h4>Proyectos</h4>
+                &nbsp;
+                <h4>Contacto</h4>
+                &nbsp;
+
+            </div>
+            <div id="popo">
+                <div id="pop"></div>
+            </div>
+        </div>
+        <div class="main" data-scroll-container="">
+            <div class="page1">
+                <div id="proyects-index" data-scroll="" data-scroll-sticky="" data-scroll-target="#proyects-index">
+
+                    <img id="min1" class="miniatura" src="miniatura1_1.1.1.jpg" />
+                    <img id="min2" class="miniatura" src="miniatura2_1.2.1.jpg" />
+                    <img id="min3" class="miniatura" src="miniatura3_1.3.2.jpg" />
+                    <!-- añadir miniaturas -->
+                    <!-- <img class="miniatura" id="min4" src="miniatura ejemplo">
+<img class="miniatura" id="min5" src="miniatura ejemplo"> -->
+
+                </div>
+                <video id="videoHome" src="Duality_1080_h264_45000kbs.mp4" autoplay="autoplay" muted="" width="300"
+                    height="150"></video>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+<script src="script.js">
+
+function init() {
+gsap.registerPlugin(ScrollTrigger);
+
+// Inicializa Locomotive Scroll
+const locoScroll = new LocomotiveScroll({
+el: document.querySelector(".main"),
+smooth: true
+});
+
+// Sincroniza ScrollTrigger con Locomotive Scroll
+locoScroll.on("scroll", ScrollTrigger.update);
+
+ScrollTrigger.scrollerProxy(".main", {
+scrollTop(value) {
+return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+},
+getBoundingClientRect() {
+return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+},
+pinType: document.querySelector(".main").style.transform ? "transform" : "fixed"
+});
+
+// Función para cambiar el fondo del cuerpo al hacer scroll
+function checkScroll() {
+const changePoint = 100; // Puedes ajustar este valor
+
+if (locoScroll.scroll.instance.scroll.y > changePoint) {
+document.body.classList.add('black-bg');
+document.getElementById('logo-img').src = 'adhr_transparent_corrected.png'; // Cambia el logo a negro
+} else {
+document.body.classList.remove('black-bg');
+document.getElementById('logo-img').src = 'adhr_transparent_corrected_black.png'; // Cambia el logo a blanco
+}
+}
+
+// Escuchar el evento de scroll y actualizar la clase de fondo
+locoScroll.on("scroll", () => {
+checkScroll(); // Llama a checkScroll en cada desplazamiento
+ScrollTrigger.update();
+});
+
+ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+ScrollTrigger.refresh();
+
+// Animaciones con GSAP
+gsap.timeline({
+scrollTrigger: {
+trigger: "h1",
+scroller: ".main",
+start: "top 20%",
+end: "top 0",
+scrub: 3
+}
+})
+.to(".page1 h1", { x: -200 })
+.to(".page1 h2", { x: 200 })
+.to("#videoHome", { width: "100%" });
+
+// Cambiar el video al pasar el ratón sobre las miniaturas
+const videoHome = document.getElementById('videoHome');
+
+document.getElementById('min1').addEventListener('mouseover', function() {
+videoHome.src = 'Myzz-Mala_1080_h264_45000kbs.mp4';
+});
+
+document.getElementById('min2').addEventListener('mouseover', function() {
+videoHome.src = 'Myzz-Medusa_1080_h264_45000kbs.mp4';
+});
+
+document.getElementById('min3').addEventListener('mouseover', function() {
+videoHome.src = 'Duality_1080_h264_45000kbs.mp4';
+});
+
+// Los siguientes elementos están comentados; descoméntalos si es necesario
+// document.getElementById('min4').addEventListener('mouseover', function() {
+// videoHome.src = 'Duality_1080_h264_45000kbs.mp4';
+// });
+
+// document.getElementById('min5').addEventListener('mouseover', function() {
+// videoHome.src = 'videoejemplo.mp4';
+// });
+}
+
+// Inicializa la funcionalidad
+init();
+</script>
