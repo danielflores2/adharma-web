@@ -41,14 +41,14 @@ function init() {
   });
 
   function checkScroll() {
-    const changePoint = window.innerHeight - 50;
+    const changePoint = window.innerHeight - 1000;
 
     const logo_adhr = document.querySelectorAll('#logo-img');
     const nav = document.getElementById('nav');
     const navLinks = document.querySelectorAll('#nav-part2 .nav-link');
 
     if (locoScroll.scroll.instance.scroll.y > changePoint) {
-      nav.classList.add('sticky-navbar');
+       //nav.classList.add('sticky-navbar');
 
       document.body.classList.add('black-bg');
       logo_adhr.forEach(img => {
