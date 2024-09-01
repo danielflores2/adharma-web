@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&family=Workbench&display=swap');
+
+
 html, body {
     height: 100%;
     width: 100%;
@@ -22,7 +26,7 @@ a:hover {
 }
 
 #logo-img {
-    height: 80px; /* Ajusta el tamaño según sea necesario */
+    height: 2rem; /* Ajusta el tamaño según sea necesario */
     transition: opacity 0.5s ease; /* Suaviza la transición del logo */
 }
 
@@ -49,11 +53,9 @@ a:hover {
     box-shadow: none; /* Elimina la sombra del navegador si no la deseas */
 }
 
-@import url("https://db.onlinewebfonts.com/c/127dbc95c7c30f178cc8909ce042a0ad?family=Thelorin");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
 * {
-    font-family: "Poppins", Arial, Times, serif;
+    font-family: "Lexend Giga", Arial, Times, serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -97,9 +99,6 @@ a:hover {
     border-width: 1px;
 }
 
-#nav img {
-    height: 80px;
-}
 
 #nav-part2 {
     display: flex;
@@ -125,10 +124,13 @@ a:hover {
     text-decoration: none;
 }
 
+
+
 .page1 h1 {
     font-size: 11vw;
-    font-family: "Thelorin";
-    font-weight: 150;
+    font-family: "Lexend Giga", sans-serif;
+
+    font-weight: 500;
     margin-top: 10vw;
     margin-left: 25vw;
     color: inherit; /* Hereda el color del padre */
@@ -136,7 +138,8 @@ a:hover {
 
 .page1 h2 {
     font-size: 7vw;
-    font-family: "Thelorin";
+    font-family: "Workbench", sans-serif;
+
     font-weight: 100;
     margin-left: 50vw;
     color: inherit; /* Hereda el color del padre */
