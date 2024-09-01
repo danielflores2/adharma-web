@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>Adharma</title>
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
 
@@ -20,50 +20,48 @@
 
     <div class="main" data-scroll-container>
         <div class="page1">
-            <div class="adhrHead"><h1>ADHARMA</h1>
-            <h2>Collective</h2>
-        
-        </div>
+            <div class="adhrHead text-center">
+                <h1>ADHARMA</h1>
+                <h2>Collective</h2>
+            </div>
 
-            <nav id="nav">
-            
-                <!-- Añade un id al logo para facilitar la manipulación -->
-                    <img src="src/images/logo/adhr1.jpg" id="logo-img" alt="Logo">
-                    <div id="nav-part2">
-                        <a href="index.html" style="text-decoration: none;"><h4>Home</h4></a>
-                        <a href="proyectos.html" style="text-decoration: none;"><h4>Proyectos</h4></a>
-                        <a href="contacto.html" style="text-decoration: none;"><h4>Contacto</h4></a>
+            <nav id="nav" class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <img src="src/images/logo/adhr1.jpg" id="logo-img" alt="Logo" class="d-inline-block align-text-top">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto" id="nav-part2">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="proyectos.html">Proyectos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contacto.html">Contacto</a>
+                            </li>
+                        </ul>
                     </div>
+                </div>
+            </nav>
         
-                    <div id="popo">
-                        <div id="pop">
+            <section class="main" data-scroll-container>
+                <div class="page1">
+                    <div id="proyects-index" data-scroll data-scroll-sticky data-scroll-target="#proyects-index">
+                        <div class="d-flex flex-column align-items-end">
+                            <img class="miniatura" id="min1" src="src/images/miniaturas/miniatura1_1.1.1.jpg">
+                            <img class="miniatura" id="min2" src="src/images/miniaturas/miniatura2_1.2.1.jpg">
+                            <img class="miniatura" id="min3" src="src/images/miniaturas/miniatura3_1.3.2.jpg">
                         </div>
                     </div>
                     
-                </nav>
-        
-            
-            <section class="main" data-scroll-container>
-                <div class="page1">
-    
-                    <div id="proyects-index" data-scroll data-scroll-sticky data-scroll-target="#proyects-index">
-    
-                        <img class="miniatura" id="min1" src="src/images/miniaturas/miniatura1_1.1.1.jpg">
-                        <img class="miniatura" id="min2" src="src/images/miniaturas/miniatura2_1.2.1.jpg">
-                        <img class="miniatura" id="min3" src="src/images/miniaturas/miniatura3_1.3.2.jpg">
-
-                        <!-- añadir miniaturas  -->
-                        <!-- <img class="miniatura" id="min4" src="miniatura ejemplo">
-                        <img class="miniatura" id="min5" src="miniatura ejemplo"> -->
-                
-                    </div>
-                    
-                    <video id="videoHome" alt="DUALITY" muted autoplay src ="https://static.stratebi.com/proyectos/temp/Duality_1080_h264_45000kbs.mp4"></video>
-        
-                    </div>
-                    
-                </section>
-            </div>
+                    <video id="videoHome" alt="DUALITY" muted autoplay src="https://static.stratebi.com/proyectos/temp/Duality_1080_h264_45000kbs.mp4" class="w-100"></video>
+                </div>
+            </section>
         </div>
     </div>
 
@@ -72,5 +70,4 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="src/script.js"></script>
 </body>
-
 </html>

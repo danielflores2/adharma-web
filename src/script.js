@@ -25,13 +25,25 @@ function init() {
     const changePoint = 100; // Puedes ajustar este valor
 
     const logo_adhr = document.getElementById('logo-img');
+    const navLinks = document.querySelectorAll('#nav-part2 .nav-link');
 
     if (locoScroll.scroll.instance.scroll.y > changePoint) {
       document.body.classList.add('black-bg');
-      logo_adhr.src = 'src/images/logo/adhr_white.svg'; // Cambia el logo a negro
+      logo_adhr.src = 'src/images/logo/adhr_white.svg'; // Cambia el logo a blanco
+
+      // Cambiar color de los enlaces del menú
+      navLinks.forEach(link => {
+        link.classList.add('text-light');
+      });
+
     } else {
       document.body.classList.remove('black-bg');
-      logo_adhr.src = 'src/images/logo/adhr_black.svg'; // Cambia el logo a blanco
+      logo_adhr.src = 'src/images/logo/adhr_black.svg'; // Cambia el logo a negro
+
+      // Restaurar color original de los enlaces del menú
+      navLinks.forEach(link => {
+        link.classList.remove('text-light');
+      });
     }
   }
 
@@ -87,11 +99,8 @@ function init() {
 // Inicializa la funcionalidad
 init();
 
-
 $(window).on('load', function() {
   // Ocultar el spinner y mostrar el contenido
-      $('#content').fadeIn('slow');
-      $('#content').removeClass('loading');
-
+  $('#content').fadeIn('slow');
+  $('#content').removeClass('loading');
 });
-

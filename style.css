@@ -1,7 +1,4 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&family=Workbench&display=swap');
-
-
 
 #spinner {
     position: absolute;
@@ -14,14 +11,14 @@
 html, body {
     height: 100%;
     width: 100%;
-    background-color: white; /* Fondo blanco inicial */
-    color: black; /* Texto negro inicial */
-    transition: background-color 0.5s ease, color 0.5s ease; /* Transición suave para fondo y texto */
+    background-color: white;
+    color: black;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 body.black-bg {
     background-color: black;
-    color: white; /* Cambia el color del texto a blanco */
+    color: white;
 }
 
 body.loading {
@@ -30,43 +27,39 @@ body.loading {
 }
 
 a {
-    color: inherit; /* Hereda el color del texto */
-    text-decoration: none; /* Elimina el subrayado por defecto */
-    transition: color 0.5s ease; /* Suaviza la transición del color */
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.5s ease;
 }
 
 a:hover {
-    text-decoration: underline; /* Añade un subrayado al pasar el cursor */
+    text-decoration: underline;
 }
 
 #logo-img {
-    height: 2rem; /* Ajusta el tamaño según sea necesario */
-    transition: opacity 0.5s ease; /* Suaviza la transición del logo */
+    height: 2rem;
+    transition: opacity 0.5s ease;
 }
 
 .main {
-    background-color: transparent; /* Cambiar el color inicial a transparente */
-    position: relative; /* Necesario para que los elementos absolutos se alineen en relación a este contenedor */
-    padding-top: 80px; /* Ajusta según la altura del nav */
+    background-color: transparent;
+    position: relative;
+    padding-top: 80px;
     margin-top: 0;
-    overflow: visible; /* Asegúrate de que el contenido no esté recortado */
+    overflow: visible;
 }
 
 /* Estilo del nav */
 #nav {
-    position: sticky;
-    top: 10;
-    z-index: 10000; /* Asegúrate de que esté por encima de otros elementos */
-    background-color: inherit; /* Asegura que tenga el mismo fondo que el resto del contenido */
-    height: 80px; /* Ajusta según sea necesario */
+    z-index: 10000;
+    background-color: inherit;
+    height: 80px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    box-shadow: none; /* Elimina la sombra del navegador si no la deseas */
 }
-
 
 * {
     font-family: "Lexend Giga", Arial, Times, serif;
@@ -83,25 +76,25 @@ a:hover {
 }
 
 #proyects-index {
-    position: absolute; /* Usa posición absoluta para colocar el contenedor en relación a .main */
-    right: 0; /* Pegado al borde derecho de la ventana */
-    top: 0; /* Empieza en la parte superior de .main */
-    height: 1080px; /* La misma altura que el video */
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 1080px;
     width: 200px;
     display: flex;
     flex-direction: column;
-    align-items: flex-end; /* Alinea las miniaturas al borde derecho */
-    justify-content: center; /* Centra las miniaturas verticalmente */
+    align-items: flex-end;
+    justify-content: center;
     overflow: hidden;
-    background: transparent; /* Establece el fondo como transparente */
-    z-index: 10; /* Asegúrate de que el contenedor esté por encima de otros elementos */
+    background: transparent;
+    z-index: 10;
 }
 
 #proyects-index img {
-    width: 80%; /* Ajusta el ancho de las miniaturas */
-    height: auto; /* Mantiene la relación de aspecto */
-    margin: 0px 0; /* Espacio entre las miniaturas */
-    object-fit: cover; /* Mantiene la relación de aspecto sin deformar */
+    width: 80%;
+    height: auto;
+    margin: 0px 0;
+    object-fit: cover;
     transition: transform 200ms;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
@@ -113,76 +106,44 @@ a:hover {
     border-width: 1px;
 }
 
-
-#nav-part2 {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 25vw;
-}
-
-#nav h4 {
-    font-size: 13px;
-    font-weight: 500;
-    text-transform: uppercase;
-    font: bold;
-}
-
-#a {
-    border: none;
-    color: inherit; /* Hereda el color del padre */
-    display: flex;
-    font-weight: 1;
-    text-transform: uppercase;
-    font: bold;
-    text-decoration: none;
-}
-
-#nav img {
-    height: 80px;
-}
-
 .page1 h1 {
     font-size: 11vw;
     font-family: "Lexend Giga", sans-serif;
-
     font-weight: 500;
     margin-top: 10vw;
     margin-left: 25vw;
-    color: inherit; /* Hereda el color del padre */
+    color: inherit;
 }
 
 .page1 h2 {
     font-size: 7vw;
-    
     font-family: "Workbench", sans-serif;
-
     font-weight: 100;
     margin-left: 50vw;
-    color: inherit; /* Hereda el color del padre */
+    color: inherit;
 }
 
 .adhrHead {
-    margin-bottom:32vh;
+    margin-bottom: 32vh;
 }
 
 video {
     width: 100%;
-    height: 1080px; /* Ajusta la altura del video */
+    height: 1080px;
     margin: 0;
     position: relative;
     display: block;
 }
 
 .miniatura {
-    width: 80%; /* Ajusta el ancho de las miniaturas */
-    height: auto; /* Mantiene la relación de aspecto */
-    margin: 10px 0; /* Espacio entre las miniaturas */
+    width: 80%;
+    height: auto;
+    margin: 10px 0;
 }
 
 .content {
-    padding: 20px; /* Espacio alrededor del contenido */
-    min-height: 2000px; /* Asegúrate de tener suficiente altura para el contenido, ajusta según necesites */
+    padding: 20px;
+    min-height: 2000px;
 }
 
 #videoHome {
