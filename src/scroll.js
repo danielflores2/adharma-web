@@ -28,8 +28,8 @@ function init() {
     if (scrollY > changePoint) {
       document.body.classList.add('black-bg');
       logo_adhr.forEach(img => {
-        if (img.src !== 'src/images/logo/adhr_white.svg') {
-          img.src = 'src/images/logo/adhr_white.svg';
+        if (img.src !== '/src/images/logo/adhr_white.svg') {
+          img.src = '/src/images/logo/adhr_white.svg';
         }
       });
       navLinks.forEach(link => {
@@ -38,8 +38,8 @@ function init() {
     } else {
       document.body.classList.remove('black-bg');
       logo_adhr.forEach(img => {
-        if (img.src !== 'src/images/logo/adhr_black.svg') {
-          img.src = 'src/images/logo/adhr_black.svg';
+        if (img.src !== '/src/images/logo/adhr_black.svg') {
+          img.src = '/src/images/logo/adhr_black.svg';
         }
       });
       navLinks.forEach(link => {
