@@ -87,3 +87,11 @@ function init() {
 // Inicializa la funcionalidad
 init();
 
+
+$(window).on('load', function() {
+  // Ocultar el spinner y mostrar el contenido
+      $('#content').fadeIn('slow');
+      $('#content').removeClass('loading');
+
+});
+
