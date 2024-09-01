@@ -21,7 +21,7 @@ header{
 html, body {
     background-color: white;
     overflow-x: hidden;
-    color: black;
+    color: rgb(255, 255, 255);
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
@@ -182,3 +182,18 @@ a:hover {
 
 #videoHome {
 }
+
+.videoContainer {
+    position: relative; /* Para que el texto se posicione respecto a este contenedor */
+}
+
+#overlay-text {
+    position: absolute; /* Asegura que el texto esté posicionado absolutamente sobre el video */
+    bottom: 20px; /* Ajusta esta distancia desde el fondo */
+    left: 50px; /* Ajusta esta distancia desde el margen izquierdo */
+    transform: none; /* Elimina cualquier transformación previa */
+    text-align: left; /* Alinea el texto a la izquierda */
+    padding: 5px 10px; /* Espaciado interno para el texto */
+    
+}
+
