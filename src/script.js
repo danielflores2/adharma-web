@@ -28,10 +28,10 @@ function init() {
 
     if (locoScroll.scroll.instance.scroll.y > changePoint) {
       document.body.classList.add('black-bg');
-      logo_adhr.src = '/src/Images/logo/adhr_white.svg'; // Cambia el logo a negro
+      logo_adhr.src = 'src/images/logo/adhr_white.svg'; // Cambia el logo a negro
     } else {
       document.body.classList.remove('black-bg');
-      logo_adhr.src = '/src/images/logo/adhr_black.svg'; // Cambia el logo a blanco
+      logo_adhr.src = 'src/images/logo/adhr_black.svg'; // Cambia el logo a blanco
     }
   }
 
