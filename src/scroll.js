@@ -6,6 +6,7 @@ function init() {
     
     const changePoint = window.innerHeight - 800;
     const changePointNav = window.innerHeight - 96;
+    const changePointNavDesaparece = window.innerHeight - 600;
 
     const logo_adhr = document.querySelectorAll('#logo-img');
     const nav = document.getElementById('nav');
@@ -13,15 +14,21 @@ function init() {
     const navbarCollapse = document.getElementById('navbarNav');
     const navbarToggler = document.querySelector('.navbar-toggler');
 
-    // Efecto de transformación en los encabezados
+    // Efecto de transformación en los encabezados que se van hacia los lados
     h1.style.transform = `translateX(${scrollY * 0.5}px)`;
     h2.style.transform = `translateX(-${scrollY * 0.5}px)`;
 
-    // Modificación del estilo del navbar en función del scroll
+    // Modificación del estilo del navbar en función del scroll para que se haga sticky cuando llegue arriba
     if (scrollY >= changePointNav) {
       nav.classList.add('sticky-navbar');
       nav.classList.remove('position-absolute', 'bottom-0');
+    } else {
+      nav.classList.remove('sticky-navbar');
+      nav.classList.add('position-absolute', 'bottom-0');
+    }
 
+  
+     if (scrollY >= changePointNavDesaparece) {
       // Añadir clases de animación para mostrar los enlaces de navegación y el logo
       logo_adhr.forEach(img => {
         img.classList.remove('logo-animation-exit');
@@ -32,9 +39,6 @@ function init() {
         link.classList.add('nav-item-animation-enter');
       });
     } else {
-      nav.classList.remove('sticky-navbar');
-      nav.classList.add('position-absolute', 'bottom-0');
-
       // Añadir clases de animación para ocultar los enlaces de navegación y el logo
       logo_adhr.forEach(img => {
         img.classList.remove('logo-animation-enter');
@@ -47,11 +51,12 @@ function init() {
     }
 
     // Desplegar el menú automáticamente cuando se haga scroll hacia arriba
-    if (scrollY <= 10) {
+    if (scrollY <= changePointNavDesaparece) {
       navbarCollapse.classList.add('show');
     } else {
       navbarCollapse.classList.remove('show');
     }
+
 
     // Cambiar el fondo y los estilos de los enlaces de navegación
     if (scrollY > changePoint) {
