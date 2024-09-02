@@ -88,34 +88,33 @@ a:hover {
 }
 
 #proyects-index {
-    position: absolute;
-    right: 0;
-    height: 100%;
-    width: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: center;
-    overflow: hidden;
-    background: transparent;
-    z-index: 10;
+    position: absolute; /* Fija el contenedor de miniaturas en la parte inferior de la página */
+    bottom: 0; /* Coloca el contenedor en la parte inferior */
+    left: 0; /* Alinea el contenedor a la izquierda */
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+    display: flex; /* Utiliza flexbox para alinear las miniaturas horizontalmente */
+    justify-content: center; /* Centra las miniaturas horizontalmente */
+    align-items: flex-end; /* Alinea las miniaturas verticalmente en la parte inferior del contenedor */
+    gap: 0px; /* Añade espacio entre las miniaturas */
+    padding: 0px; /* Añade un poco de relleno alrededor del contenedor */
+    z-index: 10; /* Asegura que el contenedor esté por encima de otros elementos */
 }
 
 #proyects-index img {
-    width: 80%;
-    height: auto;
-    margin: 0px 0;
-    object-fit: cover;
-    transition: transform 200ms;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    height: 70px; /* Define una altura fija para las miniaturas más pequeñas */
+    width: auto; /* Ajusta la anchura automáticamente para mantener la proporción */
+    transition: transform 200ms, border 200ms; /* Añade transición para la animación */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Añade una sombra sutil */
 }
 
 #proyects-index img:hover {
-    transform: scale(1.2) translateX(-15px);
-    border-style: solid;
-    border-color: white;
-    border-width: 1px;
+    transform: scale(1.2); /* Aumenta el tamaño de la imagen al pasar el ratón */
+    border: 1px solid white; /* Añade un borde blanco al pasar el ratón */
 }
+
+
+
 
 .page1 h1 {
     font-size: 11vw;
@@ -134,6 +133,7 @@ a:hover {
 .adhrHead {
     
     height: 100%;
+    overflow-x: hidden;
 }
 
 .videoSection {
@@ -183,9 +183,6 @@ a:hover {
 #videoHome {
 }
 
-.videoContainer {
-    position: relative; *//* Para que el texto se posicione respecto a este contenedor */
-}
 
 #overlay-text {
     position: absolute; /* Asegura que el texto esté posicionado absolutamente sobre el video */
@@ -232,3 +229,125 @@ a:hover {
       text-align: center;
     }
   }
+  .hidden-nav-items {
+    display: none; /* Oculta los elementos de navegación */
+  }
+  
+  .sticky-navbar .hidden-nav-items {
+    display: block; /* Muestra los elementos de navegación cuando se activa la clase sticky-navbar */
+  }
+  
+  /* Estilo inicial de los enlaces de navegación */
+.navbar-nav .nav-item {
+    opacity: 0; /* Comienza invisible */
+    transform: translateY(0); /* Posición inicial dentro del logo */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Animación de transición */
+  }
+  
+  /* Cuando se despliega el navbar */
+  .sticky-navbar .nav-item {
+    opacity: 1; /* Se hace visible */
+    transform: translateY(-10px); /* Se desplaza hacia arriba desde el logo */
+  }
+  
+/* Animación para que los elementos del menú y el logo aparezcan suavemente */
+@keyframes smoothFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px); /* Empieza desde arriba */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Termina en su posición original */
+    }
+}
+
+/* Animación para que los elementos desaparezcan suavemente */
+@keyframes smoothFadeOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0); /* Posición original */
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px); /* Se mueve hacia arriba al desaparecer */
+    }
+}
+
+/* Aplicamos las animaciones a los elementos cuando aparecen */
+.nav-item-animation-enter,
+.logo-animation-enter {
+    animation: smoothFadeIn 0.5s forwards ease-out; /* Transición suave */
+}
+
+/* Aplicamos las animaciones a los elementos cuando desaparecen */
+.nav-item-animation-exit,
+.logo-animation-exit {
+    animation: smoothFadeOut 0.5s forwards ease-out; /* Transición suave */
+}
+/* Animaciones para el menú y el logo */
+@keyframes smoothFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px); /* Empieza desde arriba */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Termina en su posición original */
+    }
+}
+
+@keyframes smoothFadeOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0); /* Posición original */
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px); /* Se mueve hacia arriba al desaparecer */
+    }
+}
+
+.nav-item-animation-enter,
+.logo-animation-enter {
+    animation: smoothFadeIn 0.5s forwards ease-out;
+}
+
+.nav-item-animation-exit,
+.logo-animation-exit {
+    animation: smoothFadeOut 0.5s forwards ease-out;
+}
+
+/* Ajustes para pantallas móviles */
+@media (max-width: 992px) {
+    /* Animación al mostrar el menú de hamburguesa */
+    .navbar-collapse.show .navbar-nav {
+        animation: smoothFadeIn 0.5s forwards ease-out;
+    }
+
+    .navbar-collapse:not(.show) .navbar-nav {
+        animation: smoothFadeOut 0.5s forwards ease-out;
+    }
+
+    /* Transición para el botón de hamburguesa */
+    .navbar-toggler {
+        transition: transform 0.4s ease-in-out;
+    }
+    /* Ajustar la separación y el tamaño de fuente para móviles */
+    .navbar-nav .nav-item {
+        margin: 0 10px; /* Aumenta la separación entre los elementos del menú */
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.9rem; /* Disminuye el tamaño de la fuente en pantallas móviles */
+    }
+    
+    /* Asegúrate de que los elementos 'Proyectos' y 'Contacto' están más alejados del logo */
+    .navbar-toggler {
+        margin: 0 20px; /* Aumenta el margen a los lados del botón de navegación para separarlo más del contenido */
+    }
+    
+    .navbar-collapse {
+        padding-top: 10px; /* Ajusta el espacio superior dentro del contenedor de colapso de la barra de navegación */
+    }
+}
