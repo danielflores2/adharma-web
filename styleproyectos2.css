@@ -196,39 +196,6 @@ a:hover {
     padding: 5px 10px; /* Espaciado interno para el texto */
     
 }
-@media (max-width: 992px) {
-    .navbar-collapse {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: absolute; /* Permite un control más preciso de la posición */
-      top: 30; /* Alinea con la parte superior */
-      left: 0;
-      right: 0;
-    }
-  
-    .navbar-nav {
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      width: 96px;
-      transform-origin: top center; /* Ajusta el origen de la animación al centro superior */
-      transform: scale(0); /* Contrae desde el centro superior */
-      transition: transform 0.4s ease-in-out; /* Suaviza la transición */
-    }
-  
-    .navbar-collapse.show .navbar-nav {
-      transform: scale(1); /* Expande a su tamaño normal */
-    }
-  
-    .navbar-toggler {
-      width: 96px;
-      display: flex;
-      justify-content: center;
-    }
-  
-    .navbar-nav .nav-item {
-      flex: 1;
-      text-align: center;
-    }
-  }
+
+
+

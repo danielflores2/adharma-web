@@ -44,6 +44,7 @@ function init() {
       '<span style="font-size: 13px;">Commercial</span><br>Duality</b>'
     );
   });
+
 }
 
 document.addEventListener("DOMContentLoaded", init);

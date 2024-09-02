@@ -27,27 +27,28 @@
             <h2 id="header2" data-scroll >Collective</h2>
         </div>
 
-        <nav id="nav" data-scroll  class="bottom-0 h-12 position-absolute navbar navbar-expand-lg navbar-light">
+        <nav id="nav" data-scroll class="bottom-0 h-12 position-absolute navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                
-                <button class= "mx-auto border border-0 navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <!-- Botón de hamburguesa centrado -->
+                <button class="mx-auto border-0 navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <img src="/src/images/logo/adhr_black.svg" id="logo-img" alt="Logo" class="d-inline-block align-text-top">
-    
                 </button>
-    
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mx-auto d-flex gap-4" id="nav-part2">
-                        
-                        <li class="nav-item mx-auto">
-                            <a class="nav-link" href="proyectos.html">Proyectos</a>
+        
+                <!-- Contenedor del menú que colapsa -->
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav d-flex flex-row gap-4 justify-content-center align-items-center w-100" id="nav-part2">
+                        <!-- Elementos del menú -->
+                        <li class="nav-item">
+                            <a class="nav-link text-center" href="proyectos.html">Proyectos</a>
                         </li>
-                        <li class="nav-item mx-auto">
+                        <!-- Logo central (oculto en móvil si es necesario) -->
+                        <li class="nav-item d-none d-lg-block">
                             <a class="navbar-brand m-0" href="#">
                                 <img src="/src/images/logo/adhr_black.svg" id="logo-img" alt="Logo" class="d-inline-block align-text-top">
                             </a>
-                        </li> 
-                        <li class="nav-item mx-auto">
-                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-center" href="contacto.html">Contacto</a>
                         </li>
                     </ul>
                 </div>

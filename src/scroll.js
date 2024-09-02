@@ -4,7 +4,7 @@ function init() {
     const scrollY = window.scrollY;
     const h1 = document.getElementById('header1');
     const h2 = document.getElementById('header2');
-    const changePoint = window.innerHeight - 400;
+    const changePoint = window.innerHeight - 800;
     const changePointNav = window.innerHeight - 96;
     
     const logo_adhr = document.querySelectorAll('#logo-img');
