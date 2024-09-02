@@ -182,6 +182,18 @@ a:hover {
 
 #videoHome {
 }
+
+.videoContainer {
+    position: relative; *//* Para que el texto se posicione respecto a este contenedor */
+}
+
+#overlay-text {
+    position: absolute; /* Asegura que el texto esté posicionado absolutamente sobre el video */
+    bottom: 20px; /* Ajusta esta distancia desde el fondo */
+    left: 50px; /* Ajusta esta distancia desde el margen izquierdo */
+    transform: none; /* Elimina cualquier transformación previa */
+    text-align: left; /* Alinea el texto a la izquierda */
+    padding: 0; /* Espaciado interno para el texto */
     
 }
 @media (max-width: 992px) {
