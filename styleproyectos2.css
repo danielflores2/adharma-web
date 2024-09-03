@@ -87,35 +87,6 @@ a:hover {
     scroll-snap-type: y proximity;
 }
 
-#proyects-index {
-    position: absolute;
-    right: 0;
-    height: 100%;
-    width: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: center;
-    overflow: hidden;
-    background: transparent;
-    z-index: 10;
-}
-
-#proyects-index img {
-    width: 80%;
-    height: auto;
-    margin: 0px 0;
-    object-fit: cover;
-    transition: transform 200ms;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-}
-
-#proyects-index img:hover {
-    transform: scale(1.2) translateX(-15px);
-    border-style: solid;
-    border-color: white;
-    border-width: 1px;
-}
 
 .page1 h1 {
     font-size: 11vw;
@@ -131,71 +102,81 @@ a:hover {
     color: inherit;
 }
 
-.adhrHead {
+@media (max-width: 992px) {
+    .navbar-collapse {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute; /* Permite un control más preciso de la posición */
+      top: 30; /* Alinea con la parte superior */
+      left: 0;
+      right: 0;
+    }
+  
+    .navbar-nav {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 96px;
+      transform-origin: top center; /* Ajusta el origen de la animación al centro superior */
+      transform: scale(0); /* Contrae desde el centro superior */
+      transition: transform 0.4s ease-in-out; /* Suaviza la transición */
+    }
+  
+    .navbar-collapse.show .navbar-nav {
+      transform: scale(1); /* Expande a su tamaño normal */
+    }
+  
+    .navbar-toggler {
+      width: 96px;
+      display: flex;
+      justify-content: center;
+    }
+  
+    .navbar-nav .nav-item {
+      flex: 1;
+      text-align: center;
+    }
+  }
+  .hidden-nav-items {
+    display: none; /* Oculta los elementos de navegación */
+  }
+  
+  .sticky-navbar .hidden-nav-items {
+    display: block; /* Muestra los elementos de navegación cuando se activa la clase sticky-navbar */
+  }
+  
+
+/* Ajustes para pantallas móviles */
+@media (max-width: 992px) {
+    /* Animación al mostrar el menú de hamburguesa */
+    .navbar-collapse.show .navbar-nav {
+        animation: smoothFadeIn 0.5s forwards ease-out;
+    }
+
+    .navbar-collapse:not(.show) .navbar-nav {
+        animation: smoothFadeOut 0.5s forwards ease-out;
+    }
+
+    /* Transición para el botón de hamburguesa */
+    .navbar-toggler {
+        transition: transform 0.4s ease-in-out;
+    }
+    /* Ajustar la separación y el tamaño de fuente para móviles */
+    .navbar-nav .nav-item {
+        margin: 0 10px; /* Aumenta la separación entre los elementos del menú */
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.9rem; /* Disminuye el tamaño de la fuente en pantallas móviles */
+    }
     
-    height: 100%;
-}
-
-.videoSection {
-   
-    z-index: 9999;
-
-    height: fit-content;
-    min-height: 100vh;
-    margin: 0;
-    position: relative;
-}
-
-
-#videoHome {
-    display: block;
-    max-height: 100vh;
-    object-fit: contain;
-}
-
-
-.videoContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-
-}
-
-.video-centered {
-    object-fit: cover;
-    max-height: 100%;
-}
-
-.miniatura {
-    width: 80%;
-    height: auto;
-    margin: 10px 0;
-}
-
-.content {
-    padding: 20px;
-    min-height: 2000px;
-}
-
-#videoHome {
-}
-
-.videoContainer {
-    position: relative; /* Para que el texto se posicione respecto a este contenedor */
-}
-
-#overlay-text {
-    position: absolute; /* Asegura que el texto esté posicionado absolutamente sobre el video */
-    bottom: 20px; /* Ajusta esta distancia desde el fondo */
-    left: 50px; /* Ajusta esta distancia desde el margen izquierdo */
-    transform: none; /* Elimina cualquier transformación previa */
-    text-align: left; /* Alinea el texto a la izquierda */
-    padding: 5px 10px; /* Espaciado interno para el texto */
+    /* Asegúrate de que los elementos 'Proyectos' y 'Contacto' están más alejados del logo */
+    .navbar-toggler {
+        margin: 0 20px; /* Aumenta el margen a los lados del botón de navegación para separarlo más del contenido */
+    }
     
+    .navbar-collapse {
+        padding-top: 10px; /* Ajusta el espacio superior dentro del contenedor de colapso de la barra de navegación */
+    }
 }
-
-
-
