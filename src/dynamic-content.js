@@ -24,7 +24,7 @@ function init() {
   document.getElementById('min1').addEventListener('mouseover', function() {
     changeVideo(
       'https://static.stratebi.com/proyectos/temp/Myzz-Mala_1080_h264_45000kbs.mp4',
-      'myzz_mala.html',
+      '/proyectos/myzz_mala.html',
       '<span style="font-size: 13px;">Music Video</span><br><b>Myzz - Mala</b>'
     );
   });
@@ -32,7 +32,7 @@ function init() {
   document.getElementById('min2').addEventListener('mouseover', function() {
     changeVideo(
       'https://static.stratebi.com/proyectos/temp/Myzz-Medusa_1080_h264_45000kbs.mp4',
-      'myzz_medusa.html',
+      '/proyectos/myzz_medusa.html',
       '<span style="font-size: 13px;">Music Video</span><br><b>Myzz - Medusa</b>'
     );
   });
@@ -40,7 +40,7 @@ function init() {
   document.getElementById('min3').addEventListener('mouseover', function() {
     changeVideo(
       'https://static.stratebi.com/proyectos/temp/Duality_1080_h264_45000kbs.mp4',
-      'duality.html',
+      '/proyectos/duality.html',
       '<span style="font-size: 13px;">Commercial</span><br>Duality</b>'
     );
   });
