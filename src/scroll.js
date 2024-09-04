@@ -71,3 +71,14 @@ function init() {
 
 // Ejecutar la función de inicialización cuando el DOM esté listo
 document.addEventListener("DOMContentLoaded", init);
+
+
+// scroll smooth al darle click a los links del nav
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+      });
+  });
+});
