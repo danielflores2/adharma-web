@@ -82,3 +82,31 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       });
   });
 });
+
+//OCULTAR # DE LA URL AL DARLE CLICK AL NAV
+
+// Selecciona todos los enlaces de navegación que empiezan con "#"
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault(); // Evita que el # se añada a la URL
+
+    const targetId = this.getAttribute('href').substring(1); // Obtiene el ID del destino
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      // Desplázate al elemento objetivo
+      targetElement.scrollIntoView({
+        behavior: 'smooth' // Desplazamiento suave
+      });
+    }
+  });
+});
+
+// Para el logo, desplazar hasta el principio sin modificar la URL
+document.getElementById('logo-link').addEventListener('click', function(e) {
+  e.preventDefault(); // Evitar que el # se añada a la URL
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // Desplazamiento suave hasta arriba
+  });
+});
