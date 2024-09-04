@@ -45,6 +45,14 @@ function init() {
     );
   });
 
+  document.getElementById('min4').addEventListener('mouseover', function() {
+    changeVideo(
+      'https://static.stratebi.com/proyectos/temp/Jaydime_Jaycas_crosscheck_DEFINIT_1.mp4',
+      '/proyectos/duality.html',
+      '<span style="font-size: 13px;">Music Video</span><br>Croschek</b>'
+    );
+  });
+
 }
 
 document.addEventListener("DOMContentLoaded", init);
