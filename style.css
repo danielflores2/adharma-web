@@ -153,6 +153,14 @@ a:hover {
     object-fit: contain;
 }
 
+#videoCarga {
+    height: fit-content;
+    position: relative;
+    min-height: 100vh;
+    display: block;
+    max-height: 100vh;
+    object-fit: contain;
+}
 
 .videoContainer {
     display: flex;

@@ -28,16 +28,37 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
+
+    <style>
+        /* Oculta todo el contenido inicialmente */
+        #contenidoPrincipal {
+            display: none;
+        }
+    </style>
+
 </head>
 <body id="content" class="main loading" data-scroll-container>
+    
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJS88QGQ"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <header data-scroll-section class="w-100 position-relative container-fluid d-flex page1" >
 
-        
+
+ <!-- Contenedor para el vídeo de carga -->
+<div id="videoContenedorCarga" >
+     <video id="videoCarga" muted autoplay playsinline>
+            <source src="/src/video/videoCarga.mp4" type="video/mp4">
+            Tu navegador no soporta videos HTML5.
+     </video>
+</div>
+
+
+
+<div id="contenidoPrincipal">
+
+    <header data-scroll-section class="w-100 position-relative container-fluid d-flex page1" >
 
         <div data-scroll data-scroll-speed="1" class="adhrHead w-100 my-auto text-center">
             <h1 id="header1"  >ADHARMA</h1>
@@ -120,12 +141,32 @@
                
     </section>
 
+</div>
+
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     
-    <script type="text/javascript" src="/src/scroll.js"></script>
+    <script type="text/javascript" src="/src/scroll copy.js"></script>
     <script type="text/javascript" src="/src/dynamic-content.js"></script>
     <script type="text/javascript" src="/src/waiter.js"></script>
+
+
+    <!--  pantalla de carga -->
+    <script>
+        // Selecciona el video y el contenido
+        var video = document.getElementById('videoCarga');
+        var contenidoPrincipal = document.getElementById('contenidoPrincipal');
+        var videoContenedor = document.getElementById('videoContenedorCarga');
+
+        // Detecta cuando el video ha terminado
+        video.onended = function() {
+            // Oculta el contenedor del vídeo
+            videoContenedor.style.display = 'none';
+            // Muestra todo el contenido, incluido el header
+            contenidoPrincipal.style.display = 'block';
+        };
+    </script>
+
 </body>
 </html>
