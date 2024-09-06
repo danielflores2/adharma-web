@@ -87,6 +87,34 @@ a:hover {
     scroll-snap-type: y proximity;
 }
 
+#proyects-index {
+    position: absolute; /* Fija el contenedor de miniaturas en la parte inferior de la página */
+    bottom: 0; /* Coloca el contenedor en la parte inferior */
+    left: 0; /* Alinea el contenedor a la izquierda */
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+    display: flex; /* Utiliza flexbox para alinear las miniaturas horizontalmente */
+    justify-content: center; /* Centra las miniaturas horizontalmente */
+    align-items: flex-end; /* Alinea las miniaturas verticalmente en la parte inferior del contenedor */
+    gap: 0px; /* Añade espacio entre las miniaturas */
+    padding: 0px; /* Añade un poco de relleno alrededor del contenedor */
+    z-index: 10; /* Asegura que el contenedor esté por encima de otros elementos */
+}
+
+#proyects-index img {
+    height: 70px; /* Define una altura fija para las miniaturas más pequeñas */
+    width: auto; /* Ajusta la anchura automáticamente para mantener la proporción */
+    transition: transform 200ms, border 200ms; /* Añade transición para la animación */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Añade una sombra sutil */
+}
+
+#proyects-index img:hover {
+    transform: scale(1.2); /* Aumenta el tamaño de la imagen al pasar el ratón */
+    border: 1px solid white; /* Añade un borde blanco al pasar el ratón */
+}
+
+
+
 
 .page1 h1 {
     font-size: 11vw;
@@ -102,51 +130,78 @@ a:hover {
     color: inherit;
 }
 
-@media (max-width: 992px) {
-    .navbar-collapse {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: absolute; /* Permite un control más preciso de la posición */
-      top: 30; /* Alinea con la parte superior */
-      left: 0;
-      right: 0;
-    }
-  
-    .navbar-nav {
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      width: 96px;
-      transform-origin: top center; /* Ajusta el origen de la animación al centro superior */
-      transform: scale(0); /* Contrae desde el centro superior */
-      transition: transform 0.4s ease-in-out; /* Suaviza la transición */
-    }
-  
-    .navbar-collapse.show .navbar-nav {
-      transform: scale(1); /* Expande a su tamaño normal */
-    }
-  
-    .navbar-toggler {
-      width: 96px;
-      display: flex;
-      justify-content: center;
-    }
-  
-    .navbar-nav .nav-item {
-      flex: 1;
-      text-align: center;
-    }
-  }
-  .hidden-nav-items {
-    display: none; /* Oculta los elementos de navegación */
-  }
-  
-  .sticky-navbar .hidden-nav-items {
-    display: block; /* Muestra los elementos de navegación cuando se activa la clase sticky-navbar */
-  }
-  
+.adhrHead {
+    
+    height: 100%;
+    overflow-x: hidden;
+}
 
+.videoSection {
+   
+    z-index: 9999;
+
+    height: fit-content;
+    min-height: 100vh;
+    margin: 0;
+    position: relative;
+}
+
+
+#videoHome {
+    display: block;
+    max-height: 100vh;
+    object-fit: contain;
+}
+
+#videoCarga {
+    height: fit-content;
+    position: relative;
+    min-height: 100vh;
+    display: block;
+    max-height: 100vh;
+    object-fit: contain;
+}
+
+.videoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+
+}
+
+.video-centered {
+    object-fit: cover;
+    max-height: 100%;
+}
+
+.miniatura {
+    width: 80%;
+    height: auto;
+    margin: 10px 0;
+}
+
+.content {
+    padding: 20px;
+    min-height: 2000px;
+}
+
+#videoHome {
+}
+
+
+#overlay-text {
+    position: absolute; /* Asegura que el texto esté posicionado absolutamente sobre el video */
+    bottom: 20px; /* Ajusta esta distancia desde el fondo */
+    left: 50px; /* Ajusta esta distancia desde el margen izquierdo */
+    transform: none; /* Elimina cualquier transformación previa */
+    text-align: left; /* Alinea el texto a la izquierda */
+    padding: 0; /* Espaciado interno para el texto */
+    
+}
+  
 /* Ajustes para pantallas móviles */
 @media (max-width: 992px) {
     /* Animación al mostrar el menú de hamburguesa */

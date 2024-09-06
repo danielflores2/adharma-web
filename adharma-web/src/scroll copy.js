@@ -1,8 +1,6 @@
 function init() {
   function handleScroll() {
     const scrollY = window.scrollY;
-    const h1 = document.getElementById('header1');
-    const h2 = document.getElementById('header2');
     
     const changePoint = window.innerHeight - 800;
     const changePointNav = window.innerHeight - 96;
@@ -13,9 +11,6 @@ function init() {
     const navbarCollapse = document.getElementById('navbarNav');
     const navbarToggler = document.querySelector('.navbar-toggler');
   
-    // Efecto de transformación en los encabezados que se van hacia los lados
-    h1.style.transform = `translateX(${scrollY * 0.5}px)`;
-    h2.style.transform = `translateX(-${scrollY * 0.5}px)`;
   
     // Modificación del estilo del navbar en función del scroll para que se haga sticky cuando llegue arriba
     if (scrollY >= changePointNav) {

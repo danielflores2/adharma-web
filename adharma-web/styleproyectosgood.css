@@ -19,16 +19,12 @@ header{
 
 
 html, body {
-    background-color: white;
+    background-color: rgb(0, 0, 0);
     overflow-x: hidden;
     color: rgb(255, 255, 255);
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-body.black-bg {
-    background-color: black;
-    color: white;
-}
 
 body.loading {
     display: none;
@@ -44,9 +40,10 @@ a:hover {
     text-decoration: underline;
 }
 
+/* tamaño del logo */
 #logo-img {
     height: 2rem;
-    transition: opacity 0.5s ease;
+
 }
 
 .main {
@@ -58,6 +55,8 @@ a:hover {
 
 /* Estilo del nav */
 #nav {
+    position: fixed !important;
+    margin-top: 0;
     z-index: 10000;
     background-color: inherit;
     height: 6rem;
@@ -68,10 +67,6 @@ a:hover {
     padding: 0 20px;
 }
 
-.sticky-navbar{
-    position: fixed !important;
-    margin-bottom: -6rem;
-}
 
 * {
     font-family: "Lexend Giga", Arial, Times, serif;
@@ -80,12 +75,6 @@ a:hover {
     box-sizing: border-box;
 }
 
-.page1 {
-    min-height: 100vh;
-    width: 100%;
-    padding-bottom: 0px;
-    scroll-snap-type: y proximity;
-}
 
 #proyects-index {
     position: absolute; /* Fija el contenedor de miniaturas en la parte inferior de la página */
@@ -153,14 +142,6 @@ a:hover {
     object-fit: contain;
 }
 
-#videoCarga {
-    height: fit-content;
-    position: relative;
-    min-height: 100vh;
-    display: block;
-    max-height: 100vh;
-    object-fit: contain;
-}
 
 .videoContainer {
     display: flex;
@@ -202,36 +183,4 @@ a:hover {
     
 }
   
-/* Ajustes para pantallas móviles */
-@media (max-width: 992px) {
-    /* Animación al mostrar el menú de hamburguesa */
-    .navbar-collapse.show .navbar-nav {
-        animation: smoothFadeIn 0.5s forwards ease-out;
-    }
 
-    .navbar-collapse:not(.show) .navbar-nav {
-        animation: smoothFadeOut 0.5s forwards ease-out;
-    }
-
-    /* Transición para el botón de hamburguesa */
-    .navbar-toggler {
-        transition: transform 0.4s ease-in-out;
-    }
-    /* Ajustar la separación y el tamaño de fuente para móviles */
-    .navbar-nav .nav-item {
-        margin: 0 10px; /* Aumenta la separación entre los elementos del menú */
-    }
-
-    .navbar-nav .nav-link {
-        font-size: 0.9rem; /* Disminuye el tamaño de la fuente en pantallas móviles */
-    }
-    
-    /* Asegúrate de que los elementos 'Proyectos' y 'Contacto' están más alejados del logo */
-    .navbar-toggler {
-        margin: 0 20px; /* Aumenta el margen a los lados del botón de navegación para separarlo más del contenido */
-    }
-    
-    .navbar-collapse {
-        padding-top: 10px; /* Ajusta el espacio superior dentro del contenedor de colapso de la barra de navegación */
-    }
-}
