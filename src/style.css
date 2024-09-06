@@ -153,23 +153,24 @@ a:hover {
     object-fit: contain;
 }
 
-#videoCarga {
-    height: fit-content;
-    position: relative;
-    min-height: 100vh;
-    display: block;
-    max-height: 100vh;
-    object-fit: contain;
-}
 
-.videoContainer {
+.video-container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
     overflow-x: hidden;
+}
 
+.video-carga, .video-contenedor-carga{
+    height: 100vh;
+}
+
+.video-carga{
+    position: relative;
+    display: block;
+    object-fit: cover;
 }
 
 .video-centered {
