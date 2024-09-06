@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&family=Workbench&display=swap');
 
+
+@font-face {
+    font-family: 'Classy Vogue'; 
+    src: url('/src/fonts/CLASSYVOGUEREGULAR.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 #spinner {
     position: absolute;
     top: 50%;
@@ -26,7 +34,7 @@ html, body {
 }
 
 body.black-bg {
-    background-color: black;
+    background-color: #0d0d0d;
     color: white;
 }
 
@@ -46,11 +54,11 @@ a:hover {
 
 #logo-img {
     height: 2rem;
-    transition: opacity 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 .main {
-    background-color: transparent;
+    background-color: #FFFDF5;
     position: relative;
     margin-top: 0;
     overflow: visible;
@@ -85,6 +93,9 @@ a:hover {
     width: 100%;
     padding-bottom: 0px;
     scroll-snap-type: y proximity;
+
+    /*background:  no-repeat center url(../src/Images/logo/Magel.svg) fixed;*/
+    /*background-size: cover;*/
 }
 
 #proyects-index {
@@ -114,17 +125,15 @@ a:hover {
 }
 
 
-
-
 .page1 h1 {
-    font-size: 11vw;
-    font-family: "Lexend Giga", sans-serif;
-    font-weight: 500;
+    font-size: 12vw;
+    font-family: "Classy Vogue", sans-serif;
+    font-weight: 1000;
     color: inherit;
 }
 
 .page1 h2 {
-    font-size: 7vw;
+    font-size: 8vw;
     font-family: "Workbench", sans-serif;
     font-weight: 100;
     color: inherit;
@@ -134,7 +143,23 @@ a:hover {
     
     height: 100%;
     overflow-x: hidden;
+    z-index: 1;
 }
+
+
+.adhrMage {
+    
+    overflow: hidden;
+    z-index: 0;
+}
+
+.adhrMage svg {
+    
+    transform: scale(1.5);
+    transform-origin: center top;
+
+}
+
 
 .videoSection {
    
@@ -189,8 +214,8 @@ a:hover {
     min-height: 2000px;
 }
 
-#videoHome {
-}
+
+
 
 
 #overlay-text {
@@ -202,6 +227,13 @@ a:hover {
     padding: 0; /* Espaciado interno para el texto */
     
 }
+
+.nav-link:hover, .navbar-brand img:hover{
+    transform: scale(1.05);
+    transition: ease-in 0.2s transform;
+}
+
+
   
 /* Ajustes para pantallas móviles */
 @media (max-width: 992px) {

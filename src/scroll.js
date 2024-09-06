@@ -10,6 +10,8 @@ function init() {
     const navLinks = document.querySelectorAll('#nav-part2 .nav-link');
     const navbarCollapse = document.getElementById('navbarNav');
     const navbarToggler = document.querySelector('.navbar-toggler');
+    const svgMAGE = document.getElementById('Magel');
+
   
   
     // Modificación del estilo del navbar en función del scroll para que se haga sticky cuando llegue arriba
@@ -24,6 +26,12 @@ function init() {
     // Cambiar el fondo y los estilos de los enlaces de navegación
     if (scrollY > changePoint) {
       document.body.classList.add('black-bg');
+
+
+      if (svgMAGE) {
+        svgMAGE.setAttribute('fill', '#191919'); // Cambiar a color oscuro
+      }
+
       logo_adhr.forEach(img => {
         if (img.src !== '/src/images/logo/adhr_white.svg') {
           img.src = '/src/images/logo/adhr_white.svg';
@@ -32,8 +40,16 @@ function init() {
       navLinks.forEach(link => {
         link.classList.add('text-light');
       });
+
+
     } else {
       document.body.classList.remove('black-bg');
+
+      if (svgMAGE) {
+        svgMAGE.setAttribute('fill', '#F1EEE2'); // Volver al color claro
+      }
+
+
       logo_adhr.forEach(img => {
         if (img.src !== '/src/images/logo/adhr_black.svg') {
           img.src = '/src/images/logo/adhr_black.svg';
@@ -63,6 +79,8 @@ function init() {
   // Agregar un evento de desplazamiento al documento
   window.addEventListener('scroll', handleScroll);
 }
+
+
 
 // Ejecutar la función de inicialización cuando el DOM esté listo
 document.addEventListener("DOMContentLoaded", init);
