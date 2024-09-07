@@ -149,6 +149,7 @@ a:hover {
 
 .adhrMage {
     
+    height: 100vh;
     overflow: hidden;
     z-index: 0;
 }
@@ -156,7 +157,8 @@ a:hover {
 .adhrMage svg {
     
     transform: scale(1.5);
-    transform-origin: center top;
+    transform-origin: center center;
+    object-fit: cover;
 
 }
 
