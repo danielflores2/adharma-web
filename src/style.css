@@ -156,6 +156,8 @@ a:hover {
 
 .adhrMage svg {
     
+    height: 100%;
+    width: 100%;
     transform: scale(1.5);
     transform-origin: center center;
     object-fit: cover;
