@@ -275,4 +275,25 @@ a:hover {
     #proyects-index {
         display: none;
     }
+
+    /* Hacer que el video ocupe el ancho completo pero mantenga la proporción 16:9 */
+    #videoHome {
+        width: 100%; /* Ocupa todo el ancho */
+        height: auto; /* Ajusta la altura según el ancho manteniendo la proporción */
+        object-fit: contain; /* Mantiene la relación de aspecto original 16:9 */
+        transition: transform 0.5s ease-in-out; /* Solo transición para el movimiento */
+        }
+
+    /* Transiciones para los vídeos */
+    .video-enter {
+        transform: translateX(100%); /* El nuevo video comienza fuera de la pantalla a la derecha */
+    }
+
+    .video-leave {
+        transform: translateX(-100%); /* El video actual sale hacia la izquierda */
+    }
+
+    .video-active {
+        transform: translateX(0); /* El video se centra en la pantalla */
+    }
 }
