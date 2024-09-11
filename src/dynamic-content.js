@@ -93,19 +93,23 @@ function init() {
       let startX = 0;
       let startY = 0;
       let isSwiping = false;
+      let diffX = 0;
   
       videoHome.addEventListener('touchstart', (e) => {
           startX = e.touches[0].clientX;
           startY = e.touches[0].clientY;
           isSwiping = false; // Reinicia el estado de swipe
+          diffX = 0; // Reinicia el movimiento
       });
   
       videoHome.addEventListener('touchmove', (e) => {
           const currentX = e.touches[0].clientX;
-          const diffX = currentX - startX;
+          const currentY = e.touches[0].clientY;
+          diffX = currentX - startX;
+          const diffY = currentY - startY;
   
-          if (Math.abs(diffX) > Math.abs(e.touches[0].clientY - startY)) {
-              // Swipe horizontal detectado
+          // Solo considerar un swipe si el movimiento en X es mayor que en Y (evitar interferir con scroll vertical)
+          if (Math.abs(diffX) > Math.abs(diffY)) {
               isSwiping = true;
   
               // Mover el video según el swipe en tiempo real
@@ -116,20 +120,17 @@ function init() {
       videoHome.addEventListener('touchend', (e) => {
           if (!isSwiping) return;
   
-          const endX = e.changedTouches[0].clientX;
-          const diffX = startX - endX;
-  
-          // Detecta swipe solo si la distancia horizontal es mayor que la vertical y suficientemente grande
+          // Detecta swipe solo si la distancia horizontal es mayor que un umbral
           if (Math.abs(diffX) > 50) {
-              if (diffX > 0) {
+              if (diffX < 0) {
                   // Swipe hacia la izquierda, mostrar siguiente video
                   currentVideoIndex = (currentVideoIndex + 1) % videos.length;
-                  videoHome.classList.add('video-leave'); // Añade la clase para salida
               } else {
                   // Swipe hacia la derecha, mostrar video anterior
                   currentVideoIndex = (currentVideoIndex - 1 + videos.length) % videos.length;
-                  videoHome.classList.add('video-leave'); // Añade la clase para salida
               }
+  
+              videoHome.classList.add('video-leave'); // Añade la clase para salida
   
               // Espera a que termine la transición antes de cambiar el video
               setTimeout(() => {
@@ -138,20 +139,25 @@ function init() {
                   videoHome.classList.add('video-enter'); // Añade la clase de entrada
                   videoHome.style.transform = 'translateX(0)';
   
-                  // Finalmente, remueve la clase de entrada después de la transición
+                  // Remover la clase de entrada después de la transición
                   setTimeout(() => {
                       videoHome.classList.remove('video-enter');
                   }, 500); // Tiempo igual a la duración de la transición
               }, 500); // Tiempo igual a la duración de la transición
           } else {
-              // Si el swipe es demasiado corto, vuelve a la posición original
+              // Si el swipe es demasiado corto, volver a la posición original
               videoHome.style.transform = 'translateX(0)';
           }
       });
   }
   
-  // Inicializa el swipe solo en móvil
-  if (window.innerWidth <= 992) {
+  // Verificar si el dispositivo es táctil
+  function isTouchDevice() {
+      return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  }
+  
+  // Inicializar swipe solo en dispositivos móviles táctiles
+  if (isTouchDevice() && window.innerWidth <= 992) {
       initSwipeVideos();
   }
 
