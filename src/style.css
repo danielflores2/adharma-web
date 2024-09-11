@@ -42,6 +42,19 @@ body.loading {
     display: none;
 }
 
+  /* Estilo de selección sin fondo */
+::selection {
+    background-color: transparent; /* Fondo transparente */
+    color: #004e66; /* Cambiar solo el color del texto a rojo */
+}
+
+/* Para navegadores Webkit como Chrome o Safari */
+::-webkit-selection {
+    background-color: transparent; /* Fondo transparente */
+    color: #004e66; /* Cambiar solo el color del texto a rojo */
+}
+
+
 a {
     color: inherit;
     text-decoration: none;
