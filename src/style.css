@@ -109,6 +109,7 @@ a:hover {
     gap: 0px; /* Añade espacio entre las miniaturas */
     padding: 0px; /* Añade un poco de relleno alrededor del contenedor */
     z-index: 10; /* Asegura que el contenedor esté por encima de otros elementos */
+    overflow-x: hidden;
 }
 
 #proyects-index img {
