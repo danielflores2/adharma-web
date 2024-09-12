@@ -94,35 +94,30 @@
             
 
             <nav id="nav" class="bottom-0 h-12 position-absolute navbar navbar-expand-lg navbar-light">
-                <div class="container-fluid">
-                    <!-- Botón de hamburguesa centrado -->
-                    <button class="mx-auto border-0 navbar-toggler" type="button" aria-controls="navbarNav"
+                <div class="container-fluid d-flex justify-content-center align-items-center">
+                    <!-- Botón de hamburguesa oculto -->
+                    <button class="d-none border-0 navbar-toggler" type="button" aria-controls="navbarNav"
                         aria-expanded="false" aria-label="Toggle navigation">
-                        <img src="/src/images/logo/adhr_black.svg" id="logo-img" alt="Logo"
-                            class="d-inline-block align-text-top">
+                        <img src="/src/images/logo/adhr_black.svg" id="logo-img" alt="Logo" class="d-inline-block align-text-top">
                     </button>
-
-
+            
                     <!-- Contenedor del menú que colapsa -->
-                    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                        <ul class="navbar-nav d-flex flex-row gap-4 justify-content-center align-items-center w-100"
-                            id="nav-part2">
+                    <div class="navbar-collapse justify-content-center d-flex align-items-center" id="navbarNav">
+                        <ul class="navbar-nav d-flex flex-row gap-4 justify-content-center align-items-center w-100" id="nav-part2">
                             <!-- Elementos del menú -->
-                            <li class="nav-item hidden-nav-items"> <!-- Agrega esta clase -->
+                            <li class="nav-item hidden-nav-items">
                                 <a class="nav-link text-center" href="#proyectos">Proyectos</a>
                             </li>
-                            <!-- Logo central (oculto en móvil si es necesario) -->
-                            <li class="nav-item d-none d-lg-block">
-                                <a class="navbar-brand m-0" href="#content">
-                                    <img src="/src/images/logo/adhr_black.svg" id="logo-img" alt="Logo"
-                                        class="d-inline-block align-text-top">
+                            <!-- Logo central -->
+                            <li class="nav-item">
+                                <a class="navbar-brand m-0" href="#content" id="logo-link">
+                                    <img src="/src/images/logo/adhr_black.svg" id="logo-img" alt="Logo" class="d-inline-block align-text-top">
                                 </a>
                             </li>
-                            <li class="nav-item hidden-nav-items"> <!-- Agrega esta clase -->
+                            <li class="nav-item hidden-nav-items">
                                 <a class="nav-link text-center" href="#contacto">Contacto</a>
                             </li>
                         </ul>
-
                     </div>
                 </div>
             </nav>
@@ -177,7 +172,12 @@
 
 
         <section id="contacto"
-            class="videoSection d-flex align-items-center bg-black w-100 position-relative container-fluid p-0 page1">
+            class="videoSection d-flex bg-black w-100 position-relative container-fluid p-0">
+
+            <div class="contacto w-100 my-auto">
+                <h1 id="header1">contacto</h1>
+                <h2 id="header2">+34 660 657 440</h2>
+            </div>
 
         </section>
 

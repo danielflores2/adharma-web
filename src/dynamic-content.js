@@ -53,113 +53,103 @@ function init() {
     );
   });
 
+
+
+
+
     // Función para inicializar el swipe solo en versión móvil
     function initSwipeVideos() {
-      const videos = [
-          {
-              src: 'https://static.stratebi.com/proyectos/temp/Myzz-Mala_1080_h264_45000kbs.mp4',
-              href: '/proyectos/myzz_mala.html',
-              text: '<span style="font-size: 13px;">Music Video</span><br><b>Myzz - Mala</b>'
-          },
-          {
-              src: 'https://static.stratebi.com/proyectos/temp/Myzz-Medusa_1080_h264_45000kbs.mp4',
-              href: '/proyectos/myzz_medusa.html',
-              text: '<span style="font-size: 13px;">Music Video</span><br><b>Myzz - Medusa</b>'
-          },
-          {
-              src: 'https://static.stratebi.com/proyectos/temp/Duality_1080_h264_45000kbs.mp4',
-              href: '/proyectos/duality.html',
-              text: '<span style="font-size: 13px;">Commercial</span><br>Duality</b>'
-          },
-          {
-              src: 'https://static.stratebi.com/proyectos/temp/Jaydime_Jaycas_crosscheck_DEFINIT_1.mp4',
-              href: '/proyectos/crosscheck.html',
-              text: '<span style="font-size: 13px;">Music Video</span><br>Cross Check</b>'
-          }
-      ];
-  
-      let currentVideoIndex = 0;
-      const videoHome = document.getElementById('videoHome');
-      const overlayText = document.getElementById('overlay-text');
-  
-      function changeVideoByIndex(index) {
-          const videoData = videos[index];
-          videoHome.src = videoData.src;
-          overlayText.innerHTML = videoData.text;
-          videoHome.play();
-      }
-  
-      // Detectar eventos táctiles
-      let startX = 0;
-      let startY = 0;
-      let isSwiping = false;
-      let diffX = 0;
-  
-      videoHome.addEventListener('touchstart', (e) => {
-          startX = e.touches[0].clientX;
-          startY = e.touches[0].clientY;
-          isSwiping = false; // Reinicia el estado de swipe
-          diffX = 0; // Reinicia el movimiento
-      });
-  
-      videoHome.addEventListener('touchmove', (e) => {
-          const currentX = e.touches[0].clientX;
-          const currentY = e.touches[0].clientY;
-          diffX = currentX - startX;
-          const diffY = currentY - startY;
-  
-          // Solo considerar un swipe si el movimiento en X es mayor que en Y (evitar interferir con scroll vertical)
-          if (Math.abs(diffX) > Math.abs(diffY)) {
-              isSwiping = true;
-  
-              // Mover el video según el swipe en tiempo real
-              videoHome.style.transform = `translateX(${diffX}px)`;
-          }
-      });
-  
-      videoHome.addEventListener('touchend', (e) => {
-          if (!isSwiping) return;
-  
-          // Detecta swipe solo si la distancia horizontal es mayor que un umbral
-          if (Math.abs(diffX) > 50) {
-              if (diffX < 0) {
-                  // Swipe hacia la izquierda, mostrar siguiente video
-                  currentVideoIndex = (currentVideoIndex + 1) % videos.length;
-              } else {
-                  // Swipe hacia la derecha, mostrar video anterior
-                  currentVideoIndex = (currentVideoIndex - 1 + videos.length) % videos.length;
-              }
-  
-              videoHome.classList.add('video-leave'); // Añade la clase para salida
-  
-              // Espera a que termine la transición antes de cambiar el video
-              setTimeout(() => {
-                  changeVideoByIndex(currentVideoIndex);
-                  videoHome.classList.remove('video-leave');
-                  videoHome.classList.add('video-enter'); // Añade la clase de entrada
-                  videoHome.style.transform = 'translateX(0)';
-  
-                  // Remover la clase de entrada después de la transición
-                  setTimeout(() => {
-                      videoHome.classList.remove('video-enter');
-                  }, 500); // Tiempo igual a la duración de la transición
-              }, 500); // Tiempo igual a la duración de la transición
-          } else {
-              // Si el swipe es demasiado corto, volver a la posición original
-              videoHome.style.transform = 'translateX(0)';
-          }
-      });
-  }
-  
-  // Verificar si el dispositivo es táctil
-  function isTouchDevice() {
-      return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-  }
-  
-  // Inicializar swipe solo en dispositivos móviles táctiles
-  if (isTouchDevice() && window.innerWidth <= 992) {
-      initSwipeVideos();
-  }
+    const videos = [
+        {
+            src: 'https://static.stratebi.com/proyectos/temp/Myzz-Mala_1080_h264_45000kbs.mp4',
+            href: '/proyectos/myzz_mala.html',
+            text: '<span style="font-size: 13px;">Music Video</span><br><b>Myzz - Mala</b>'
+        },
+        {
+            src: 'https://static.stratebi.com/proyectos/temp/Myzz-Medusa_1080_h264_45000kbs.mp4',
+            href: '/proyectos/myzz_medusa.html',
+            text: '<span style="font-size: 13px;">Music Video</span><br><b>Myzz - Medusa</b>'
+        },
+        {
+            src: 'https://static.stratebi.com/proyectos/temp/Duality_1080_h264_45000kbs.mp4',
+            href: '/proyectos/duality.html',
+            text: '<span style="font-size: 13px;">Commercial</span><br>Duality</b>'
+        },
+        {
+            src: 'https://static.stratebi.com/proyectos/temp/Jaydime_Jaycas_crosscheck_DEFINIT_1.mp4',
+            href: '/proyectos/crosscheck.html',
+            text: '<span style="font-size: 13px;">Music Video</span><br>Cross Check</b>'
+        }
+    ];
+
+    let currentVideoIndex = 0;
+    const videoHome = document.getElementById('videoHome');
+    const overlayText = document.getElementById('overlay-text');
+
+    // Estado de swipe
+    let startX = 0;
+    let isSwiping = false;
+    let diffX = 0;
+    let threshold = 150; // Distancia mínima para considerar un swipe válido
+
+    // Función para cambiar vídeo
+    function changeVideoByIndex(index) {
+        const videoData = videos[index];
+        videoHome.src = videoData.src;
+        overlayText.innerHTML = videoData.text;
+        videoHome.play();
+    }
+
+    videoHome.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isSwiping = true;
+        videoHome.style.transition = 'none'; // Desactiva la transición mientras se mueve con el dedo
+    });
+
+    videoHome.addEventListener('touchmove', (e) => {
+        if (!isSwiping) return;
+        const currentX = e.touches[0].clientX;
+        diffX = currentX - startX;
+
+        // Movimiento en tiempo real con el dedo
+        videoHome.style.transform = `translateX(${diffX}px)`;
+    });
+
+    videoHome.addEventListener('touchend', (e) => {
+        if (!isSwiping) return;
+
+        // Restablece el swipe
+        isSwiping = false;
+        videoHome.style.transition = 'transform 0.5s ease'; // Transición suave al soltar
+
+        // Si se ha desplazado más de threshold, se cambia de vídeo
+        if (diffX < -threshold) {
+            // Swipe a la izquierda: siguiente vídeo
+            currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+        } else if (diffX > threshold) {
+            // Swipe a la derecha: vídeo anterior
+            currentVideoIndex = (currentVideoIndex - 1 + videos.length) % videos.length;
+        }
+
+        // Reestablece la posición final, encajando el vídeo en la pantalla
+        videoHome.style.transform = 'translateX(0)';
+
+        // Cambia el vídeo después de la transición si hubo swipe válido
+        setTimeout(() => {
+            changeVideoByIndex(currentVideoIndex);
+        }, 500); // Espera a que la transición finalice
+    });
+}
+
+// Verificar si el dispositivo es táctil
+function isTouchDevice() {
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+}
+
+// Inicializar swipe solo en dispositivos móviles táctiles
+if (isTouchDevice() && window.innerWidth <= 992) {
+    initSwipeVideos();
+}
 
 }
 
