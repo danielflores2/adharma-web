@@ -52,7 +52,7 @@
     <!-- Contenedor para el vídeo de carga -->
 
     <div id="videoContenedorCarga" class="video-contenedor-carga w-100">
-        <video id="videoCarga" class="video-carga w-100" muted autoplay playsinline>
+        <video id="videoCarga" class="video-carga w-100" muted autoplay playsinline preload loop>
             <source src="/src/video/MagoCarga.mp4" type="video/mp4">
             Tu navegador no soporta videos HTML5.
         </video>
@@ -62,7 +62,7 @@
     
     <main id="contenidoPrincipal">
 
-        <header class="w-100 position-relative container-fluid d-flex page1">
+        <header id="landing" class="w-100 position-relative container-fluid d-flex page1 justify-content-center">
 
             <div class="adhrMage w-100 position-absolute">
                 <?xml version="1.0" encoding="UTF-8"?>
@@ -88,8 +88,8 @@
             </div>
 
             <div class="adhrHead w-100 my-auto text-center">
-                <h1 id="header1">adharma</h1>
-                <h2 id="header2">Collective</h2>
+                <h1 id="header1">ADHARMA</h1>
+                <h2 id="header2">COLLECTIVE</h2>
             </div>
 
             
@@ -104,20 +104,23 @@
             
                     <!-- Contenedor del menú que colapsa -->
                     <div class="navbar-collapse justify-content-center d-flex align-items-center" id="navbarNav">
-                        <ul class="navbar-nav d-flex flex-row gap-4 justify-content-center align-items-center w-100" id="nav-part2">
+                        <ul class="navbar-nav d-flex flex-row gap-4 justify-content-between align-items-center w-100" id="nav-part2">
                             <!-- Elementos del menú -->
                             <li class="nav-item hidden-nav-items">
-                                <a class="nav-link text-center" href="#proyectos">Proyectos</a>
+                                <a class="nav-link text-center hover-effect w-100" href="#about">ABOUT US</a>
                             </li>
+                            
                             <!-- Logo central -->
                             <li class="nav-item">
-                                <a class="navbar-brand m-0" href="#content" id="logo-link">
+                                <a class="navbar-brand m-0 " href="#proyectos" id="logo-link">
                                     <img src="/src/images/logo/adhr_black.svg" id="logo-img" alt="Logo" class="d-inline-block align-text-top">
                                 </a>
                             </li>
+
                             <li class="nav-item hidden-nav-items">
-                                <a class="nav-link text-center" href="#contacto">Contacto</a>
+                                <a class="nav-link text-center w-100 hover-effect" href="#contacto">CONTACT</a>
                             </li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -125,29 +128,35 @@
 
         </header>
 
-        <section id="proyectos"
-            class="videoSection d-flex align-items-center bg-black w-100 position-relative container-fluid p-0 page1">
+        <section id="proyectos" class="videoSection d-flex align-items-center bg-black w-100 position-relative container-fluid p-0 page1">
 
             <div class="video-container h-100 align-items-center justify-content-center d-flex" >
 
-                <p id="overlay-text" style="color: white;"><span
-                        style="font-size: 13px;">Commercial</span><br>Duality</b></p>
-
-                <a id="videoHomeLink" href="/proyectos/duality.html">
-                    <video id="videoHome" alt="DUALITY" muted autoplay playsinline
+                
+                    <video id="videoHome" alt="DUALITY" muted autoplay playsinline loop="true" preload="true"
                         src="https://static.stratebi.com/proyectos/temp/Duality_1080_h264_45000kbs.mp4"
                         class="m-auto video-centered"></video>
-                </a>
+            
             </div>
 
-            <div id="proyects-index">
-                <div class="d-flex align-items-end">
-                    <div id="proyects-index">
-                        <div class="d-flex align-items-end">
+                
+            <div class="proyects-index">
+                <div class="d-flex flex-column  align-items-center">
+                    <a id="videoHomeLink" class="hover-effect " href="/proyectos/duality.html">
+                        <p id="overlay-text" class="w-100 text-center">
+                            <b>DUALITY</b><br>COMMERCIAL
+                        </p>
+                    </a>
+                    <div class="video-selector align-items-end">
                             <picture>
                                 <source srcset="/src/images/miniaturas/miniatura1_1.1.1.webp" type="image/webp">
                                 <img class="miniatura" id="min1" src="/src/images/miniaturas/miniatura1_1.1.1.jpg"
                                     alt="Miniatura 1">
+                            </picture>
+                            <picture>
+                                <source srcset="/src/images/miniaturas/therebirthd73.webp" type="image/webp">
+                                <img class="miniatura" id="min5" src="/src/images/miniaturas/therebirthd73.webp"
+                                    alt="Miniatura 5">
                             </picture>
                             <picture>
                                 <source srcset="/src/images/miniaturas/miniatura2_1.2.1.webp" type="image/webp">
@@ -164,21 +173,46 @@
                                 <img class="miniatura" id="min4" src="/src/images/miniaturas/miniatura_croschek.jpg"
                                     alt="Miniatura 4">
                             </picture>
-                        </div>
+                            
+                            <picture>
+                                <source srcset="/src/images/miniaturas/miniatura_croschek.webp" type="image/webp">
+                                <img class="miniatura" id="min6" src="/src/images/miniaturas/miniatura_croschek.jpg"
+                                    alt="Miniatura 6">
+                            </picture>
                     </div>
                 </div>
             </div>
 
+
         </section>
 
-
-        <section id="contacto"
+        <!--<section id="about"
             class="videoSection d-flex bg-black w-100 position-relative container-fluid p-0">
 
-            <div class="contacto w-100 my-auto">
-                <h1 id="header1">contacto</h1>
-                <h2 id="header2">+34 660 657 440</h2>
+            
+            <div class="adhrContact w-100 my-auto text-center">
+                <h1>SOBRE NOSOTROS</h1>
+                
             </div>
+
+        </section>-->
+
+        <section id="contacto"
+            class="videoSection d-flex bg-white w-100 position-relative container-fluid p-0">   
+            
+            <div class="adhrContact w-100 text-center">
+                <img src="src\images\logo\contacto - u need.png" class="w-100" alt="">
+                
+                <a class="hover-effect email" href="mailto:info@adharma.es">INFO@ADHARMA.ES</a>
+
+                <img src="src\images\logo\contacto - comicshit.png" class="w-100" alt="">
+
+                <h1 class="texto-contacto text-black">CONTACTO</h1>
+
+                <img src="src\images\logo\contacto - mago.png" class="mago-contacto" alt="">
+
+            </div>
+
 
         </section>
 

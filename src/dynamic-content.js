@@ -21,42 +21,61 @@ function init() {
   }
 
   // Eventos para cambiar el video y el texto al pasar el ratón sobre las miniaturas
-  document.getElementById('min1').addEventListener('mouseover', function() {
+  document.getElementById('min1').addEventListener('click', function() {
     changeVideo(
       'https://static.stratebi.com/proyectos/temp/Myzz-Mala_1080_h264_45000kbs.mp4',
       '/proyectos/myzz_mala.html',
-      '<span style="font-size: 13px;">Music Video</span><br><b>Myzz - Mala</b>'
+      '<b>MALA</b><br>MUSIC VIDEO'
     );
   });
 
-  document.getElementById('min2').addEventListener('mouseover', function() {
+  document.getElementById('min2').addEventListener('click', function() {
     changeVideo(
       'https://static.stratebi.com/proyectos/temp/Myzz-Medusa_1080_h264_45000kbs.mp4',
       '/proyectos/myzz_medusa.html',
-      '<span style="font-size: 13px;">Music Video</span><br><b>Myzz - Medusa</b>'
+      '<b>MEDUSA</b><br>MUSIC VIDEO'
     );
   });
 
-  document.getElementById('min3').addEventListener('mouseover', function() {
+  document.getElementById('min3').addEventListener('click', function() {
     changeVideo(
       'https://static.stratebi.com/proyectos/temp/Duality_1080_h264_45000kbs.mp4',
       '/proyectos/duality.html',
-      '<span style="font-size: 13px;">Commercial</span><br>Duality</b>'
+      '<b>DUALITY</b><br>COMMERCIAL'
     );
   });
 
-  document.getElementById('min4').addEventListener('mouseover', function() {
+  document.getElementById('min4').addEventListener('click', function() {
     changeVideo(
       'https://static.stratebi.com/proyectos/temp/Jaydime_Jaycas_crosscheck_DEFINIT_1.mp4',
       '/proyectos/crosscheck.html',
-      '<span style="font-size: 13px;">Music Video</span><br>Cross Check</b>'
+      '<b>CROSS CHECK</b><br>MUSIC VIDEO'
+
+    );
+  });
+
+  document.getElementById('min5').addEventListener('click', function() {
+    changeVideo(
+      'https://static.stratebi.com/proyectos/temp/THE%20REBIRTH%20%281080p%2C%20h264%2C%20youtube%29.mp4',
+      '/proyectos/crosscheck.html',
+      '<b>THE REBIRTH</b><br>COMMERCIAL'
+
+    );
+  });
+
+  document.getElementById('min6').addEventListener('click', function() {
+    changeVideo(
+      'https://static.stratebi.com/proyectos/temp/Jaydime_Jaycas_crosscheck_DEFINIT_1.mp4',
+      '/proyectos/crosscheck.html',
+      '<b>SUBLIMOTION</b><br>COMMERCIAL'
+
     );
   });
 
 
 
 
-
+ /*
     // Función para inicializar el swipe solo en versión móvil
     function initSwipeVideos() {
     const videos = [
@@ -151,6 +170,7 @@ if (isTouchDevice() && window.innerWidth <= 992) {
     initSwipeVideos();
 }
 
+*/
 }
 
 document.addEventListener("DOMContentLoaded", init);

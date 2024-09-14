@@ -28,9 +28,9 @@ header{
 
 html, body {
     background-color: white;
-    overflow-x: hidden;
-    color: rgb(255, 255, 255);
+    overflow: hidden; /* Bloquear el scroll nativo */    color: rgb(255, 255, 255);
     transition: background-color 0.5s ease, color 0.5s ease;
+    scroll-behavior: smooth;
 }
 
 body.black-bg {
@@ -61,8 +61,40 @@ a {
     transition: color 0.5s ease;
 }
 
-a:hover {
-    text-decoration: underline;
+a:hover{
+font-weight:500
+}
+
+a.hover-effect {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    overflow: hidden; /* Asegúrate de que el pseudo-elemento no se desborde */
+}
+
+/* Estilos cuando se hace hover sobre el enlace */
+a.hover-effect::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background-image: url('/src/images/logo/rayito-hover-2.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translate(-50%, -50%) scale(0.5);
+    z-index: -1;
+    pointer-events: none; /* Evita que el pseudo-elemento sea interactivo */
+}
+
+/* Cambios al hacer hover */
+a.hover-effect:hover::before {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1);
 }
 
 #logo-img {
@@ -111,7 +143,7 @@ a:hover {
     /*background-size: cover;*/
 }
 
-#proyects-index {
+.proyects-index {
     position: absolute; /* Fija el contenedor de miniaturas en la parte inferior de la página */
     bottom: 0; /* Coloca el contenedor en la parte inferior */
     left: 0; /* Alinea el contenedor a la izquierda */
@@ -124,7 +156,8 @@ a:hover {
     z-index: 10; /* Asegura que el contenedor esté por encima de otros elementos */
 }
 
-#proyects-index img {
+.proyects-index img {
+    cursor: pointer;
     height: 70px; /* Define una altura fija para las miniaturas más pequeñas */
     width: auto; /* Ajusta la anchura automáticamente para mantener la proporción */
     transition: transform 200ms, border 200ms; /* Añade transición para la animación */
@@ -132,22 +165,24 @@ a:hover {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Añade una sombra sutil */
 }
 
-#proyects-index img:hover {
+.proyects-index img:hover {
     transform: scale(1.2); /* Aumenta el tamaño de la imagen al pasar el ratón */
     border: 1px solid white; /* Añade un borde blanco al pasar el ratón */
 }
 
 
-.page1 h1 {
+.adhrHead h1 {
     font-size: 12vw;
-    font-family: "Classy Vogue", sans-serif;
-    font-weight: 1000;
+    font-family: "Lexend Giga", Arial, Times, serif;
+
+    font-weight: 600;
     color: inherit;
 }
 
-.page1 h2 {
+.adhrHead h2 {
     font-size: 8vw;
-    font-family: "Workbench", sans-serif;
+    font-family: "Lexend Giga", Arial, Times, serif;
+
     font-weight: 100;
     color: inherit;
 }
@@ -205,6 +240,8 @@ a:hover {
     overflow-x: hidden;
 }
 
+
+
 .video-carga, .video-contenedor-carga{
     height: 100vh;
 }
@@ -233,16 +270,21 @@ a:hover {
 
 
 
-
-
 #overlay-text {
-    position: absolute; /* Asegura que el texto esté posicionado absolutamente sobre el video */
-    bottom: 20px; /* Ajusta esta distancia desde el fondo */
-    left: 50px; /* Ajusta esta distancia desde el margen izquierdo */
     transform: none; /* Elimina cualquier transformación previa */
     text-align: left; /* Alinea el texto a la izquierda */
     padding: 0; /* Espaciado interno para el texto */
+
+    color: white;
     
+}
+
+.nav-item{
+    min-width: 122px
+}
+
+.nav-item:nth-child(2){
+    min-width: fit-content;
 }
 
 .nav-link:hover, .navbar-brand img:hover{
@@ -250,15 +292,74 @@ a:hover {
     transition: ease-in 0.2s transform;
 }
 
-.contacto {
+.adhrContact {
     
     height: 100%;
     overflow-x: hidden;
     z-index: 1;
+    margin-top: 5rem;
+}
+
+.adhrContact h1 {
+    font-size: 8vw;
+    font-family: "Lexend Giga", Arial, Times, serif;
+
+    font-weight: 1000;
+    color: inherit;
+}
+
+.adhrContact a {
+    color: black;
+}
+
+.adhrContact a:hover{
+font-weight: normal;}
+
+.adhrContact .email {
+    color: black;
+    text-align: center;
+    font-size: 7vw;
+}
+
+.adhrContact.email:hover{
+    transform: scale(0.9);
+    transition: all 0.2s ease;
+}
+
+
+.mago-contacto{
+    bottom: 0 ;
+    left: 0;
+    width: 40vw;
+    position: absolute;
+}
+
+.texto-contacto{
+    bottom: 0 ;
+    right: 0;
+    position: absolute;
+    font-weight: bolder;
+}
+
+
+
+#landing {
+    position: sticky; 
+    top: 0; /
+}
+
+#proyectos {
+    position: sticky; 
+    top: 0; /* Se mantendrá fija en la parte superior al hacer scroll */
+}
+
+#contacto {
+    position: sticky; 
+    top: 0; /* Se mantendrá fija en la parte superior al hacer scroll */
 }
   
 /* Ajustes para pantallas móviles */
-@media (max-width: 992px) {
+@media (max-width: 800px) {
     /* Animación al mostrar el menú de hamburguesa */
     .navbar-collapse.show .navbar-nav {
         animation: smoothFadeIn 0.5s forwards ease-out;
@@ -273,14 +374,23 @@ a:hover {
         transition: transform 0.4s ease-in-out;
     }
     /* Ajustar la separación y el tamaño de fuente para móviles */
-    .navbar-nav .nav-item {
-        margin: 0 10px; /* Aumenta la separación entre los elementos del menú */
-    }
+
+   
 
     .navbar-nav .nav-link {
-        font-size: 0.9rem; /* Disminuye el tamaño de la fuente en pantallas móviles */
+        font-size: 0.8rem; /* Disminuye el tamaño de la fuente en pantallas móviles */
     }
     
+
+    .nav-item{
+        min-width: 100px;
+        width:100px;
+    }
+
+    .nav-item:nth-child(2){
+        min-width: fit-content;
+        width: fit-content;
+    }
     /* Asegúrate de que los elementos 'Proyectos' y 'Contacto' están más alejados del logo */
     .navbar-toggler {
         margin: 0 20px; /* Aumenta el margen a los lados del botón de navegación para separarlo más del contenido */
@@ -290,12 +400,11 @@ a:hover {
         padding-top: 10px; /* Ajusta el espacio superior dentro del contenedor de colapso de la barra de navegación */
     }
 
-    #proyects-index {
+    .proyects-index div .video-selector {
         display: none;
     }
 
     #videoHome {
-        width: 100%;
         height: 100vh;
         object-fit: contain;
         transition: transform 0.5s ease; /* Transición para ajustar el swipe */
