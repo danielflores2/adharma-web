@@ -24,7 +24,8 @@ function init() {
   document.getElementById('min1').addEventListener('click', function() {
     changeVideo(
       'https://static.stratebi.com/proyectos/temp/Myzz-Mala_1080_h264_45000kbs.mp4',
-      '/proyectos/myzz_mala.html',
+      //'/proyectos/myzz_mala.html',
+      '#',
       '<b>MALA</b><br>MUSIC VIDEO'
     );
   });
@@ -32,7 +33,9 @@ function init() {
   document.getElementById('min2').addEventListener('click', function() {
     changeVideo(
       'https://static.stratebi.com/proyectos/temp/Myzz-Medusa_1080_h264_45000kbs.mp4',
-      '/proyectos/myzz_medusa.html',
+      //'/proyectos/myzz_medusa.html',
+      '#',
+
       '<b>MEDUSA</b><br>MUSIC VIDEO'
     );
   });
@@ -40,7 +43,9 @@ function init() {
   document.getElementById('min3').addEventListener('click', function() {
     changeVideo(
       'https://static.stratebi.com/proyectos/temp/Duality_1080_h264_45000kbs.mp4',
-      '/proyectos/duality.html',
+      //'/proyectos/duality.html',
+      '#',
+
       '<b>DUALITY</b><br>COMMERCIAL'
     );
   });
@@ -48,7 +53,9 @@ function init() {
   document.getElementById('min4').addEventListener('click', function() {
     changeVideo(
       'https://static.stratebi.com/proyectos/temp/Jaydime_Jaycas_crosscheck_DEFINIT_1.mp4',
-      '/proyectos/crosscheck.html',
+      //'/proyectos/crosscheck.html',
+      '#',
+
       '<b>CROSS CHECK</b><br>MUSIC VIDEO'
 
     );
@@ -57,7 +64,9 @@ function init() {
   document.getElementById('min5').addEventListener('click', function() {
     changeVideo(
       'https://static.stratebi.com/proyectos/temp/THE%20REBIRTH%20%281080p%2C%20h264%2C%20youtube%29.mp4',
-      '/proyectos/crosscheck.html',
+      //'/proyectos/crosscheck.html',
+      '#',
+
       '<b>THE REBIRTH</b><br>COMMERCIAL'
 
     );
@@ -65,8 +74,10 @@ function init() {
 
   document.getElementById('min6').addEventListener('click', function() {
     changeVideo(
-      'https://static.stratebi.com/proyectos/temp/Jaydime_Jaycas_crosscheck_DEFINIT_1.mp4',
-      '/proyectos/crosscheck.html',
+      'https://static.stratebi.com/proyectos/temp/ReelSubli.mp4',
+      //'/proyectos/crosscheck.html',
+      '#',
+
       '<b>SUBLIMOTION</b><br>COMMERCIAL'
 
     );

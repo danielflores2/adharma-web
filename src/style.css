@@ -8,6 +8,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Impact'; 
+    src: url('/src/fonts/IMPACT.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 #spinner {
     position: absolute;
     top: 50%;
@@ -29,7 +36,7 @@ header{
 html, body {
     background-color: white;
     overflow: hidden; /* Bloquear el scroll nativo */    color: rgb(255, 255, 255);
-    transition: background-color 0.5s ease, color 0.5s ease;
+    transition: background-color 0.5s  ease-in-out, color 0.5s  ease-in-out;
     scroll-behavior: smooth;
 }
 
@@ -172,8 +179,8 @@ a.hover-effect:hover::before {
 
 
 .adhrHead h1 {
-    font-size: 12vw;
-    font-family: "Lexend Giga", Arial, Times, serif;
+    font-size: 6vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
     font-weight: 600;
     color: inherit;
@@ -194,6 +201,9 @@ a.hover-effect:hover::before {
     z-index: 1;
 }
 
+.landing-mago{
+    max-width: 200px;
+}
 
 .adhrMage {
     
@@ -206,7 +216,7 @@ a.hover-effect:hover::before {
     
     height: 100%;
     width: 100%;
-    transform: scale(1.5);
+    transform: scale(2);
     transform-origin: center center;
     object-fit: cover;
 
@@ -298,34 +308,35 @@ a.hover-effect:hover::before {
     overflow-x: hidden;
     z-index: 1;
     margin-top: 5rem;
+    
 }
 
-.adhrContact h1 {
-    font-size: 8vw;
-    font-family: "Lexend Giga", Arial, Times, serif;
-
-    font-weight: 1000;
-    color: inherit;
+.adhrContact .header-contact img {
+    max-width: 1400px;
 }
+
+
 
 .adhrContact a {
-    color: black;
+    color: #282828;
 }
 
-.adhrContact a:hover{
-font-weight: normal;}
 
-.adhrContact .email {
-    color: black;
+.adhrContact .texto-email:hover{
+    font-weight: 400;
+    transform: scale(0.95);
+    transition: all 0.2s ease-in-out;
+}
+
+.texto-email {
+    color: #282828;
     text-align: center;
-    font-size: 7vw;
-}
+    font-size: 6vw;
+    font-size:clamp(6vw,6vw,6rem);
+    font-weight: 300;
 
-.adhrContact.email:hover{
-    transform: scale(0.9);
-    transition: all 0.2s ease;
+    max-width: 1400px;
 }
-
 
 .mago-contacto{
     bottom: 0 ;
@@ -337,10 +348,21 @@ font-weight: normal;}
 .texto-contacto{
     bottom: 0 ;
     right: 0;
+    margin-bottom: -1rem;
+    padding-inline: 1rem;
     position: absolute;
-    font-weight: bolder;
+
+    font-size: 14vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    font-weight: normal;
+    color: inherit;
+
+    color: #282828;
 }
 
+.texto-email{
+}
 
 
 #landing {

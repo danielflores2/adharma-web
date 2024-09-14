@@ -87,9 +87,12 @@
                 </svg>
             </div>
 
-            <div class="adhrHead w-100 my-auto text-center">
+            <div class="adhrHead d-flex flex-column align-items-center w-100 my-auto text-center">
+                <img class="landing-mago" src="/src/images/logo/home - mago0.png" alt=""> 
                 <h1 id="header1">ADHARMA</h1>
-                <h2 id="header2">COLLECTIVE</h2>
+               
+                
+                <!--<h2 id="header2">COLLECTIVE</h2>-->
             </div>
 
             
@@ -142,12 +145,12 @@
                 
             <div class="proyects-index">
                 <div class="d-flex flex-column  align-items-center">
-                    <a id="videoHomeLink" class="hover-effect " href="/proyectos/duality.html">
+                    <a id="videoHomeLink" class="hover-effect " href="# ">
                         <p id="overlay-text" class="w-100 text-center">
                             <b>DUALITY</b><br>COMMERCIAL
                         </p>
                     </a>
-                    <div class="video-selector align-items-end">
+                    <div class="video-selector d-flex align-items-end">
                             <picture>
                                 <source srcset="/src/images/miniaturas/miniatura1_1.1.1.webp" type="image/webp">
                                 <img class="miniatura" id="min1" src="/src/images/miniaturas/miniatura1_1.1.1.jpg"
@@ -169,16 +172,17 @@
                                     alt="Miniatura 3">
                             </picture>
                             <picture>
+                                <source srcset="/src/images/miniaturas/Subliminiatura00.webp" type="image/webp">
+                                <img class="miniatura" id="min6" src="/src/images/miniaturas/Subliminiatura00.webp"
+                                    alt="Miniatura 6">
+                            </picture>
+                            <picture>
                                 <source srcset="/src/images/miniaturas/miniatura_croschek.webp" type="image/webp">
                                 <img class="miniatura" id="min4" src="/src/images/miniaturas/miniatura_croschek.jpg"
                                     alt="Miniatura 4">
                             </picture>
                             
-                            <picture>
-                                <source srcset="/src/images/miniaturas/miniatura_croschek.webp" type="image/webp">
-                                <img class="miniatura" id="min6" src="/src/images/miniaturas/miniatura_croschek.jpg"
-                                    alt="Miniatura 6">
-                            </picture>
+                            
                     </div>
                 </div>
             </div>
@@ -198,16 +202,20 @@
         </section>-->
 
         <section id="contacto"
-            class="videoSection d-flex bg-white w-100 position-relative container-fluid p-0">   
+            class="videoSection d-flex w-100 position-relative container-fluid p-0">   
             
             <div class="adhrContact w-100 text-center">
-                <img src="src\images\logo\contacto - u need.png" class="w-100" alt="">
+                <div class="px-4 pt-4 header-contact">
+                    <img src="src\images\logo\contacto - u need.png" class="w-100" alt="">
+                </div>
                 
-                <a class="hover-effect email" href="mailto:info@adharma.es">INFO@ADHARMA.ES</a>
+                <div class="px-4">
+                    <a class="hover-effect texto-email" href="mailto:info@adharma.es">INFO@ADHARMA.ES</a>
+                </div>
 
                 <img src="src\images\logo\contacto - comicshit.png" class="w-100" alt="">
 
-                <h1 class="texto-contacto text-black">CONTACTO</h1>
+                <h1 class="texto-contacto">CONTACTO</h1>
 
                 <img src="src\images\logo\contacto - mago.png" class="mago-contacto" alt="">
 
