@@ -2,18 +2,42 @@ function init() {
   const sections = document.querySelectorAll('header, section');
   let currentIndex = 0; // Índice de la sección actual
   let isScrolling = false; // Flag para evitar scroll repetido
+
+  const nav = document.getElementById('nav');
+  const navLinks = document.querySelectorAll('#nav-part2 .nav-link');
+  const logo_adhr = document.querySelectorAll('#logo-img');
   let touchStartY = 0;
   let touchEndY = 0;
 
   // Función que actualiza el estilo según la sección actual
   function handleScroll() {
     if (currentIndex > 0) {
-      document.getElementById('nav').classList.add('sticky-navbar');
+      nav.classList.add('sticky-navbar');
+      nav.classList.remove('position-absolute', 'bottom-0');
     } else {
-      document.getElementById('nav').classList.remove('sticky-navbar');
+      nav.classList.remove('sticky-navbar');
+      nav.classList.add('position-absolute', 'bottom-0');
     }
 
-    // Aquí puedes modificar el estilo de las secciones o el nav según el índice actual
+    if (currentIndex === sections.length - 1 || currentIndex === 0) {
+      document.body.style.backgroundColor = '#FFFDF5'; // Fondo blanco
+      logo_adhr.forEach(img => {
+        img.src = '/src/images/logo/adhr_black.svg'; // Cambiar logo a negro
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('text-light');
+        link.classList.add('text-dark'); // Cambiar los enlaces a oscuro
+      });
+    } else {
+      document.body.style.backgroundColor = '#FFFDF5'; // Fondo blanco
+      logo_adhr.forEach(img => {
+        img.src = '/src/images/logo/adhr_white.svg'; // Cambiar logo a blanco
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('text-dark');
+        link.classList.add('text-light'); // Cambiar los enlaces a claro
+      });
+    }
   }
 
   // Función para desplazarse a una sección específica
@@ -24,7 +48,6 @@ function init() {
       currentIndex = index;
       handleScroll();
 
-      // Esperar que la animación termine antes de permitir más scrolls
       setTimeout(() => {
         isScrolling = false;
       }, 800); // Tiempo para terminar el scroll
@@ -35,8 +58,11 @@ function init() {
   function updateCurrentIndex() {
     sections.forEach((section, index) => {
       const sectionTop = section.getBoundingClientRect().top;
-      if (sectionTop >= 0 && sectionTop < window.innerHeight / 2) {
-        currentIndex = index;
+      if (sectionTop >= -window.innerHeight * 0.3 && sectionTop < window.innerHeight * 0.7) {
+        if (currentIndex !== index) {
+          currentIndex = index;
+          handleScroll();
+        }
       }
     });
   }
@@ -49,34 +75,19 @@ function init() {
   // Detectar el final del touch y gestionar el swipe
   function handleTouchEnd(event) {
     touchEndY = event.changedTouches[0].clientY;
-    const swipeThreshold = 50; // Umbral para considerar un swipe
+    const swipeThreshold = 50; // Umbral para considerar que ha sido un swipe
 
     if (!isScrolling) {
       if (touchStartY - touchEndY > swipeThreshold) {
-        // Swipe hacia arriba (siguiente sección)
+        // Swipe hacia arriba
         currentIndex = currentIndex === sections.length - 1 ? sections.length - 1 : currentIndex + 1;
         scrollToSection(currentIndex);
       } else if (touchEndY - touchStartY > swipeThreshold) {
-        // Swipe hacia abajo (sección anterior)
+        // Swipe hacia abajo
         currentIndex = currentIndex === 0 ? 0 : currentIndex - 1;
         scrollToSection(currentIndex);
       }
     }
-  }
-
-  // Bloquear el scroll libre y forzar la fijación en una sección
-  function blockFreeScroll() {
-    window.addEventListener('wheel', function (event) {
-      event.preventDefault(); // Prevenir el scroll nativo
-      if (!isScrolling) {
-        if (event.deltaY > 0) {
-          currentIndex = Math.min(currentIndex + 1, sections.length - 1);
-        } else {
-          currentIndex = Math.max(currentIndex - 1, 0);
-        }
-        scrollToSection(currentIndex);
-      }
-    }, { passive: false }); // Hacer que el evento no sea pasivo para evitar el scroll nativo
   }
 
   // Manejar el clic en el logo para alternar entre "landing" y "proyectos"
@@ -107,7 +118,6 @@ function init() {
 
   window.addEventListener('scroll', updateCurrentIndex);
 
-  // Detectar si es un dispositivo móvil
   function isMobileDevice() {
     return /Mobi|Android|iPhone/i.test(navigator.userAgent) || window.innerWidth <= 768;
   }
@@ -116,8 +126,23 @@ function init() {
     window.addEventListener('touchstart', handleTouchStart, false);
     window.addEventListener('touchend', handleTouchEnd, false);
   } else {
-    // Bloquear el scroll libre en desktop
-    blockFreeScroll();
+    window.addEventListener('wheel', function (event) {
+      if (!isScrolling) {
+        currentIndex = event.deltaY > 0 ? Math.min(currentIndex + 1, sections.length - 1) : Math.max(currentIndex - 1, 0);
+        scrollToSection(currentIndex);
+      }
+    });
+
+    window.addEventListener('keydown', function (event) {
+      if (!isScrolling) {
+        if (event.key === 'ArrowDown') {
+          currentIndex = Math.min(currentIndex + 1, sections.length - 1);
+        } else if (event.key === 'ArrowUp') {
+          currentIndex = Math.max(currentIndex - 1, 0);
+        }
+        scrollToSection(currentIndex);
+      }
+    });
   }
 }
 
