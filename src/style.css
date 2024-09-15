@@ -382,6 +382,7 @@ a.hover-effect:hover::before {
 
 .video-selector{
     display: flex;
+    gap: 5px;
 }
   
 /* Ajustes para pantallas móviles */
@@ -428,11 +429,17 @@ a.hover-effect:hover::before {
         padding-top: 10px; /* Ajusta el espacio superior dentro del contenedor de colapso de la barra de navegación */
     }
 
-    /*
+    
     .video-selector {
-        display: none;
+        transform: scale(0.7);
+
+        /*display: none;*/
     }
-*/
+
+    .proyects-index img{
+        width: 80px !important;
+    }
+        
     #videoHome {
         height: 100vh;
         object-fit: contain;
