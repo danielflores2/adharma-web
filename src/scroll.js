@@ -18,6 +18,7 @@ function init() {
       nav.classList.add('position-absolute', 'bottom-0');
     }
 
+    // Actualizamos el logo y enlaces según la sección
     if (currentIndex === sections.length - 1 || currentIndex === 0) {
       document.body.style.backgroundColor = '#FFFDF5'; // Fondo blanco
       logo_adhr.forEach(img => {
@@ -40,15 +41,16 @@ function init() {
   }
 
   function scrollToSection(index) {
-    isScrolling = true;
     if (index >= 0 && index < sections.length) {
+      isScrolling = true; // Previene más scrolls mientras ocurre uno
       sections[index].scrollIntoView({ behavior: 'smooth' });
       currentIndex = index; // Actualizamos el índice actual
       handleScroll(); // Actualizamos el estilo basado en el índice actual
+
+      setTimeout(() => {
+        isScrolling = false; // Terminamos el scroll
+      }, 800); // Un retraso para que termine el scroll suave
     }
-    setTimeout(() => {
-      isScrolling = false;
-    }, 500); // Tiempo para terminar la animación del scroll
   }
 
   function updateCurrentIndex() {
@@ -76,11 +78,11 @@ function init() {
     if (!isScrolling) {
       if (touchStartY - touchEndY > swipeThreshold) {
         // Swipe hacia arriba (desplazarse a la siguiente sección)
-        currentIndex = currentIndex === sections.length - 1 ? 0 : currentIndex + 1;
+        currentIndex = currentIndex === sections.length - 1 ? sections.length - 1 : currentIndex + 1;
         scrollToSection(currentIndex);
       } else if (touchEndY - touchStartY > swipeThreshold) {
         // Swipe hacia abajo (desplazarse a la sección anterior)
-        currentIndex = currentIndex === 0 ? sections.length - 1 : currentIndex - 1;
+        currentIndex = currentIndex === 0 ? 0 : currentIndex - 1;
         scrollToSection(currentIndex);
       }
     }
