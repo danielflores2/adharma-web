@@ -9,7 +9,6 @@ function init() {
   let touchStartY = 0;
   let touchEndY = 0;
 
-  // Función que actualiza el estilo según la sección actual
   function handleScroll() {
     if (currentIndex > 0) {
       nav.classList.add('sticky-navbar');
@@ -19,6 +18,7 @@ function init() {
       nav.classList.add('position-absolute', 'bottom-0');
     }
 
+    // Actualizamos el logo y enlaces según la sección
     if (currentIndex === sections.length - 1 || currentIndex === 0) {
       document.body.style.backgroundColor = '#FFFDF5'; // Fondo blanco
       logo_adhr.forEach(img => {
@@ -40,28 +40,26 @@ function init() {
     }
   }
 
-  // Función para desplazarse a una sección específica
   function scrollToSection(index) {
     if (index >= 0 && index < sections.length) {
-      isScrolling = true;
+      isScrolling = true; // Previene más scrolls mientras ocurre uno
       sections[index].scrollIntoView({ behavior: 'smooth' });
-      currentIndex = index;
-      handleScroll();
+      currentIndex = index; // Actualizamos el índice actual
+      handleScroll(); // Actualizamos el estilo basado en el índice actual
 
       setTimeout(() => {
-        isScrolling = false;
-      }, 800); // Tiempo para terminar el scroll
+        isScrolling = false; // Terminamos el scroll
+      }, 800); // Un retraso para que termine el scroll suave
     }
   }
 
-  // Actualizar currentIndex según la sección visible
   function updateCurrentIndex() {
     sections.forEach((section, index) => {
       const sectionTop = section.getBoundingClientRect().top;
       if (sectionTop >= -window.innerHeight * 0.3 && sectionTop < window.innerHeight * 0.7) {
-        if (currentIndex !== index) {
-          currentIndex = index;
-          handleScroll();
+        if (currentIndex !== index) { // Solo actualizar si cambió la sección
+          currentIndex = index; // Actualizamos el currentIndex
+          handleScroll(); // Aplicamos los cambios de estilo según la sección
         }
       }
     });
@@ -79,42 +77,16 @@ function init() {
 
     if (!isScrolling) {
       if (touchStartY - touchEndY > swipeThreshold) {
-        // Swipe hacia arriba
+        // Swipe hacia arriba (desplazarse a la siguiente sección)
         currentIndex = currentIndex === sections.length - 1 ? sections.length - 1 : currentIndex + 1;
         scrollToSection(currentIndex);
       } else if (touchEndY - touchStartY > swipeThreshold) {
-        // Swipe hacia abajo
+        // Swipe hacia abajo (desplazarse a la sección anterior)
         currentIndex = currentIndex === 0 ? 0 : currentIndex - 1;
         scrollToSection(currentIndex);
       }
     }
   }
-
-  // Manejar el clic en el logo para alternar entre "landing" y "proyectos"
-  document.getElementById('logo-link').addEventListener('click', function (e) {
-    e.preventDefault();
-
-    const landingSection = document.getElementById('landing');
-    const proyectosSection = document.getElementById('proyectos');
-    const currentScroll = window.scrollY;
-
-    if (currentScroll < landingSection.offsetHeight) {
-      // Desplazarse a la sección de "proyectos"
-      window.scrollTo({
-        top: proyectosSection.offsetTop,
-        behavior: 'smooth'
-      });
-      currentIndex = 1;
-    } else {
-      // Desplazarse a la parte superior (landing)
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-      currentIndex = 0;
-    }
-    handleScroll(); // Actualizar el estilo tras el desplazamiento manual
-  });
 
   window.addEventListener('scroll', updateCurrentIndex);
 
