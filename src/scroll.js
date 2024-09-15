@@ -3,16 +3,13 @@ function init() {
   let currentIndex = 0; // Índice de la sección actual
   let isScrolling = false; // Flag para evitar scroll repetido
 
-  const logo_adhr = document.querySelectorAll('#logo-img');
   const nav = document.getElementById('nav');
   const navLinks = document.querySelectorAll('#nav-part2 .nav-link');
-  const svgMAGE = document.getElementById('Magel');
+  const logo_adhr = document.querySelectorAll('#logo-img');
+  let touchStartY = 0;
+  let touchEndY = 0;
 
   function handleScroll() {
-    const scrollY = window.scrollY;
-    const changePointNav = window.innerHeight - 96;
-
-    // Modificación del estilo del navbar en función del scroll para que se haga sticky
     if (currentIndex > 0) {
       nav.classList.add('sticky-navbar');
       nav.classList.remove('position-absolute', 'bottom-0');
@@ -21,9 +18,7 @@ function init() {
       nav.classList.add('position-absolute', 'bottom-0');
     }
 
-    // Cambiar el fondo y los estilos de los enlaces de navegación según la sección actual
-    if (currentIndex === sections.length - 1) {
-      // Sección "contact", cambiar el fondo a blanco y el logo a negro
+    if (currentIndex === sections.length - 1 || currentIndex === 0) {
       document.body.style.backgroundColor = '#FFFDF5'; // Fondo blanco
       logo_adhr.forEach(img => {
         img.src = '/src/images/logo/adhr_black.svg'; // Cambiar logo a negro
@@ -32,20 +27,7 @@ function init() {
         link.classList.remove('text-light');
         link.classList.add('text-dark'); // Cambiar los enlaces a oscuro
       });
-
-    } else if (currentIndex === 0) {
-      // Sección "landing"
-      document.body.style.backgroundColor = '#FFFDF5'; // Fondo blanco
-      logo_adhr.forEach(img => {
-        img.src = '/src/images/logo/adhr_black.svg'; // Cambiar logo a negro
-      });
-      navLinks.forEach(link => {
-        link.classList.remove('text-light');
-        link.classList.add('text-dark'); // Cambiar los enlaces a oscuro
-      });
-
-    } else if (currentIndex === 1) {
-      // Sección "proyectos"
+    } else {
       document.body.style.backgroundColor = '#FFFDF5'; // Fondo blanco
       logo_adhr.forEach(img => {
         img.src = '/src/images/logo/adhr_white.svg'; // Cambiar logo a blanco
@@ -57,7 +39,6 @@ function init() {
     }
   }
 
-  // Función para desplazarse a una sección específica
   function scrollToSection(index) {
     isScrolling = true;
     if (index >= 0 && index < sections.length) {
@@ -65,18 +46,14 @@ function init() {
       currentIndex = index; // Actualizamos el índice actual
       handleScroll(); // Actualizamos el estilo basado en el índice actual
     }
-
     setTimeout(() => {
       isScrolling = false;
     }, 500); // Tiempo para terminar la animación del scroll
   }
 
-  // Actualizar currentIndex según la sección visible
   function updateCurrentIndex() {
     sections.forEach((section, index) => {
       const sectionTop = section.getBoundingClientRect().top;
-
-      // Si la sección está aproximadamente a entrar (sección top en el 30% de la pantalla)
       if (sectionTop >= -window.innerHeight * 0.3 && sectionTop < window.innerHeight * 0.7) {
         if (currentIndex !== index) { // Solo actualizar si cambió la sección
           currentIndex = index; // Actualizamos el currentIndex
@@ -86,112 +63,57 @@ function init() {
     });
   }
 
-  // Evento de clic para el botón de hamburguesa para pantallas móviles
-  const navbarToggler = document.querySelector('.navbar-toggler');
-  navbarToggler.addEventListener('click', () => {
-    const navbarCollapse = document.getElementById('navbarNav');
-    if (navbarCollapse.classList.contains('show')) {
-      navbarCollapse.classList.remove('show');
-      navbarCollapse.classList.add('nav-item-animation-exit');
-    } else {
-      navbarCollapse.classList.add('show');
-      navbarCollapse.classList.add('nav-item-animation-enter');
-    }
-  });
-
-  // Evento click en el logo para hacer scroll hacia "landing" o "proyectos"
-  document.getElementById('logo-link').addEventListener('click', function (e) {
-    e.preventDefault();
-
-    const landingSection = document.getElementById('landing');
-    const proyectosSection = document.getElementById('proyectos');
-    const currentScroll = window.scrollY;
-
-    if (currentScroll < landingSection.offsetHeight) {
-      window.scrollTo({
-        top: proyectosSection.offsetTop,
-        behavior: 'smooth'
-      });
-      currentIndex = 1;
-    } else {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-      currentIndex = 0;
-    }
-    handleScroll(); // Actualizar estilo tras scroll manual
-  });
-
-  // Escuchar el evento de scroll para actualizar el currentIndex
-  window.addEventListener('scroll', updateCurrentIndex);
-
-  // Detectar si es un dispositivo móvil
-  function isMobileDevice() {
-    return /Mobi|Android|iPhone/i.test(navigator.userAgent) || window.innerWidth <= 768;
-  }
-
-  // Función para manejar el scroll infinito en dispositivos móviles
-  
-
-  // Variables para el manejo de gestos de deslizar (swipe) en dispositivos móviles
-  let touchStartY = 0;
-  let touchEndY = 0;
-
-  // Función para manejar el inicio del touch
+  // Detectar el inicio del touch
   function handleTouchStart(event) {
-    touchStartY = event.changedTouches[0].screenY;
+    touchStartY = event.touches[0].clientY;
   }
 
-  // Función para manejar el final del touch y determinar si fue un swipe hacia arriba o abajo
+  // Detectar el final del touch y gestionar el swipe
   function handleTouchEnd(event) {
-    touchEndY = event.changedTouches[0].screenY;
+    touchEndY = event.changedTouches[0].clientY;
+    const swipeThreshold = 50; // Umbral para considerar que ha sido un swipe
 
-    // Determinamos la dirección del swipe
     if (!isScrolling) {
-      if (touchStartY > touchEndY + 50) {
-        // Swipe hacia arriba
+      if (touchStartY - touchEndY > swipeThreshold) {
+        // Swipe hacia arriba (desplazarse a la siguiente sección)
         currentIndex = currentIndex === sections.length - 1 ? 0 : currentIndex + 1;
         scrollToSection(currentIndex);
-      } else if (touchStartY < touchEndY - 50) {
-        // Swipe hacia abajo
+      } else if (touchEndY - touchStartY > swipeThreshold) {
+        // Swipe hacia abajo (desplazarse a la sección anterior)
         currentIndex = currentIndex === 0 ? sections.length - 1 : currentIndex - 1;
         scrollToSection(currentIndex);
       }
     }
   }
 
-  // Activar el comportamiento de scroll infinito solo en móviles
+  window.addEventListener('scroll', updateCurrentIndex);
+
+  function isMobileDevice() {
+    return /Mobi|Android|iPhone/i.test(navigator.userAgent) || window.innerWidth <= 768;
+  }
+
   if (isMobileDevice()) {
     window.addEventListener('touchstart', handleTouchStart, false);
     window.addEventListener('touchend', handleTouchEnd, false);
   } else {
-    // En dispositivos de escritorio, mantener el scroll estándar
     window.addEventListener('wheel', function (event) {
       if (!isScrolling) {
-        if (event.deltaY > 0) {
+        currentIndex = event.deltaY > 0 ? Math.min(currentIndex + 1, sections.length - 1) : Math.max(currentIndex - 1, 0);
+        scrollToSection(currentIndex);
+      }
+    });
+
+    window.addEventListener('keydown', function (event) {
+      if (!isScrolling) {
+        if (event.key === 'ArrowDown') {
           currentIndex = Math.min(currentIndex + 1, sections.length - 1);
-        } else {
+        } else if (event.key === 'ArrowUp') {
           currentIndex = Math.max(currentIndex - 1, 0);
         }
         scrollToSection(currentIndex);
       }
     });
-
-    // Teclas de flechas en escritorio
-    window.addEventListener('keydown', function (event) {
-      if (!isScrolling) {
-        if (event.key === 'ArrowDown') {
-          currentIndex = Math.min(currentIndex + 1, sections.length - 1);
-          scrollToSection(currentIndex);
-        } else if (event.key === 'ArrowUp') {
-          currentIndex = Math.max(currentIndex - 1, 0);
-          scrollToSection(currentIndex);
-        }
-      }
-    });
   }
 }
 
-// Ejecutar la función de inicialización cuando el DOM esté listo
 document.addEventListener("DOMContentLoaded", init);
