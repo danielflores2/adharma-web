@@ -181,20 +181,7 @@ function init() {
     handleSwipe();
   }
 
-  // Función para determinar la dirección del swipe y manejar el scroll correspondiente
-  function handleSwipe() {
-    if (!isScrolling) {
-      if (touchStartY > touchEndY + 50) {
-        // Swipe hacia arriba
-        currentIndex = currentIndex === sections.length - 1 ? 0 : currentIndex + 1;
-        scrollToSection(currentIndex);
-      } else if (touchStartY < touchEndY - 50) {
-        // Swipe hacia abajo
-        currentIndex = currentIndex === 0 ? sections.length - 1 : currentIndex - 1;
-        scrollToSection(currentIndex);
-      }
-    }
-  }
+  
 
   // Activar el comportamiento de scroll infinito solo en móviles
   if (isMobileDevice()) {
