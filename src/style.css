@@ -401,7 +401,9 @@ a.hover-effect:hover::before {
     }
     /* Ajustar la separación y el tamaño de fuente para móviles */
 
-   
+    #nav {
+        margin-bottom: 100px;
+    }
 
     .navbar-nav .nav-link {
         font-size: 0.8rem; /* Disminuye el tamaño de la fuente en pantallas móviles */
@@ -426,10 +428,11 @@ a.hover-effect:hover::before {
         padding-top: 10px; /* Ajusta el espacio superior dentro del contenedor de colapso de la barra de navegación */
     }
 
+    /*
     .video-selector {
         display: none;
     }
-
+*/
     #videoHome {
         height: 100vh;
         object-fit: contain;
