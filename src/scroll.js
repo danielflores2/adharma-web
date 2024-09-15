@@ -132,18 +132,7 @@ function init() {
   }
 
   // Función para manejar el scroll infinito en dispositivos móviles
-  function handleScrollMobile(event) {
-    if (!isScrolling) {
-      if (event.deltaY > 0) {
-        // Scroll hacia abajo
-        currentIndex = currentIndex === sections.length - 1 ? 0 : currentIndex + 1;
-      } else {
-        // Scroll hacia arriba
-        currentIndex = currentIndex === 0 ? sections.length - 1 : currentIndex - 1;
-      }
-      scrollToSection(currentIndex);
-    }
-  }
+  
 
   // Variables para el manejo de gestos de deslizar (swipe) en dispositivos móviles
   let touchStartY = 0;
