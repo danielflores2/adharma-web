@@ -64,6 +64,21 @@ function init() {
     }
   }
 
+  // Bloquear el scroll libre y forzar la fijación en una sección
+  function blockFreeScroll() {
+    window.addEventListener('wheel', function (event) {
+      event.preventDefault(); // Prevenir el scroll nativo
+      if (!isScrolling) {
+        if (event.deltaY > 0) {
+          currentIndex = Math.min(currentIndex + 1, sections.length - 1);
+        } else {
+          currentIndex = Math.max(currentIndex - 1, 0);
+        }
+        scrollToSection(currentIndex);
+      }
+    }, { passive: false }); // Hacer que el evento no sea pasivo para evitar el scroll nativo
+  }
+
   // Manejar el clic en el logo para alternar entre "landing" y "proyectos"
   document.getElementById('logo-link').addEventListener('click', function (e) {
     e.preventDefault();
@@ -98,28 +113,11 @@ function init() {
   }
 
   if (isMobileDevice()) {
-    // Asignar eventos de touch
     window.addEventListener('touchstart', handleTouchStart, false);
     window.addEventListener('touchend', handleTouchEnd, false);
-
-    // Prevenir el scroll nativo en móviles
-    window.addEventListener('touchmove', function (event) {
-      event.preventDefault(); // Prevenir el desplazamiento libre
-    }, { passive: false });
   } else {
-    // En pantallas grandes, activar scroll forzado entre secciones con mouse wheel
-    window.addEventListener('wheel', function (event) {
-      event.preventDefault(); // Prevenir el scroll nativo
-
-      if (!isScrolling) {
-        if (event.deltaY > 0) {
-          currentIndex = Math.min(currentIndex + 1, sections.length - 1);
-        } else {
-          currentIndex = Math.max(currentIndex - 1, 0);
-        }
-        scrollToSection(currentIndex);
-      }
-    }, { passive: false });
+    // Bloquear el scroll libre en desktop
+    blockFreeScroll();
   }
 }
 
