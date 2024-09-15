@@ -179,18 +179,18 @@ a.hover-effect:hover::before {
 
 
 .adhrHead h1 {
-    font-size: 6vw;
+    font-size: 8vw;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
     font-weight: 600;
     color: inherit;
 }
 
-.adhrHead h2 {
-    font-size: 8vw;
+.adhrHead p {
     font-family: "Lexend Giga", Arial, Times, serif;
+    font-size: 2vw;
 
-    font-weight: 100;
+    font-weight: 500;
     color: inherit;
 }
 
