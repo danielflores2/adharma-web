@@ -23,54 +23,33 @@ function init() {
 
     // Cambiar el fondo y los estilos de los enlaces de navegación según la sección actual
     if (currentIndex === sections.length - 1) {
-      // Si estamos en la sección "contact", cambiar el fondo a blanco y el logo a negro
+      // Sección "contact", cambiar el fondo a blanco y el logo a negro
       document.body.style.backgroundColor = '#FFFDF5'; // Fondo blanco
-
-      //if (svgMAGE) {
-        //svgMAGE.setAttribute('fill', '#000000'); // Cambiar el logo a negro
-      //}
-
       logo_adhr.forEach(img => {
-        if (img.src !== '/src/images/logo/adhr_black.svg') {
-          img.src = '/src/images/logo/adhr_black.svg'; // Cambiar logo a negro
-        }
+        img.src = '/src/images/logo/adhr_black.svg'; // Cambiar logo a negro
       });
-
       navLinks.forEach(link => {
         link.classList.remove('text-light');
         link.classList.add('text-dark'); // Cambiar los enlaces a oscuro
       });
 
-    } else if (currentIndex === 0){
-      // Si no estamos en la sección "contact", aplicar el fondo oscuro
+    } else if (currentIndex === 0) {
+      // Sección "landing"
       document.body.style.backgroundColor = '#FFFDF5'; // Fondo blanco
-
-
-      
-
       logo_adhr.forEach(img => {
-        if (img.src !== '/src/images/logo/adhr_black.svg') {
-          img.src = '/src/images/logo/adhr_black.svg'; // Cambiar logo a blanco
-        }
+        img.src = '/src/images/logo/adhr_black.svg'; // Cambiar logo a negro
       });
-
       navLinks.forEach(link => {
         link.classList.remove('text-light');
         link.classList.add('text-dark'); // Cambiar los enlaces a oscuro
       });
-    } else if (currentIndex === 1){
-      // Si no estamos en la sección "contact", aplicar el fondo oscuro
+
+    } else if (currentIndex === 1) {
+      // Sección "proyectos"
       document.body.style.backgroundColor = '#FFFDF5'; // Fondo blanco
-
-
-      
-
       logo_adhr.forEach(img => {
-        if (img.src !== '/src/images/logo/adhr_white.svg') {
-          img.src = '/src/images/logo/adhr_white.svg'; // Cambiar logo a blanco
-        }
+        img.src = '/src/images/logo/adhr_white.svg'; // Cambiar logo a blanco
       });
-
       navLinks.forEach(link => {
         link.classList.remove('text-dark');
         link.classList.add('text-light'); // Cambiar los enlaces a claro
@@ -153,18 +132,7 @@ function init() {
   }
 
   // Función para manejar el scroll infinito en dispositivos móviles
-  function handleScrollMobile(event) {
-    if (!isScrolling) {
-      if (event.deltaY > 0) {
-        // Scroll hacia abajo
-        currentIndex = currentIndex === sections.length - 1 ? 0 : currentIndex + 1;
-      } else {
-        // Scroll hacia arriba
-        currentIndex = currentIndex === 0 ? sections.length - 1 : currentIndex - 1;
-      }
-      scrollToSection(currentIndex);
-    }
-  }
+  
 
   // Variables para el manejo de gestos de deslizar (swipe) en dispositivos móviles
   let touchStartY = 0;
@@ -178,11 +146,8 @@ function init() {
   // Función para manejar el final del touch y determinar si fue un swipe hacia arriba o abajo
   function handleTouchEnd(event) {
     touchEndY = event.changedTouches[0].screenY;
-    handleSwipe();
-  }
 
-  // Función para determinar la dirección del swipe y manejar el scroll correspondiente
-  function handleSwipe() {
+    // Determinamos la dirección del swipe
     if (!isScrolling) {
       if (touchStartY > touchEndY + 50) {
         // Swipe hacia arriba

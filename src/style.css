@@ -367,7 +367,7 @@ a.hover-effect:hover::before {
 
 #landing {
     position: sticky; 
-    top: 0; /
+    top: 0; 
 }
 
 #proyectos {
@@ -378,6 +378,10 @@ a.hover-effect:hover::before {
 #contacto {
     position: sticky; 
     top: 0; /* Se mantendrá fija en la parte superior al hacer scroll */
+}
+
+.video-selector{
+    display: flex;
 }
   
 /* Ajustes para pantallas móviles */
@@ -422,7 +426,7 @@ a.hover-effect:hover::before {
         padding-top: 10px; /* Ajusta el espacio superior dentro del contenedor de colapso de la barra de navegación */
     }
 
-    .proyects-index div .video-selector {
+    .video-selector {
         display: none;
     }
 
