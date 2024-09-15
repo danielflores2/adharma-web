@@ -387,6 +387,13 @@ a.hover-effect:hover::before {
   
 /* Ajustes para pantallas móviles */
 @media (max-width: 800px) {
+    
+    
+    html, body {
+        overflow-x: hidden; /* Bloquear el scroll nativo */    
+        overflow-y: visible !important; /* Bloquear el scroll nativo */    
+    
+    }
     /* Animación al mostrar el menú de hamburguesa */
     .navbar-collapse.show .navbar-nav {
         animation: smoothFadeIn 0.5s forwards ease-out;
