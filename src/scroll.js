@@ -165,4 +165,30 @@ function init() {
   }
 }
 
+    // HACE QUE EL SCROLL FUNCIONE DENTRO DEL IFRAME
+document.addEventListener("DOMContentLoaded", () => {
+  const iframe = document.getElementById("vimeoPlayer");
+
+  if (iframe) {
+    // Deshabilitar la interacción del iframe durante el scroll
+    iframe.style.pointerEvents = "none";
+
+    window.addEventListener("scroll", () => {
+      iframe.style.pointerEvents = "none"; // Deshabilita el iframe
+      setTimeout(() => {
+        iframe.style.pointerEvents = "auto"; // Vuelve a habilitarlo después del scroll
+      }, 500); // Ajusta este tiempo según la duración de tu scroll
+    });
+
+    // Reactivar la interacción con el iframe al dejar de hacer scroll
+    iframe.addEventListener("mouseenter", () => {
+      iframe.style.pointerEvents = "auto";
+    });
+
+    iframe.addEventListener("mouseleave", () => {
+      iframe.style.pointerEvents = "none";
+    });
+  }
+});
+
 document.addEventListener("DOMContentLoaded", init);

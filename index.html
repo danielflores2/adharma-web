@@ -28,6 +28,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://player.vimeo.com/api/player.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -64,11 +65,16 @@
 
         <header id="landing" class="w-100 position-relative container-fluid d-flex page1 justify-content-center">
 
-            <div class="video-reel h-100 align-items-center justify-content-center d-flex">
-                <video id="videoReel" alt="DUALITY" muted autoplay playsinline loop="true" preload="true"
-                    src="https://static.stratebi.com/proyectos/temp/Duality_1080_h264_45000kbs.mp4"
-                    class="m-auto video-centered"></video>
-            </div>
+            <div class="video-reel align-items-center justify-content-center d-flex">
+                <!-- Reel -->
+                <iframe 
+                  id="vimeoPlayer" 
+                  src="https://player.vimeo.com/video/1013428601?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0" 
+                  frameborder="0" 
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
+                  title="Adharma 'the magician's cut' - Demo Reel 2024">
+                </iframe>
+              </div>          
 
             <nav id="nav" class="bottom-0 h-12 position-absolute navbar navbar-expand-lg navbar-light">
                 <div class="container-fluid d-flex justify-content-center align-items-center">
@@ -185,10 +191,6 @@
                 <div class="px-4">
                     <a class="hover-effect texto-email" href="mailto:info@adharma.es">INFO@ADHARMA.ES</a>
                 </div>
-
-                <img src="src\images\logo\contacto - comicshit.png" class="w-100" alt="">
-
-                <h1 class="texto-contacto">CONTACTO</h1>
 
                 <img src="src\images\logo\contacto - mago.png" class="mago-contacto" alt="">
 
