@@ -84,7 +84,7 @@ function init() {
   function handleWheel(event) {
     if (!isScrolling) {
       const deltaY = event.deltaY;
-      if (Math.abs(deltaY) > 30) { // Ajustar umbral para que sea sensible
+      if (Math.abs(deltaY) > 4) { // Ajustar umbral para que sea sensible
         if (deltaY > 0) {
           // Desplazamiento hacia abajo (permitir el paso de "Proyectos" a "Contacto")
           if (currentIndex === 0) {
