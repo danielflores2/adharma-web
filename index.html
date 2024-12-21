@@ -65,16 +65,14 @@
 
         <header id="landing" class="position-relative container-fluid d-flex page1 justify-content-center">
 
-            <div class="video-reel h-100 align-items-center justify-content-center d-flex">
-                <!-- Reel -->
-                <iframe 
-                  id="vimeoPlayer" 
-                  src="https://player.vimeo.com/video/1013428601?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0" 
-                  frameborder="0" 
-                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
-                  title="Adharma 'the magician's cut' - Demo Reel 2024">
-                </iframe>
-              </div>          
+            <div class="video-reel-container h-100 align-items-center justify-content-center d-flex" >
+
+                
+                <video id="videoReel" alt="reel" muted autoplay playsinline loop="true" preload="true"
+                    src="https://d17wmwjckt0fmo.cloudfront.net/videos/adharma__the_magician's_cut__-_demo_reel_2024%20(1080p).mp4"
+                    class="m-auto video-centered"></video>
+        
+            </div>       
 
             <nav id="nav" class="bottom-0 h-12 position-absolute navbar navbar-expand-lg navbar-light">
                 <div class="container-fluid d-flex justify-content-center align-items-center">
