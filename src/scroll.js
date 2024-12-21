@@ -2,7 +2,6 @@ function init() {
   const sections = document.querySelectorAll('header, section');
   let currentIndex = 0; // Índice de la sección actual
   let isScrolling = false; // Flag para evitar scroll repetido
-
   const nav = document.getElementById('nav');
   const navLinks = document.querySelectorAll('#nav-part2 .nav-link');
   const logo_adhr = document.querySelectorAll('#logo-img');
@@ -54,19 +53,6 @@ function init() {
     }
   }
 
-  // Actualizar currentIndex según la sección visible
-  function updateCurrentIndex() {
-    sections.forEach((section, index) => {
-      const sectionTop = section.getBoundingClientRect().top;
-      if (sectionTop >= -window.innerHeight * 0.3 && sectionTop < window.innerHeight * 0.7) {
-        if (currentIndex !== index) {
-          currentIndex = index;
-          handleScroll();
-        }
-      }
-    });
-  }
-
   // Detectar el inicio del touch
   function handleTouchStart(event) {
     touchStartY = event.touches[0].clientY;
@@ -75,27 +61,55 @@ function init() {
   // Detectar el final del touch y gestionar el swipe
   function handleTouchEnd(event) {
     touchEndY = event.changedTouches[0].clientY;
-    const swipeThreshold = 50; // Umbral para considerar que ha sido un swipe
-
-    if (!isScrolling) {
+    const swipeThreshold = 30; // Umbral de desplazamiento
+    if (!isScrolling && Math.abs(touchStartY - touchEndY) > swipeThreshold) {
       if (touchStartY - touchEndY > swipeThreshold) {
         // Swipe hacia arriba
-        currentIndex = currentIndex === sections.length - 1 ? sections.length - 1 : currentIndex + 1;
+        currentIndex = Math.min(currentIndex + 1, sections.length - 1); // Asegura que no sobrepase la última sección
         scrollToSection(currentIndex);
       } else if (touchEndY - touchStartY > swipeThreshold) {
-        // Swipe hacia abajo
-        currentIndex = currentIndex === 0 ? 0 : currentIndex - 1;
-        scrollToSection(currentIndex);
+        // Swipe hacia abajo (permitir el paso de "Proyectos" a "Contacto")
+        if (currentIndex === 0) {
+          currentIndex = 1; // Asegura que solo vayamos a la sección de "Proyectos"
+          scrollToSection(currentIndex);
+        } else if (currentIndex === 1) {
+          currentIndex = 2; // Ahora podemos ir a "Contacto"
+          scrollToSection(currentIndex);
+        }
       }
     }
   }
 
-  // Manejar el clic en el logo para alternar entre "landing" y "proyectos"
+  // Manejo del evento wheel para trackpad
+  function handleWheel(event) {
+    if (!isScrolling) {
+      const deltaY = event.deltaY;
+      if (Math.abs(deltaY) > 30) { // Ajustar umbral para que sea sensible
+        if (deltaY > 0) {
+          // Desplazamiento hacia abajo (permitir el paso de "Proyectos" a "Contacto")
+          if (currentIndex === 0) {
+            currentIndex = 1;
+            scrollToSection(currentIndex);
+          } else if (currentIndex === 1) {
+            currentIndex = 2; // Desplazar a "Contacto"
+            scrollToSection(currentIndex);
+          }
+        } else {
+          // Desplazamiento hacia arriba
+          currentIndex = Math.max(currentIndex - 1, 0); // Limitar a la primera sección
+          scrollToSection(currentIndex);
+        }
+      }
+    }
+  }
+
+  // Clic en el logo para alternar entre "landing" y "proyectos"
   document.getElementById('logo-link').addEventListener('click', function (e) {
     e.preventDefault();
 
     const landingSection = document.getElementById('landing');
     const proyectosSection = document.getElementById('proyectos');
+    const contactoSection = document.getElementById('contacto');
     const currentScroll = window.scrollY;
 
     if (currentScroll < landingSection.offsetHeight) {
@@ -105,6 +119,13 @@ function init() {
         behavior: 'smooth'
       });
       currentIndex = 1;
+    } else if (currentScroll >= proyectosSection.offsetTop && currentScroll < contactoSection.offsetTop) {
+      // Desplazarse a la sección de "contacto"
+      window.scrollTo({
+        top: contactoSection.offsetTop,
+        behavior: 'smooth'
+      });
+      currentIndex = 2;
     } else {
       // Desplazarse a la parte superior (landing)
       window.scrollTo({
@@ -116,7 +137,21 @@ function init() {
     handleScroll(); // Actualizar el estilo tras el desplazamiento manual
   });
 
-  window.addEventListener('scroll', updateCurrentIndex);
+  window.addEventListener('scroll', function () {
+    const currentScroll = window.scrollY;
+    const proyectosSection = document.getElementById('proyectos');
+    const contactoSection = document.getElementById('contacto');
+
+    if (currentScroll < document.getElementById('landing').offsetHeight) {
+      currentIndex = 0;
+    } else if (currentScroll >= proyectosSection.offsetTop && currentScroll < contactoSection.offsetTop) {
+      currentIndex = 1;
+    } else if (currentScroll >= contactoSection.offsetTop) {
+      currentIndex = 2;
+    }
+
+    handleScroll(); // Actualizar el estilo tras el scroll manual
+  });
 
   function isMobileDevice() {
     return /Mobi|Android|iPhone/i.test(navigator.userAgent) || window.innerWidth <= 768;
@@ -126,23 +161,7 @@ function init() {
     window.addEventListener('touchstart', handleTouchStart, false);
     window.addEventListener('touchend', handleTouchEnd, false);
   } else {
-    window.addEventListener('wheel', function (event) {
-      if (!isScrolling) {
-        currentIndex = event.deltaY > 0 ? Math.min(currentIndex + 1, sections.length - 1) : Math.max(currentIndex - 1, 0);
-        scrollToSection(currentIndex);
-      }
-    });
-
-    window.addEventListener('keydown', function (event) {
-      if (!isScrolling) {
-        if (event.key === 'ArrowDown') {
-          currentIndex = Math.min(currentIndex + 1, sections.length - 1);
-        } else if (event.key === 'ArrowUp') {
-          currentIndex = Math.max(currentIndex - 1, 0);
-        }
-        scrollToSection(currentIndex);
-      }
-    });
+    window.addEventListener('wheel', handleWheel, false); // Usar wheel en lugar de touch para trackpads
   }
 }
 

@@ -118,8 +118,9 @@ a.hover-effect:hover::before {
 
 #videoReel {
     display: block;
-    max-height: 100vh;
-    object-fit: contain;
+    width: 100%;  /* Asegura que el video ocupe todo el ancho disponible */
+    height: 100vh;  /* Asegura que el video ocupe toda la altura de la pantalla */
+    object-fit: cover;  /* Esto asegura que el video cubra completamente el área, sin dejar espacio vacío */
 }
 
 .video-reel {
@@ -127,8 +128,8 @@ a.hover-effect:hover::before {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
-    overflow-x: hidden;
+    height: 100vh;  /* Asegura que el contenedor tenga la altura de toda la pantalla */
+    overflow: hidden;  /* Evita que el video se desborde del contenedor */
 }
 
 
@@ -252,8 +253,9 @@ a.hover-effect:hover::before {
 
 #videoHome {
     display: block;
-    max-height: 100vh;
-    object-fit: contain;
+    width: 100%;  /* Asegura que el video ocupe todo el ancho disponible */
+    height: 100vh;  /* Asegura que el video ocupe toda la altura de la pantalla */
+    object-fit: cover;  /* Esto asegura que el video cubra completamente el área, sin dejar espacio vacío */
 }
 
 
@@ -262,7 +264,7 @@ a.hover-effect:hover::before {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     overflow-x: hidden;
 }
 
