@@ -32,12 +32,22 @@ header{
 
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 
 html, body {
     background-color: white;
     overflow: hidden; /* Bloquear el scroll nativo */    color: rgb(255, 255, 255);
     transition: background-color 0.5s  ease-in-out, color 0.5s  ease-in-out;
     scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
 }
 
 body.black-bg {
@@ -117,17 +127,20 @@ a.hover-effect:hover::before {
 }
 
 .video-reel {
-    position: absolute;
+    position: fixed;  /* Cambiado de absolute a fixed */
     top: 0;
     left: 0;
-    width: 100%;  /* Ocupa todo el ancho de la pantalla */
-    overflow: hidden; /* Oculta cualquier contenido fuera del contenedor */
-  }
-  
-  #vimeoPlayer {
-    width: 100%;  /* El iframe ocupa todo el ancho del contenedor */
-    object-fit: cover; /* El video se recorta por arriba y por abajo para llenar el contenedor sin distorsionarse */
-  }
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1; /* Si quieres que el video quede al fondo, mantenlo con z-index negativo */
+}
+
+#vimeoPlayer {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantiene el video cubriendo toda el área */
+}
 
 /* Estilo del nav */
 #nav {
