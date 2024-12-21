@@ -126,7 +126,7 @@ a.hover-effect:hover::before {
     overflow: visible;
 }
 
-.video-reel {
+.video-reel-container {
     position: absolute;  /* Cambiado de absolute a fixed */
     width: 100%;
     height: 100vh;
@@ -134,9 +134,10 @@ a.hover-effect:hover::before {
     z-index: 1; /* Si quieres que el video quede al fondo, mantenlo con z-index negativo */
 }
 
-#vimeoPlayer {
+#videoReel {
     width: 100%;
     object-fit: cover; /* Mantiene el video cubriendo toda el área */
+
 }
 
 /* Estilo del nav */
