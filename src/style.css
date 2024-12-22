@@ -150,7 +150,6 @@ a.hover-effect:hover::before {
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    bottom: 0;
 }
 
 .nav-link {
@@ -159,8 +158,7 @@ a.hover-effect:hover::before {
 
 .sticky-navbar{
     position: fixed !important;
-    top: 0;
-    width: 100%;
+    margin-bottom: -6rem;
 }
 
 * {
