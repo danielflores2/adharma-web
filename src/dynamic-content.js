@@ -21,47 +21,47 @@ function init() {
   }
 
   // Eventos para cambiar el video y el texto al pasar el ratón sobre las miniaturas
-  document.getElementById('mini_mala').addEventListener('click', function() {
+  document.getElementById('mini_mala').addEventListener('mouseover', function() {
     changeVideo(
       'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Myzz-Mala_1080_h264_45000kbs.mp4',
       //'/proyectos/myzz_mala.html',
       '#',
-      '<b>MALA</b><br>MUSIC VIDEO'
+      '<b>MYZZ - MALA</b><br>MUSIC VIDEO'
     );
   });
 
-  document.getElementById('mini_myzz_medusa').addEventListener('click', function() {
+  document.getElementById('mini_myzz_medusa').addEventListener('mouseover', function() {
     changeVideo(
       'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Myzz-Medusa_1080_h264_45000kbs.mp4',
       //'/proyectos/myzz_medusa.html',
       '#',
 
-      '<b>MEDUSA</b><br>MUSIC VIDEO'
+      '<b>MYZZ - MEDUSA</b><br>MUSIC VIDEO'
     );
   });
 
-  document.getElementById('mini_duality').addEventListener('click', function() {
+  document.getElementById('mini_duality').addEventListener('mouseover', function() {
     changeVideo(
       'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Duality_1080_h264_45000kbs.mp4',
       //'/proyectos/duality.html',
       '#',
 
-      '<b>DUALITY</b><br>COMMERCIAL'
+      '<b>DÜADÜA - DUALITY</b><br>COMMERCIAL'
     );
   });
 
-  document.getElementById('mini_croschek').addEventListener('click', function() {
+  document.getElementById('mini_croschek').addEventListener('mouseover', function() {
     changeVideo(
       'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Jaydime-Croscheck_1080_h264_45000kbs.mp4',
       //'/proyectos/crosscheck.html',
       '#',
 
-      '<b>CROSS CHECK</b><br>MUSIC VIDEO'
+      '<b>JAY DIME - CROSS CHECK</b><br>MUSIC VIDEO'
 
     );
   });  
 
-  document.getElementById('mini_distrue_rebirth').addEventListener('click', function() {
+  document.getElementById('mini_distrue_rebirth').addEventListener('mouseover', function() {
     changeVideo(
       'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Distrue-The_Rebirth_1080_h264.mp4',
       //'/proyectos/the rebirth.html',
@@ -72,7 +72,7 @@ function init() {
     );
   });
 
-  document.getElementById('mini_subli').addEventListener('click', function() {
+  document.getElementById('mini_subli').addEventListener('mouseover', function() {
     changeVideo(
       'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/ReelSubli_1080_h264.mp4',
       //'/proyectos/sublimotion.html',
@@ -83,7 +83,93 @@ function init() {
     );
   });
 
+  document.getElementById('mini_ambar_tormenta').addEventListener('mouseover', function() {
+    changeVideo(
+      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Ambar Garces - Tormenta.mp4',
+      //'/proyectos/ambar-tormenta.html',
+      '#',
 
+      '<b>AMBAR - TORMENTA</b><br>MUSIC VIDEO'
+
+    );
+  });
+
+  document.getElementById('mini_3wb').addEventListener('mouseover', function() {
+    changeVideo(
+      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Everyone has their basketball_1080_v02.mov',
+      //'/proyectos/3wb.html',
+      '#',
+
+      '<b>3WB EVERYONE HAS THEIR BASKETBALL</b><br>COMMERCIAL'
+
+    );
+  });
+
+  document.getElementById('mini_benzo_paris_dia2').addEventListener('mouseover', function() {
+    changeVideo(
+      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Benzo - Paris 2 try 1.mp4',
+      //'/proyectos/benzo-paris-dia.html',
+      '#',
+
+      '<b>BENZO - PARIS</b><br>MUSIC VIDEO'
+
+    );
+  });
+
+  document.getElementById('mini_benzo_paris').addEventListener('mouseover', function() {
+    changeVideo(
+      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Benzo - Paris 1.mp4',
+      //'/proyectos/benzo-paris.html',
+      '#',
+
+      '<b>BENZO - PARIS</b><br>MUSIC VIDEO'
+
+    );
+  });
+
+  document.getElementById('mini_benzo_perfect').addEventListener('mouseover', function() {
+    changeVideo(
+      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Benzo - Perfect Loop 3.mp4',
+      //'/proyectos/benzo-perfect.html',
+      '#',
+
+      '<b>BENZO - PERFECT</b><br>MUSIC VIDEO'
+
+    );
+  });
+
+  document.getElementById('mini_footdistrict').addEventListener('mouseover', function() {
+    changeVideo(
+      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/SINS_ENTREVISTACOMPLETA_1080_h264.mov',
+      //'/proyectos/footdistric.html',
+      '#',
+
+      '<b>FOOT DISTRICT X SINS ART</b><br>INTERVIEW'
+
+    );
+  });
+
+  document.getElementById('mini_kaños').addEventListener('mouseover', function() {
+    changeVideo(
+      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Kaños_Color_h264_1920.mov',
+      //'/proyectos/kaños-besarteloslabios.html',
+      '#',
+
+      '<b>KAÑOS - BESARTE LOS LABIOS</b><br>MUSIC VIDEO'
+
+    );
+  });
+
+  document.getElementById('mini_video_rafa').addEventListener('mouseover', function() {
+    changeVideo(
+      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Cascorro_Enfadado_1080_h264_45000kbs.mov',
+      //'/proyectos/andreuslim-cascorroenfermo.html',
+      '#',
+
+      '<b>ANDREU SLIM - CASCORRO ENFERMO</b><br>COLOR'
+
+    );
+  });
 
 
  /*

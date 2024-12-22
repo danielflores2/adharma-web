@@ -193,8 +193,8 @@ a.hover-effect:hover::before {
 
 .proyects-index img {
     cursor: pointer;
-    height: 70px; /* Define una altura fija para las miniaturas más pequeñas */
-    width: auto; /* Ajusta la anchura automáticamente para mantener la proporción */
+    height: 72px; /* Define una altura fija para las miniaturas más pequeñas */
+    width: 128px; /* Ajusta la anchura automáticamente para mantener la proporción */
     transition: transform 200ms, border 200ms; /* Añade transición para la animación */
     object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Añade una sombra sutil */
@@ -233,24 +233,6 @@ a.hover-effect:hover::before {
     max-width: 200px;
 }
 
-.adhrMage {
-    
-    height: 100vh;
-    overflow: hidden;
-    z-index: 0;
-}
-
-.adhrMage svg {
-    
-    height: 100%;
-    width: 100%;
-    transform: scale(2);
-    transform-origin: center center;
-    object-fit: cover;
-
-}
-
-
 .videoSection {
    
     z-index: 9999;
@@ -260,6 +242,7 @@ a.hover-effect:hover::before {
     margin: 0;
     position: relative;
 }
+
 
 
 #videoHome {
@@ -279,8 +262,6 @@ a.hover-effect:hover::before {
     overflow-x: hidden;
 }
 
-
-
 .video-carga, .video-contenedor-carga{
     height: 100vh;
 }
@@ -299,8 +280,14 @@ a.hover-effect:hover::before {
 .miniatura {
     width: 80%;
     height: auto;
-    margin: 10px 0;
+    margin: 5px 0;
 }
+
+.video-selector{
+    display: flex;
+    gap: 5px;
+}
+
 
 .content {
     padding: 20px;
@@ -367,32 +354,6 @@ a.hover-effect:hover::before {
     max-width: 1400px;
 }
 
-.mago-contacto{
-    bottom: 0 ;
-    left: 0;
-    width: 40vw;
-    position: absolute;
-}
-
-.texto-contacto{
-    bottom: 0 ;
-    right: 0;
-    margin-bottom: -1rem;
-    padding-inline: 1rem;
-    position: absolute;
-
-    font-size: 14vw;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-
-    font-weight: normal;
-    color: inherit;
-
-    color: #282828;
-}
-
-.texto-email{
-}
-
 
 #landing {
     position: sticky; 
@@ -421,21 +382,6 @@ a.hover-effect:hover::before {
     z-index: 10; /* Asegura que la imagen esté sobre otros elementos si es necesario */
 }
 
-#maguito {
-    position: absolute;
-    bottom: 0px; /* Ajusta la distancia desde la parte inferior */
-    left: 20px; /* Ajusta la distancia desde la parte derecha */
-    width: 20vw; /* Cambia el tamaño de la imagen */
-    max-width: 150vh; /* Ajusta el tamaño máximo de la imagen */
-    height: auto; /* Mantiene la proporción de la imagen */
-    object-fit: contain; /* Asegura que la imagen no se deforme */
-    z-index: 10; /* Asegura que la imagen esté sobre otros elementos si es necesario */
-}
-
-.video-selector{
-    display: flex;
-    gap: 5px;
-}
   
 /* Ajustes para pantallas móviles */
 @media (max-width: 800px) {
