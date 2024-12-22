@@ -21,7 +21,7 @@ function init() {
   }
 
   // Eventos para cambiar el video y el texto al pasar el ratón sobre las miniaturas
-  document.getElementById('mini_mala').addEventListener('mouseover', function() {
+  document.getElementById('mini_mala').addEventListener('click', function() {
     changeVideo(
       'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Myzz-Mala_1080_h264_45000kbs.mp4',
       //'/proyectos/myzz_mala.html',
@@ -30,7 +30,7 @@ function init() {
     );
   });
 
-  document.getElementById('mini_myzz_medusa').addEventListener('mouseover', function() {
+  document.getElementById('mini_myzz_medusa').addEventListener('click', function() {
     changeVideo(
       'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Myzz-Medusa_1080_h264_45000kbs.mp4',
       //'/proyectos/myzz_medusa.html',
@@ -40,7 +40,7 @@ function init() {
     );
   });
 
-  document.getElementById('mini_duality').addEventListener('mouseover', function() {
+  document.getElementById('mini_duality').addEventListener('click', function() {
     changeVideo(
       'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Duality_1080_h264_45000kbs.mp4',
       //'/proyectos/duality.html',
@@ -50,7 +50,7 @@ function init() {
     );
   });
 
-  document.getElementById('mini_croschek').addEventListener('mouseover', function() {
+  document.getElementById('mini_croschek').addEventListener('click', function() {
     changeVideo(
       'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Jaydime-Croscheck_1080_h264_45000kbs.mp4',
       //'/proyectos/crosscheck.html',
@@ -61,7 +61,7 @@ function init() {
     );
   });  
 
-  document.getElementById('mini_distrue_rebirth').addEventListener('mouseover', function() {
+  document.getElementById('mini_distrue_rebirth').addEventListener('click', function() {
     changeVideo(
       'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Distrue-The_Rebirth_1080_h264.mp4',
       //'/proyectos/the rebirth.html',
@@ -72,7 +72,7 @@ function init() {
     );
   });
 
-  document.getElementById('mini_subli').addEventListener('mouseover', function() {
+  document.getElementById('mini_subli').addEventListener('click', function() {
     changeVideo(
       'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/ReelSubli_1080_h264.mp4',
       //'/proyectos/sublimotion.html',
@@ -83,7 +83,7 @@ function init() {
     );
   });
 
-  document.getElementById('mini_ambar_tormenta').addEventListener('mouseover', function() {
+  document.getElementById('mini_ambar_tormenta').addEventListener('click', function() {
     changeVideo(
       'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Ambar Garces - Tormenta.mp4',
       //'/proyectos/ambar-tormenta.html',
@@ -94,7 +94,7 @@ function init() {
     );
   });
 
-  document.getElementById('mini_3wb').addEventListener('mouseover', function() {
+  document.getElementById('mini_3wb').addEventListener('click', function() {
     changeVideo(
       'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Everyone has their basketball_1080_v02.mov',
       //'/proyectos/3wb.html',
@@ -105,7 +105,7 @@ function init() {
     );
   });
 
-  document.getElementById('mini_benzo_paris_dia2').addEventListener('mouseover', function() {
+  document.getElementById('mini_benzo_paris_dia2').addEventListener('click', function() {
     changeVideo(
       'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Benzo - Paris 2 try 1.mp4',
       //'/proyectos/benzo-paris-dia.html',
@@ -116,7 +116,7 @@ function init() {
     );
   });
 
-  document.getElementById('mini_benzo_paris').addEventListener('mouseover', function() {
+  document.getElementById('mini_benzo_paris').addEventListener('click', function() {
     changeVideo(
       'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Benzo - Paris 1.mp4',
       //'/proyectos/benzo-paris.html',
@@ -127,7 +127,7 @@ function init() {
     );
   });
 
-  document.getElementById('mini_benzo_perfect').addEventListener('mouseover', function() {
+  document.getElementById('mini_benzo_perfect').addEventListener('click', function() {
     changeVideo(
       'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Benzo - Perfect Loop 3.mp4',
       //'/proyectos/benzo-perfect.html',
@@ -138,7 +138,7 @@ function init() {
     );
   });
 
-  document.getElementById('mini_footdistrict').addEventListener('mouseover', function() {
+  document.getElementById('mini_footdistrict').addEventListener('click', function() {
     changeVideo(
       'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/SINS_ENTREVISTACOMPLETA_1080_h264.mov',
       //'/proyectos/footdistric.html',
@@ -149,7 +149,7 @@ function init() {
     );
   });
 
-  document.getElementById('mini_kaños').addEventListener('mouseover', function() {
+  document.getElementById('mini_kaños').addEventListener('click', function() {
     changeVideo(
       'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Kaños_Color_h264_1920.mov',
       //'/proyectos/kaños-besarteloslabios.html',
@@ -160,7 +160,7 @@ function init() {
     );
   });
 
-  document.getElementById('mini_video_rafa').addEventListener('mouseover', function() {
+  document.getElementById('mini_video_rafa').addEventListener('click', function() {
     changeVideo(
       'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Cascorro_Enfadado_1080_h264_45000kbs.mov',
       //'/proyectos/andreuslim-cascorroenfermo.html',
