@@ -21,7 +21,7 @@ function init() {
   }
 
   // Eventos para cambiar el video y el texto al pasar el ratón sobre las miniaturas
-  document.getElementById('min1').addEventListener('click', function() {
+  document.getElementById('mini_mala').addEventListener('click', function() {
     changeVideo(
       'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Myzz-Mala_1080_h264_45000kbs.mp4',
       //'/proyectos/myzz_mala.html',
@@ -30,7 +30,7 @@ function init() {
     );
   });
 
-  document.getElementById('min2').addEventListener('click', function() {
+  document.getElementById('mini_myzz_medusa').addEventListener('click', function() {
     changeVideo(
       'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Myzz-Medusa_1080_h264_45000kbs.mp4',
       //'/proyectos/myzz_medusa.html',
@@ -40,7 +40,7 @@ function init() {
     );
   });
 
-  document.getElementById('min3').addEventListener('click', function() {
+  document.getElementById('mini_duality').addEventListener('click', function() {
     changeVideo(
       'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Duality_1080_h264_45000kbs.mp4',
       //'/proyectos/duality.html',
@@ -50,7 +50,7 @@ function init() {
     );
   });
 
-  document.getElementById('min4').addEventListener('click', function() {
+  document.getElementById('mini_croschek').addEventListener('click', function() {
     changeVideo(
       'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Jaydime-Croscheck_1080_h264_45000kbs.mp4',
       //'/proyectos/crosscheck.html',
@@ -61,7 +61,7 @@ function init() {
     );
   });  
 
-  document.getElementById('min5').addEventListener('click', function() {
+  document.getElementById('mini_distrue_rebirth').addEventListener('click', function() {
     changeVideo(
       'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Distrue-The_Rebirth_1080_h264.mp4',
       //'/proyectos/the rebirth.html',
@@ -72,7 +72,7 @@ function init() {
     );
   });
 
-  document.getElementById('min6').addEventListener('click', function() {
+  document.getElementById('mini_subli').addEventListener('click', function() {
     changeVideo(
       'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/ReelSubli_1080_h264.mp4',
       //'/proyectos/sublimotion.html',
