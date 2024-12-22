@@ -23,7 +23,7 @@ function init() {
   // Eventos para cambiar el video y el texto al pasar el ratón sobre las miniaturas
   document.getElementById('min1').addEventListener('click', function() {
     changeVideo(
-      'https://static.stratebi.com/proyectos/temp/Myzz-Mala_1080_h264_45000kbs.mp4',
+      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Myzz-Mala_1080_h264_45000kbs.mp4',
       //'/proyectos/myzz_mala.html',
       '#',
       '<b>MALA</b><br>MUSIC VIDEO'
@@ -32,7 +32,7 @@ function init() {
 
   document.getElementById('min2').addEventListener('click', function() {
     changeVideo(
-      'https://static.stratebi.com/proyectos/temp/Myzz-Medusa_1080_h264_45000kbs.mp4',
+      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Myzz-Medusa_1080_h264_45000kbs.mp4',
       //'/proyectos/myzz_medusa.html',
       '#',
 
@@ -42,7 +42,7 @@ function init() {
 
   document.getElementById('min3').addEventListener('click', function() {
     changeVideo(
-      'https://static.stratebi.com/proyectos/temp/Duality_1080_h264_45000kbs.mp4',
+      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Duality_1080_h264_45000kbs.mp4',
       //'/proyectos/duality.html',
       '#',
 
@@ -52,18 +52,18 @@ function init() {
 
   document.getElementById('min4').addEventListener('click', function() {
     changeVideo(
-      'https://static.stratebi.com/proyectos/temp/Jaydime_Jaycas_crosscheck_DEFINIT_1.mp4',
+      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Jaydime-Croscheck_1080_h264_45000kbs.mp4',
       //'/proyectos/crosscheck.html',
       '#',
 
       '<b>CROSS CHECK</b><br>MUSIC VIDEO'
 
     );
-  });
+  });  
 
   document.getElementById('min5').addEventListener('click', function() {
     changeVideo(
-      'https://static.stratebi.com/proyectos/temp/THE%20REBIRTH%20%281080p%2C%20h264%2C%20youtube%29.mp4',
+      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Distrue-The_Rebirth_1080_h264.mp4',
       //'/proyectos/the rebirth.html',
       '#',
 
@@ -74,7 +74,7 @@ function init() {
 
   document.getElementById('min6').addEventListener('click', function() {
     changeVideo(
-      'https://static.stratebi.com/proyectos/temp/ReelSubli.mp4',
+      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/ReelSubli_1080_h264.mp4',
       //'/proyectos/sublimotion.html',
       '#',
 
