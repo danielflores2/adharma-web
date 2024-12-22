@@ -8,7 +8,7 @@ function init() {
   let touchStartY = 0;
   let touchEndY = 0;
 
-  // Función que actualiza el estilo según la sección actual
+  // FUNCIÓN QUE CONTROLA EL NAV
   function handleScroll() {
     if (currentIndex > 0) {
       nav.classList.add('sticky-navbar');
@@ -17,30 +17,10 @@ function init() {
       nav.classList.remove('sticky-navbar');
       nav.classList.add('position-absolute', 'bottom-0');
     }
-
-    if (currentIndex === sections.length - 1 || currentIndex === 0) {
-      document.body.style.backgroundColor = '#FFFDF5'; // Fondo blanco
-      logo_adhr.forEach(img => {
-        img.src = '/src/images/logo/adhr_black.svg'; // Cambiar logo a negro
-      });
-      navLinks.forEach(link => {
-        link.classList.remove('text-light');
-        link.classList.add('text-dark'); // Cambiar los enlaces a oscuro
-      });
-    } else {
-      document.body.style.backgroundColor = '#FFFDF5'; // Fondo blanco
-      logo_adhr.forEach(img => {
-        img.src = '/src/images/logo/adhr_white.svg'; // Cambiar logo a blanco
-      });
-      navLinks.forEach(link => {
-        link.classList.remove('text-dark');
-        link.classList.add('text-light'); // Cambiar los enlaces a claro
-      });
-    }
   }
 
-  // Función para desplazarse a una sección específica
-  function scrollToSection(index) {
+   // Función para desplazarse a una sección específica
+   function scrollToSection(index) {
     if (index >= 0 && index < sections.length) {
       isScrolling = true;
       sections[index].scrollIntoView({ behavior: 'smooth' });
