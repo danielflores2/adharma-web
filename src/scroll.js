@@ -9,15 +9,17 @@ function init() {
   let touchEndY = 0;
 
   // FUNCIÓN QUE CONTROLA EL NAV
-  function handleScroll() {
-    if (currentIndex > 0) {
-      nav.classList.add('sticky-navbar');
-      nav.classList.remove('position-absolute', 'bottom-0');
-    } else {
-      nav.classList.remove('sticky-navbar');
-      nav.classList.add('position-absolute', 'bottom-0');
-    }
+
+ function handleScroll() {
+  if (currentIndex > 0) {
+    nav.classList.add('sticky-navbar');
+    nav.classList.remove('position-absolute', 'bottom-0');
+  } else {
+    nav.classList.remove('sticky-navbar');
+    nav.classList.add('position-absolute', 'bottom-0');
+
   }
+}
 
    // Función para desplazarse a una sección específica
    function scrollToSection(index) {
@@ -144,31 +146,5 @@ function init() {
     window.addEventListener('wheel', handleWheel, false); // Usar wheel en lugar de touch para trackpads
   }
 }
-
-    // HACE QUE EL SCROLL FUNCIONE DENTRO DEL IFRAME
-document.addEventListener("DOMContentLoaded", () => {
-  const iframe = document.getElementById("vimeoPlayer");
-
-  if (iframe) {
-    // Deshabilitar la interacción del iframe durante el scroll
-    iframe.style.pointerEvents = "none";
-
-    window.addEventListener("scroll", () => {
-      iframe.style.pointerEvents = "none"; // Deshabilita el iframe
-      setTimeout(() => {
-        iframe.style.pointerEvents = "auto"; // Vuelve a habilitarlo después del scroll
-      }, 500); // Ajusta este tiempo según la duración de tu scroll
-    });
-
-    // Reactivar la interacción con el iframe al dejar de hacer scroll
-    iframe.addEventListener("mouseenter", () => {
-      iframe.style.pointerEvents = "auto";
-    });
-
-    iframe.addEventListener("mouseleave", () => {
-      iframe.style.pointerEvents = "none";
-    });
-  }
-});
 
 document.addEventListener("DOMContentLoaded", init);

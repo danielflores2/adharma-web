@@ -153,6 +153,10 @@ a.hover-effect:hover::before {
     bottom: 0;
 }
 
+.nav-link {
+    color: white !important;
+  }
+
 .sticky-navbar{
     position: fixed !important;
     top: 0;
@@ -405,6 +409,29 @@ a.hover-effect:hover::before {
 #contacto {
     position: sticky; 
     top: 0; /* Se mantendrá fija en la parte superior al hacer scroll */
+}
+
+/* Estilo para posicionar la imagen en la esquina inferior derecha */
+#uneed {
+    position: absolute;
+    bottom: 20px; /* Ajusta la distancia desde la parte inferior */
+    right: 20px; /* Ajusta la distancia desde la parte derecha */
+    width: 10vw; /* Cambia el tamaño de la imagen */
+    max-width: 50vh; /* Ajusta el tamaño máximo de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+    object-fit: contain; /* Asegura que la imagen no se deforme */
+    z-index: 10; /* Asegura que la imagen esté sobre otros elementos si es necesario */
+}
+
+#maguito {
+    position: absolute;
+    bottom: 0px; /* Ajusta la distancia desde la parte inferior */
+    left: 20px; /* Ajusta la distancia desde la parte derecha */
+    width: 20vw; /* Cambia el tamaño de la imagen */
+    max-width: 150vh; /* Ajusta el tamaño máximo de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+    object-fit: contain; /* Asegura que la imagen no se deforme */
+    z-index: 10; /* Asegura que la imagen esté sobre otros elementos si es necesario */
 }
 
 .video-selector{
