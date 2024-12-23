@@ -2,7 +2,7 @@
 var videoCarga = document.getElementById('videoCarga');
 var contenidoPrincipal = document.getElementById('contenidoPrincipal');
 var videoContenedor = document.getElementById('videoContenedorCarga');
-var videoReel = document.getElementById('videoReel');  // Video principal que se está cargando
+var videoReel = document.getElementById('videoReelVertical');  // Video principal que se está cargando
 
 // Detecta cuando el video de carga está a 2 segundos de terminar
 videoCarga.addEventListener('timeupdate', function() {
