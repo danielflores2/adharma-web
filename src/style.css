@@ -301,6 +301,7 @@ a.hover-effect:hover::before {
     align-items: flex-end;
     padding: 0;
     z-index: 10;
+    overflow: hidden; /* Asegura que las miniaturas no se salgan del contenedor */
 }
 
 .video-selector {
@@ -320,8 +321,9 @@ a.hover-effect:hover::before {
     cursor: pointer;
 }
 .miniatura:hover {
-    transform: scale(1.1); /* Escala suave al pasar el ratón */
-    border: 1px solid white;
+    transform: scale(1.05); /* Escala suave al pasar el ratón */
+
+
 }
 
 

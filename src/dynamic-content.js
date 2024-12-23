@@ -161,6 +161,27 @@ function init() {
     );
   });
 
+  document.getElementById('mini_bucle').addEventListener('click', function() {
+    changeVideo(
+      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/chiara-oliver-bucle-video-oficial.mp4',
+      //'/proyectos/chiara-bucle.html',
+      '#',
+
+      '<b>CHIARA OLIVER - BUCLE</b><br>MUSIC VIDEO'
+
+    );
+  });
+
+  document.getElementById('mini_dua_boncalso').addEventListener('click', function() {
+    changeVideo(
+      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/uno-de-uno-bon-calso.mp4',
+      //'/proyectos/chiara-bucle.html',
+      '#',
+
+      '<b>BON CALSO - UNO DE UNO by DÜADÜA</b><br>MUSIC VIDEO'
+
+    );
+  });
 
  /*
     // Función para inicializar el swipe solo en versión móvil
