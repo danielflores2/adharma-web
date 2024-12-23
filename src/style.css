@@ -48,6 +48,7 @@ html, body {
     padding: 0;
     width: 100%;
     height: 100%;
+    scroll-snap-align: y mandatory;
 }
 
 body.black-bg {
@@ -129,6 +130,33 @@ a.hover-effect:hover::before {
 .content {
     padding: 20px;
     min-height: 2000px;
+}
+
+.container-fluid {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+section {
+    flex-shrink: 0;
+    height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.hover-effect {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.hover-effect:hover {
+    color: #ff6347;
 }
 
 

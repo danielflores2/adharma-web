@@ -223,39 +223,66 @@
             <!-- Contenido para pantallas verticales -->
 
             <header id="landingVertical" class="position-relative container-fluid d-flex page1 justify-content-center">
-
                 <div class="video-reel-vertical-container align-items-center justify-content-center d-flex">
-
                     <video id="videoReelVertical" alt="reel" muted autoplay playsinline loop="true" preload="auto"
                         src="https://d17wmwjckt0fmo.cloudfront.net/videos/adharma__the_magician's_cut__-_demo_reel_2024%20(1080p)_vertical.mp4"
                         class="m-auto video-centered">
                     </video>
-
-                </div>       
-    
+                </div>
             </header>
-
+        
             <section id="proyectosVertical" class="videoSection d-flex align-items-center bg-black w-100 position-relative container-fluid p-0 page1">
-
                 <div class="video-container h-100 align-items-center justify-content-center d-flex">
-
                     <video id="videoHomeVertical" alt="DUALITY" muted autoplay playsinline loop="true" preload="auto"
-                        src="https://d17wmwjckt0fmo.cloudfront.net/videos/DUA CASINO_vertical.mp4"
+                        src="https://d17wmwjckt0fmo.cloudfront.net/videos/DUA%20CASINO_vertical.mp4"
                         class="m-auto video-centered">
                     </video>
-
                 </div>
-
             </section>
-
+        
             <section id="contactoVerical" class="videoSection d-flex w-100 position-relative container-fluid p-0">
-
                 <div class="px-4">
                     <a class="hover-effect texto-email" href="mailto:info@adharma.es">INFO@ADHARMA.ES</a>
                 </div>
-                
-           </section>
-
+            </section>
+        
+            <script>
+                // Detectar el scroll en dispositivos táctiles
+                let scrollTimeout;
+                let isScrolling = false;
+        
+                document.addEventListener("wheel", (e) => {
+                    if (isScrolling) return;
+                    isScrolling = true;
+                    clearTimeout(scrollTimeout);
+        
+                    if (e.deltaY > 0) {
+                        // Scroll hacia abajo
+                        scrollToNextSection();
+                    } else {
+                        // Scroll hacia arriba
+                        scrollToPrevSection();
+                    }
+        
+                    scrollTimeout = setTimeout(() => isScrolling = false, 500); // Permite el scroll después de 500ms
+                });
+        
+                function scrollToNextSection() {
+                    const currentSection = document.querySelector('section:not(:last-child)');
+                    const nextSection = currentSection.nextElementSibling;
+                    if (nextSection) {
+                        nextSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+        
+                function scrollToPrevSection() {
+                    const currentSection = document.querySelector('section:not(:first-child)');
+                    const prevSection = currentSection.previousElementSibling;
+                    if (prevSection) {
+                        prevSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            </script>
            <script type="module" src="/app_vertical.js"></script>
         </div>
 
