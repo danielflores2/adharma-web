@@ -115,11 +115,6 @@ a.hover-effect:hover::before {
     transform: translate(-50%, -50%) scale(1);
 }
 
-#logo-img {
-    height: 2rem;
-    transition: all 0.5s ease;
-}
-
 .main {
     background-color: #FFFDF5;
     position: relative;
@@ -202,9 +197,17 @@ a.hover-effect:hover::before {
     padding: 0 20px;
 }
 
-.nav-link {
-    color: white !important;
-  }
+#nav .container-fluid {
+    height: 100%; /* Asegura que el contenedor ocupe toda la altura disponible */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Alineación vertical */
+}
+
+#logo-img {
+    height: 2rem;
+    vertical-align: middle; /* Alinea el logo verticalmente al centro */
+}
 
 .sticky-navbar{
     position: fixed !important;
@@ -218,8 +221,28 @@ a.hover-effect:hover::before {
     box-sizing: border-box;
 }
 
+.navbar-brand {
+    display: flex;
+    align-items: center; /* Alinea el logo con los textos */
+}
+
 .nav-item{
     min-width: 122px
+}
+
+.nav-link {
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    font-size: 1rem;
+    color: white;
+}
+
+/* Alinea los textos en el navbar */
+.navbar-nav {
+    display: flex;
+    gap: 20px; /* Espacio entre los elementos */
+    list-style: none;
 }
 
 .nav-item:nth-child(2){
@@ -292,44 +315,39 @@ a.hover-effect:hover::before {
 
 /* MINIATURAS */
 .proyects-index {
-    position: absolute; /* Fija el contenedor de miniaturas en la parte inferior de la página */
-    bottom: 0; /* Coloca el contenedor en la parte inferior */
-    left: 0; /* Alinea el contenedor a la izquierda */
-    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
-    display: flex; /* Utiliza flexbox para alinear las miniaturas horizontalmente */
-    justify-content: center; /* Centra las miniaturas horizontalmente */
-    align-items: flex-end; /* Alinea las miniaturas verticalmente en la parte inferior del contenedor */
-    gap: 0px; /* Añade espacio entre las miniaturas */
-    padding: 0px; /* Añade un poco de relleno alrededor del contenedor */
-    z-index: 10; /* Asegura que el contenedor esté por encima de otros elementos */
+    position: absolute; /* Fija el contenedor en la parte inferior */
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    display: flex;
+    justify-content: center; /* Centra la fila */
+    align-items: flex-end;
+    padding: 0;
+    z-index: 10;
+    overflow: hidden; /* Asegura que las miniaturas no se salgan del contenedor */
 }
 
-.proyects-index img {
-    cursor: pointer;
-    height: 72px; /* Define una altura fija para las miniaturas más pequeñas */
-    width: 128px; /* Ajusta la anchura automáticamente para mantener la proporción */
-    transition: transform 200ms, border 200ms; /* Añade transición para la animación */
-    object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Añade una sombra sutil */
-}
-
-.proyects-index img:hover {
-    transform: scale(1.2); /* Aumenta el tamaño de la imagen al pasar el ratón */
-    border: 1px solid white; /* Añade un borde blanco al pasar el ratón */
+.video-selector {
+    display: flex;
+    justify-content: space-between; /* Coloca las miniaturas de forma uniforme */
+    gap: 0; /* Elimina cualquier espacio extra entre las miniaturas */
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho de la pantalla */
 }
 
 .miniatura {
-    width: 80%;
-    height: auto;
-    margin: 5px 0;
+    width: 100%;
+    height: auto; /* Ajusta este valor según cuánto recorte quieras */
+    object-fit: cover;
+    object-position: top center;
+    flex: 1 0 auto;
+    transition: transform 200ms, border 200ms;
+    cursor: pointer;
 }
+.miniatura:hover {
+    transform: scale(1.05); /* Escala suave al pasar el ratón */
 
-.video-selector{
-    display: flex;
-    gap: 5px;
+
 }
-
-
 
 
 
@@ -373,53 +391,28 @@ a.hover-effect:hover::before {
 
 
 
-
 /* CONTACTO */
 #overlay-text {
     transform: none; /* Elimina cualquier transformación previa */
     text-align: left; /* Alinea el texto a la izquierda */
     padding: 0; /* Espaciado interno para el texto */
-
     color: white;
-    
 }
 
-
-
-.adhrContact {
-    
-    height: 100%;
-    overflow-x: hidden;
-    z-index: 1;
-    margin-top: 5rem;
-    
-}
-
-.adhrContact .header-contact img {
-    max-width: 1400px;
-}
-
-
-
-.adhrContact a {
-    color: #282828;
-}
-
-
-.adhrContact .texto-email:hover{
-    font-weight: 400;
-    transform: scale(0.95);
-    transition: all 0.2s ease-in-out;
+.email {
+    display: flex;
+    justify-content: center;  /* Centra horizontalmente */
+    align-items: center;      /* Centra verticalmente */
+    height: 100vh;            /* Asegura que el contenedor ocupe toda la altura de la pantalla */
+    width: 100%;              /* Asegura que el contenedor ocupe todo el ancho disponible */
+    padding: 0;               /* Elimina el padding */
 }
 
 .texto-email {
     color: #282828;
     text-align: center;
-    font-size: 6vw;
-    font-size:clamp(6vw,6vw,6rem);
+    font-size: clamp(1vw, 1vw, 1rem);
     font-weight: 300;
-
-    max-width: 1400px;
 }
 
 #contacto {
