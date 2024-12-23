@@ -115,11 +115,6 @@ a.hover-effect:hover::before {
     transform: translate(-50%, -50%) scale(1);
 }
 
-#logo-img {
-    height: 2rem;
-    transition: all 0.5s ease;
-}
-
 .main {
     background-color: #FFFDF5;
     position: relative;
@@ -202,9 +197,11 @@ a.hover-effect:hover::before {
     padding: 0 20px;
 }
 
-.nav-link {
-    color: white !important;
-  }
+#logo-img {
+    height: 2rem;
+    transition: all 0.5s ease;
+    vertical-align: middle; /* Alinea el logo verticalmente al centro */
+}
 
 .sticky-navbar{
     position: fixed !important;
@@ -216,6 +213,9 @@ a.hover-effect:hover::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+.nav-link {
+    vertical-align: middle; /* Alinea el texto verticalmente al centro */
 }
 
 .nav-item{
@@ -368,53 +368,28 @@ a.hover-effect:hover::before {
 
 
 
-
 /* CONTACTO */
 #overlay-text {
     transform: none; /* Elimina cualquier transformación previa */
     text-align: left; /* Alinea el texto a la izquierda */
     padding: 0; /* Espaciado interno para el texto */
-
     color: white;
-    
 }
 
-
-
-.adhrContact {
-    
-    height: 100%;
-    overflow-x: hidden;
-    z-index: 1;
-    margin-top: 5rem;
-    
-}
-
-.adhrContact .header-contact img {
-    max-width: 1400px;
-}
-
-
-
-.adhrContact a {
-    color: #282828;
-}
-
-
-.adhrContact .texto-email:hover{
-    font-weight: 400;
-    transform: scale(0.95);
-    transition: all 0.2s ease-in-out;
+.email {
+    display: flex;
+    justify-content: center;  /* Centra horizontalmente */
+    align-items: center;      /* Centra verticalmente */
+    height: 100vh;            /* Asegura que el contenedor ocupe toda la altura de la pantalla */
+    width: 100%;              /* Asegura que el contenedor ocupe todo el ancho disponible */
+    padding: 0;               /* Elimina el padding */
 }
 
 .texto-email {
     color: #282828;
     text-align: center;
-    font-size: 6vw;
-    font-size:clamp(6vw,6vw,6rem);
+    font-size: clamp(1vw, 1vw, 1rem);
     font-weight: 300;
-
-    max-width: 1400px;
 }
 
 #contacto {
