@@ -43,6 +43,35 @@ function init() {
     }
   }
 
+
+  // Detectar el inicio del touch
+  function handleTouchStart(event) {
+    touchStartY = event.touches[0].clientY;
+  }
+
+  // Detectar el final del touch y gestionar el swipe
+  function handleTouchEnd(event) {
+    touchEndY = event.changedTouches[0].clientY;
+    const swipeThreshold = 30; // Umbral de desplazamiento
+    if (!isScrolling && Math.abs(touchStartY - touchEndY) > swipeThreshold) {
+      if (touchStartY - touchEndY > swipeThreshold) {
+        // Swipe hacia arriba
+        currentIndex = Math.min(currentIndex + 1, sections.length - 1); // Asegura que no sobrepase la última sección
+        scrollToSection(currentIndex);
+      } else if (touchEndY - touchStartY > swipeThreshold) {
+        // Swipe hacia abajo (permitir el paso de "Proyectos" a "Contacto")
+        if (currentIndex === 0) {
+          currentIndex = 1; // Asegura que solo vayamos a la sección de "Proyectos"
+          scrollToSection(currentIndex);
+        } else if (currentIndex === 1) {
+          currentIndex = 2; // Ahora podemos ir a "Contacto"
+          scrollToSection(currentIndex);
+        }
+      }
+    }
+  }
+
+
   // Manejo del evento wheel para trackpad
   function handleWheel(event) {
     if (!isScrolling) {
