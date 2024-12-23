@@ -292,44 +292,36 @@ a.hover-effect:hover::before {
 
 /* MINIATURAS */
 .proyects-index {
-    position: absolute; /* Fija el contenedor de miniaturas en la parte inferior de la página */
-    bottom: 0; /* Coloca el contenedor en la parte inferior */
-    left: 0; /* Alinea el contenedor a la izquierda */
-    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
-    display: flex; /* Utiliza flexbox para alinear las miniaturas horizontalmente */
-    justify-content: center; /* Centra las miniaturas horizontalmente */
-    align-items: flex-end; /* Alinea las miniaturas verticalmente en la parte inferior del contenedor */
-    gap: 0px; /* Añade espacio entre las miniaturas */
-    padding: 0px; /* Añade un poco de relleno alrededor del contenedor */
-    z-index: 10; /* Asegura que el contenedor esté por encima de otros elementos */
+    position: absolute; /* Fija el contenedor en la parte inferior */
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    display: flex;
+    justify-content: center; /* Centra la fila */
+    align-items: flex-end;
+    padding: 0;
+    z-index: 10;
 }
 
-.proyects-index img {
-    cursor: pointer;
-    height: 72px; /* Define una altura fija para las miniaturas más pequeñas */
-    width: 128px; /* Ajusta la anchura automáticamente para mantener la proporción */
-    transition: transform 200ms, border 200ms; /* Añade transición para la animación */
-    object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Añade una sombra sutil */
-}
-
-.proyects-index img:hover {
-    transform: scale(1.2); /* Aumenta el tamaño de la imagen al pasar el ratón */
-    border: 1px solid white; /* Añade un borde blanco al pasar el ratón */
+.video-selector {
+    display: flex;
+    justify-content: flex-start; /* Evita espacios grandes entre imágenes */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    gap: 0; /* Elimina cualquier espacio entre miniaturas */
 }
 
 .miniatura {
-    width: 80%;
-    height: auto;
-    margin: 5px 0;
+    width: 100%; /* Asegura que las miniaturas se ajusten dinámicamente */
+    height: auto; /* Mantiene la proporción de la imagen */
+    object-fit: cover; /* Llenará su contenedor sin distorsión */
+    transition: transform 200ms, border 200ms;
+    cursor: pointer;
 }
 
-.video-selector{
-    display: flex;
-    gap: 5px;
+.miniatura:hover {
+    transform: scale(1.1); /* Escala suave al pasar el ratón */
+    border: 1px solid white;
 }
-
-
 
 
 
