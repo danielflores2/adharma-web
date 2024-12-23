@@ -126,6 +126,35 @@ a.hover-effect:hover::before {
     overflow: visible;
 }
 
+.content {
+    padding: 20px;
+    min-height: 2000px;
+}
+
+
+
+
+
+/* VIDEO CARGA */
+.video-carga, .video-contenedor-carga{
+    height: 100vh;
+}
+
+.video-carga{
+    position: relative;
+    display: block;
+    object-fit: cover;
+}
+
+#landing {
+    position: sticky; 
+    top: 0; 
+}
+
+
+
+
+/* VIDEO REEL */
 .video-reel-container {
     position: absolute;  /* Cambiado de absolute a fixed */
     width: 100%;
@@ -140,7 +169,21 @@ a.hover-effect:hover::before {
 
 }
 
-/* Estilo del nav */
+.video-reel-vertical-container {
+    position: absolute;  /* Cambiado de absolute a fixed */
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1; /* Si quieres que el video quede al fondo, mantenlo con z-index negativo */
+}
+
+#videoReelVertical {
+    height: 100%;
+    object-fit: cover; /* Mantiene el video cubriendo toda el área */
+
+}
+
+/* NAVEGADOR */
 #nav {
     z-index: 10000;
     background-color: inherit;
@@ -168,6 +211,22 @@ a.hover-effect:hover::before {
     box-sizing: border-box;
 }
 
+.nav-item{
+    min-width: 122px
+}
+
+.nav-item:nth-child(2){
+    min-width: fit-content;
+}
+
+.nav-link:hover, .navbar-brand img:hover{
+    transform: scale(1.05);
+    transition: ease-in 0.2s transform;
+}
+
+
+
+
 .page1 {
     min-height: 100vh;
     width: 100%;
@@ -178,6 +237,8 @@ a.hover-effect:hover::before {
     /*background-size: cover;*/
 }
 
+
+/* MINIATURAS */
 .proyects-index {
     position: absolute; /* Fija el contenedor de miniaturas en la parte inferior de la página */
     bottom: 0; /* Coloca el contenedor en la parte inferior */
@@ -205,6 +266,20 @@ a.hover-effect:hover::before {
     border: 1px solid white; /* Añade un borde blanco al pasar el ratón */
 }
 
+.miniatura {
+    width: 80%;
+    height: auto;
+    margin: 5px 0;
+}
+
+.video-selector{
+    display: flex;
+    gap: 5px;
+}
+
+
+
+
 
 .adhrHead h1 {
     font-size: 8vw;
@@ -229,9 +304,8 @@ a.hover-effect:hover::before {
     z-index: 1;
 }
 
-.landing-mago{
-    max-width: 200px;
-}
+
+
 
 .videoSection {
    
@@ -244,6 +318,11 @@ a.hover-effect:hover::before {
 }
 
 
+/* REPRODUCTOR */
+#proyectos {
+    position: sticky; 
+    top: 0; /* Se mantendrá fija en la parte superior al hacer scroll */
+}
 
 #videoHome {
     display: block;
@@ -252,6 +331,11 @@ a.hover-effect:hover::before {
     object-fit: cover;  /* Esto asegura que el video cubra completamente el área, sin dejar espacio vacío */
 }
 
+#videoHomeVertical {
+    display: block;
+    height: 100vh;  /* Asegura que el video ocupe toda la altura de la pantalla */
+    object-fit: cover;  /* Esto asegura que el video cubra completamente el área, sin dejar espacio vacío */
+}
 
 .video-container {
     display: flex;
@@ -262,40 +346,21 @@ a.hover-effect:hover::before {
     overflow-x: hidden;
 }
 
-.video-carga, .video-contenedor-carga{
-    height: 100vh;
-}
 
-.video-carga{
-    position: relative;
-    display: block;
-    object-fit: cover;
-}
 
 .video-centered {
     object-fit: cover;
     max-height: 100%;
 }
 
-.miniatura {
-    width: 80%;
-    height: auto;
-    margin: 5px 0;
-}
-
-.video-selector{
-    display: flex;
-    gap: 5px;
-}
-
-
-.content {
-    padding: 20px;
-    min-height: 2000px;
-}
 
 
 
+
+
+
+
+/* CONTACTO */
 #overlay-text {
     transform: none; /* Elimina cualquier transformación previa */
     text-align: left; /* Alinea el texto a la izquierda */
@@ -305,18 +370,7 @@ a.hover-effect:hover::before {
     
 }
 
-.nav-item{
-    min-width: 122px
-}
 
-.nav-item:nth-child(2){
-    min-width: fit-content;
-}
-
-.nav-link:hover, .navbar-brand img:hover{
-    transform: scale(1.05);
-    transition: ease-in 0.2s transform;
-}
 
 .adhrContact {
     
@@ -354,17 +408,6 @@ a.hover-effect:hover::before {
     max-width: 1400px;
 }
 
-
-#landing {
-    position: sticky; 
-    top: 0; 
-}
-
-#proyectos {
-    position: sticky; 
-    top: 0; /* Se mantendrá fija en la parte superior al hacer scroll */
-}
-
 #contacto {
     position: sticky; 
     top: 0; /* Se mantendrá fija en la parte superior al hacer scroll */
@@ -382,9 +425,11 @@ a.hover-effect:hover::before {
     z-index: 10; /* Asegura que la imagen esté sobre otros elementos si es necesario */
 }
 
+
   
 /* Ajustes para pantallas móviles */
 @media (max-width: 800px) {
+
     
     
     html, body {
@@ -432,13 +477,6 @@ a.hover-effect:hover::before {
     
     .navbar-collapse {
         padding-top: 10px; /* Ajusta el espacio superior dentro del contenedor de colapso de la barra de navegación */
-    }
-
-    
-    .video-selector {
-        transform: scale(0.7);
-
-        /*display: none;*/
     }
 
     .proyects-index img{
