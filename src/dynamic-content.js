@@ -127,16 +127,6 @@ function init() {
     );
   });
 
-  document.getElementById('mini_benzo_perfect').addEventListener('click', function() {
-    changeVideo(
-      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Benzo - Perfect Loop 3.mp4',
-      //'/proyectos/benzo-perfect.html',
-      '#',
-
-      '<b>BENZO - PERFECT</b><br>MUSIC VIDEO'
-
-    );
-  });
 
   document.getElementById('mini_footdistrict').addEventListener('click', function() {
     changeVideo(
