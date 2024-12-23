@@ -1,4 +1,14 @@
 function init() {
+  // Verifica si el dispositivo es móvil
+  function isMobileDevice() {
+    return /Mobi|Android|iPhone/i.test(navigator.userAgent) || window.innerWidth <= 768;
+  }
+
+  // Solo ejecutamos el script en escritorio
+  if (isMobileDevice()) {
+    return; // Si es un móvil, no ejecutamos el resto del código
+  }
+
   const sections = document.querySelectorAll('header, section');
   let currentIndex = 0; // Índice de la sección actual
   let isScrolling = false; // Flag para evitar scroll repetido
@@ -19,8 +29,8 @@ function init() {
     }
   }
 
-   // Función para desplazarse a una sección específica
-   function scrollToSection(index) {
+  // Función para desplazarse a una sección específica
+  function scrollToSection(index) {
     if (index >= 0 && index < sections.length) {
       isScrolling = true;
       sections[index].scrollIntoView({ behavior: 'smooth' });
@@ -30,33 +40,6 @@ function init() {
       setTimeout(() => {
         isScrolling = false;
       }, 800); // Tiempo para terminar el scroll
-    }
-  }
-
-  // Detectar el inicio del touch
-  function handleTouchStart(event) {
-    touchStartY = event.touches[0].clientY;
-  }
-
-  // Detectar el final del touch y gestionar el swipe
-  function handleTouchEnd(event) {
-    touchEndY = event.changedTouches[0].clientY;
-    const swipeThreshold = 30; // Umbral de desplazamiento
-    if (!isScrolling && Math.abs(touchStartY - touchEndY) > swipeThreshold) {
-      if (touchStartY - touchEndY > swipeThreshold) {
-        // Swipe hacia arriba
-        currentIndex = Math.min(currentIndex + 1, sections.length - 1); // Asegura que no sobrepase la última sección
-        scrollToSection(currentIndex);
-      } else if (touchEndY - touchStartY > swipeThreshold) {
-        // Swipe hacia abajo (permitir el paso de "Proyectos" a "Contacto")
-        if (currentIndex === 0) {
-          currentIndex = 1; // Asegura que solo vayamos a la sección de "Proyectos"
-          scrollToSection(currentIndex);
-        } else if (currentIndex === 1) {
-          currentIndex = 2; // Ahora podemos ir a "Contacto"
-          scrollToSection(currentIndex);
-        }
-      }
     }
   }
 
@@ -133,14 +116,7 @@ function init() {
     handleScroll(); // Actualizar el estilo tras el scroll manual
   });
 
-  function isMobileDevice() {
-    return /Mobi|Android|iPhone/i.test(navigator.userAgent) || window.innerWidth <= 768;
-  }
-
-  if (isMobileDevice()) {
-    window.addEventListener('touchstart', handleTouchStart, false);
-    window.addEventListener('touchend', handleTouchEnd, false);
-  } else {
+  if (!isMobileDevice()) {
     window.addEventListener('wheel', handleWheel, false); // Usar wheel en lugar de touch para trackpads
   }
 }
