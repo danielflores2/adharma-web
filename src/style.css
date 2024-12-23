@@ -382,9 +382,11 @@ a.hover-effect:hover::before {
     z-index: 10; /* Asegura que la imagen esté sobre otros elementos si es necesario */
 }
 
+
   
 /* Ajustes para pantallas móviles */
 @media (max-width: 800px) {
+
     
     
     html, body {
@@ -432,13 +434,6 @@ a.hover-effect:hover::before {
     
     .navbar-collapse {
         padding-top: 10px; /* Ajusta el espacio superior dentro del contenedor de colapso de la barra de navegación */
-    }
-
-    
-    .video-selector {
-        transform: scale(0.7);
-
-        /*display: none;*/
     }
 
     .proyects-index img{
