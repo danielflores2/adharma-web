@@ -305,19 +305,20 @@ a.hover-effect:hover::before {
 
 .video-selector {
     display: flex;
-    justify-content: flex-start; /* Evita espacios grandes entre imágenes */
-    width: 100%; /* Ocupa todo el ancho disponible */
-    gap: 0; /* Elimina cualquier espacio entre miniaturas */
+    justify-content: space-between; /* Coloca las miniaturas de forma uniforme */
+    gap: 0; /* Elimina cualquier espacio extra entre las miniaturas */
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho de la pantalla */
 }
 
 .miniatura {
-    width: 100%; /* Asegura que las miniaturas se ajusten dinámicamente */
-    height: auto; /* Mantiene la proporción de la imagen */
-    object-fit: cover; /* Llenará su contenedor sin distorsión */
+    width: 100%;
+    height: auto; /* Ajusta este valor según cuánto recorte quieras */
+    object-fit: cover;
+    object-position: top center;
+    flex: 1 0 auto;
     transition: transform 200ms, border 200ms;
     cursor: pointer;
 }
-
 .miniatura:hover {
     transform: scale(1.1); /* Escala suave al pasar el ratón */
     border: 1px solid white;
