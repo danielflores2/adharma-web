@@ -29,6 +29,17 @@ function init() {
     }
   }
 
+ function handleScroll() {
+  if (currentIndex > 0) {
+    nav.classList.add('sticky-navbar');
+    nav.classList.remove('position-absolute', 'bottom-0');
+  } else {
+    nav.classList.remove('sticky-navbar');
+    nav.classList.add('position-absolute', 'bottom-0');
+
+  }
+}
+
   // Función para desplazarse a una sección específica
   function scrollToSection(index) {
     if (index >= 0 && index < sections.length) {
