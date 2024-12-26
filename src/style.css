@@ -195,6 +195,9 @@ a.hover-effect:hover::before {
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
+    position: absolute; /* Empieza en la parte inferior */
+    bottom: 0; /* Pone el nav en la parte inferior de la página */
+    transition: all 0.3s ease; /* La transición se aplica aquí */
 }
 
 #nav .container-fluid {
@@ -209,9 +212,18 @@ a.hover-effect:hover::before {
     vertical-align: middle; /* Alinea el logo verticalmente al centro */
 }
 
-.sticky-navbar{
-    position: fixed !important;
-    margin-bottom: -6rem;
+.sticky-navbar {
+    position: fixed !important; /* Cambia a fixed cuando el nav debe ser sticky */
+    top: 0; /* Lo pone en la parte superior */
+    width: 100%;
+    z-index: 1000;
+    margin-bottom: 0;
+    background-color: #000; /* Puedes ajustar el color de fondo si es necesario */
+}
+.nav {
+    position: absolute; /* Empieza en la parte inferior */
+    bottom: 0; /* Pone el nav en la parte inferior de la página */
+    transition: all 0.3s ease; /* La transición se aplica aquí */
 }
 
 * {
@@ -226,8 +238,8 @@ a.hover-effect:hover::before {
     align-items: center; /* Alinea el logo con los textos */
 }
 
-.nav-item{
-    min-width: 122px
+.nav-item {
+    min-width: 122px;
 }
 
 .nav-link {
@@ -279,7 +291,6 @@ a.hover-effect:hover::before {
     position: sticky; 
     top: 0; /* Se mantendrá fija en la parte superior al hacer scroll */
     width: 100vw; /* Ocupa el 100% del ancho de la pantalla */
-    height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
 }
 
 #videoHome {

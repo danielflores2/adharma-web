@@ -1,18 +1,10 @@
-// script.js
+window.addEventListener('scroll', function() {
+  var nav = document.getElementById('nav');
+  var rect = nav.getBoundingClientRect();
 
-document.addEventListener("DOMContentLoaded", () => {
-    const navBar = document.getElementById("nav");
-  
-    // Calcula el punto en el que el `nav` debe fijarse
-    const navOffsetTop = navBar.offsetTop;
-  
-    window.addEventListener("scroll", () => {
-      // Si el usuario ha hecho scroll más allá de la posición original del `nav`
-      if (window.scrollY >= navOffsetTop) {
-        navBar.classList.add("sticky");
-      } else {
-        navBar.classList.remove("sticky");
-      }
-    });
-  });
-  
+  if (rect.top <= 0) {  // Cuando la parte superior del nav llegue al top de la pantalla
+      nav.classList.add('sticky-navbar');
+  } else {
+      nav.classList.remove('sticky-navbar');
+  }
+});

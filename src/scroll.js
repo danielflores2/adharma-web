@@ -1,154 +1,88 @@
 function init() {
   // Verifica si el dispositivo es móvil
-  function isMobileDevice() {
-    return /Mobi|Android|iPhone/i.test(navigator.userAgent) || window.innerWidth <= 768;
-  }
+  const isMobileDevice = () => /Mobi|Android|iPhone/i.test(navigator.userAgent) || window.innerWidth <= 768;
+  if (isMobileDevice()) return; // Si es móvil, no ejecuta el resto del código
 
-  // Solo ejecutamos el script en escritorio
-  if (isMobileDevice()) {
-    return; // Si es un móvil, no ejecutamos el resto del código
-  }
+  // Selección de las secciones
+  const sections = document.querySelectorAll('header, section'); // Todas las secciones de la página
 
-  const sections = document.querySelectorAll('header, section');
+  // Variables para gestionar el scroll y navegación
   let currentIndex = 0; // Índice de la sección actual
-  let isScrolling = false; // Flag para evitar scroll repetido
-  const nav = document.getElementById('nav');
-  const navLinks = document.querySelectorAll('#nav-part2 .nav-link');
-  const logo_adhr = document.querySelectorAll('#logo-img');
-  let touchStartY = 0;
-  let touchEndY = 0;
+  let isScrolling = false; // Bandera para evitar scroll repetido
+  let touchStartY = 0; // Coordenada Y inicial del touch (para swipe)
 
-  // FUNCIÓN QUE CONTROLA EL NAV
-  function handleScroll() {
-    if (currentIndex > 0) {
-      nav.classList.add('sticky-navbar');
-      nav.classList.remove('position-absolute', 'bottom-0');
+  // Desplaza la página hacia la sección correspondiente
+  const scrollToSection = (index) => {
+    if (index >= 0 && index < sections.length) { // Verifica que el índice sea válido
+      isScrolling = true; // Marca que está en proceso de desplazamiento
+      sections[index].scrollIntoView({ behavior: 'smooth' }); // Realiza el desplazamiento suave
+      currentIndex = index; // Actualiza el índice actual
+      setTimeout(() => isScrolling = false, 800); // Libera el scroll después de 800 ms
+    }
+  };
+
+  // Maneja el final del gesto de swipe (toque en pantallas táctiles)
+  const handleTouchEnd = ({ changedTouches }) => {
+    const touchEndY = changedTouches[0].clientY; // Obtiene la coordenada Y del touch final
+    const swipeThreshold = 30; // Umbral de desplazamiento para considerar un swipe
+    if (isScrolling || Math.abs(touchStartY - touchEndY) <= swipeThreshold) return; // Ignora si no hay suficiente movimiento
+
+    // Calcula la dirección del swipe y ajusta el índice actual
+    currentIndex += (touchStartY - touchEndY > 0) ? 1 : -1;
+    currentIndex = Math.min(Math.max(currentIndex, 0), sections.length - 1); // Asegura que el índice esté en rango
+    scrollToSection(currentIndex); // Desplaza a la sección correspondiente
+  };
+
+  // Maneja el desplazamiento con el scroll del mouse o trackpad
+  const handleWheel = (event) => {
+    if (isScrolling) return; // Ignora el desplazamiento si ya se está procesando uno
+    const deltaY = event.deltaY;
+    if (Math.abs(deltaY) <= 4) return; // Ignora movimientos pequeños
+
+    // Calcula la dirección del desplazamiento
+    if (deltaY > 0) {
+      // Desplazamiento hacia abajo
+      currentIndex = Math.min(currentIndex + 1, sections.length - 1); // Asegura que no se pase del límite
     } else {
-      nav.classList.remove('sticky-navbar');
-      nav.classList.add('position-absolute', 'bottom-0');
+      // Desplazamiento hacia arriba
+      currentIndex = Math.max(currentIndex - 1, 0); // Asegura que no se pase del límite
     }
-  }
+    scrollToSection(currentIndex); // Desplaza a la sección correspondiente
+  };
 
+  // Maneja el clic en el logo para navegar entre las secciones
+  const handleLogoClick = (e) => {
+    e.preventDefault(); // Evita el comportamiento predeterminado del enlace
+    const scrollY = window.scrollY; // Obtiene la posición actual del scroll
 
-  // Función para desplazarse a una sección específica
-  function scrollToSection(index) {
-    if (index >= 0 && index < sections.length) {
-      isScrolling = true;
-      sections[index].scrollIntoView({ behavior: 'smooth' });
-      currentIndex = index;
-      handleScroll();
-
-      setTimeout(() => {
-        isScrolling = false;
-      }, 800); // Tiempo para terminar el scroll
-    }
-  }
-
-
-  // Detectar el inicio del touch
-  function handleTouchStart(event) {
-    touchStartY = event.touches[0].clientY;
-  }
-
-  // Detectar el final del touch y gestionar el swipe
-  function handleTouchEnd(event) {
-    touchEndY = event.changedTouches[0].clientY;
-    const swipeThreshold = 30; // Umbral de desplazamiento
-    if (!isScrolling && Math.abs(touchStartY - touchEndY) > swipeThreshold) {
-      if (touchStartY - touchEndY > swipeThreshold) {
-        // Swipe hacia arriba
-        currentIndex = Math.min(currentIndex + 1, sections.length - 1); // Asegura que no sobrepase la última sección
-        scrollToSection(currentIndex);
-      } else if (touchEndY - touchStartY > swipeThreshold) {
-        // Swipe hacia abajo (permitir el paso de "Proyectos" a "Contacto")
-        if (currentIndex === 0) {
-          currentIndex = 1; // Asegura que solo vayamos a la sección de "Proyectos"
-          scrollToSection(currentIndex);
-        } else if (currentIndex === 1) {
-          currentIndex = 2; // Ahora podemos ir a "Contacto"
-          scrollToSection(currentIndex);
-        }
-      }
-    }
-  }
-
-
-  // Manejo del evento wheel para trackpad
-  function handleWheel(event) {
-    if (!isScrolling) {
-      const deltaY = event.deltaY;
-      if (Math.abs(deltaY) > 4) { // Ajustar umbral para que sea sensible
-        if (deltaY > 0) {
-          // Desplazamiento hacia abajo (permitir el paso de "Proyectos" a "Contacto")
-          if (currentIndex === 0) {
-            currentIndex = 1;
-            scrollToSection(currentIndex);
-          } else if (currentIndex === 1) {
-            currentIndex = 2; // Desplazar a "Contacto"
-            scrollToSection(currentIndex);
-          }
-        } else {
-          // Desplazamiento hacia arriba
-          currentIndex = Math.max(currentIndex - 1, 0); // Limitar a la primera sección
-          scrollToSection(currentIndex);
-        }
-      }
-    }
-  }
-
-  // Clic en el logo para alternar entre "landing" y "proyectos"
-  document.getElementById('logo-link').addEventListener('click', function (e) {
-    e.preventDefault();
-
-    const landingSection = document.getElementById('landing');
-    const proyectosSection = document.getElementById('proyectos');
-    const contactoSection = document.getElementById('contacto');
-    const currentScroll = window.scrollY;
-
-    if (currentScroll < landingSection.offsetHeight) {
-      // Desplazarse a la sección de "proyectos"
-      window.scrollTo({
-        top: proyectosSection.offsetTop,
-        behavior: 'smooth'
-      });
-      currentIndex = 1;
-    } else if (currentScroll >= proyectosSection.offsetTop && currentScroll < contactoSection.offsetTop) {
-      // Desplazarse a la sección de "contacto"
-      window.scrollTo({
-        top: contactoSection.offsetTop,
-        behavior: 'smooth'
-      });
-      currentIndex = 2;
+    if (scrollY < sections[0].offsetHeight) {
+      scrollToSection(1); // Si está en la primera sección, va a la segunda
+    } else if (scrollY >= sections[1].offsetTop && scrollY < sections[2].offsetTop) {
+      scrollToSection(2); // Si está en la segunda sección, va a la tercera
     } else {
-      // Desplazarse a la parte superior (landing)
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-      currentIndex = 0;
+      scrollToSection(0); // Si está en la tercera sección, vuelve a la primera
     }
-    handleScroll(); // Actualizar el estilo tras el desplazamiento manual
-  });
+  };
 
-  window.addEventListener('scroll', function () {
-    const currentScroll = window.scrollY;
-    const proyectosSection = document.getElementById('proyectos');
-    const contactoSection = document.getElementById('contacto');
-
-    if (currentScroll < document.getElementById('landing').offsetHeight) {
-      currentIndex = 0;
-    } else if (currentScroll >= proyectosSection.offsetTop && currentScroll < contactoSection.offsetTop) {
-      currentIndex = 1;
-    } else if (currentScroll >= contactoSection.offsetTop) {
-      currentIndex = 2;
+  // Maneja el scroll manual para actualizar el índice actual
+  const handleScroll = () => {
+    const scrollY = window.scrollY; // Obtiene la posición actual del scroll
+    if (scrollY < sections[0].offsetHeight) {
+      currentIndex = 0; // Está en la primera sección
+    } else if (scrollY >= sections[1].offsetTop && scrollY < sections[2].offsetTop) {
+      currentIndex = 1; // Está en la segunda sección
+    } else {
+      currentIndex = 2; // Está en la tercera sección
     }
+  };
 
-    handleScroll(); // Actualizar el estilo tras el scroll manual
-  });
-
-  if (!isMobileDevice()) {
-    window.addEventListener('wheel', handleWheel, false); // Usar wheel en lugar de touch para trackpads
-  }
+  // Eventos principales
+  window.addEventListener('scroll', handleScroll); // Actualiza el índice al hacer scroll manual
+  window.addEventListener('wheel', handleWheel); // Desplazamiento con el mouse/trackpad
+  window.addEventListener('touchstart', ({ touches }) => touchStartY = touches[0].clientY); // Captura el inicio del touch
+  window.addEventListener('touchend', handleTouchEnd); // Detecta el final del swipe
+  document.getElementById('logo-link').addEventListener('click', handleLogoClick); // Clic en el logo para navegación
 }
 
+// Ejecuta la función `init` una vez que el DOM se ha cargado
 document.addEventListener("DOMContentLoaded", init);
