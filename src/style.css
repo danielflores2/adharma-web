@@ -329,20 +329,24 @@ a.hover-effect:hover::before {
     color: white;
 }
 
-.center-container {
-    display: flex; /* Habilita flexbox */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: flex-end; /* Alinea al fondo verticalmente */
-    height: 100vh; /* Altura completa de la pantalla */
-    width: 100vw; /* Ancho completo de la pantalla */
+.text-container {
+    text-align: left; /* Alinea todo el contenido del contenedor a la izquierda */
+    padding: 1rem; /* Opcional: agrega un poco de espacio alrededor */
 }
 
 #overlay-text-vertical {
-    text-align: center; /* Centra el texto internamente */
-    padding: 1rem; /* Añade espacio alrededor del texto */
+    text-align: left; /* Asegura que el texto dentro del <p> esté alineado a la izquierda */
+    margin: 0; /* Elimina márgenes adicionales */
+    padding: 0; /* Elimina rellenos adicionales */
     color: white;
-    font-size: 1.5rem; /* Tamaño del texto */
 }
+
+a#videoHomeLinkVertical {
+    text-decoration: none; /* Quita el subrayado del enlace */
+
+}
+
+
 
 /* MINIATURAS */
 .proyects-index {
