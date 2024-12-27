@@ -332,6 +332,7 @@ a.hover-effect:hover::before {
 .text-container {
     text-align: left; /* Alinea todo el contenido del contenedor a la izquierda */
     padding: 1rem; /* Opcional: agrega un poco de espacio alrededor */
+    z-index: 999999;
 }
 
 #overlay-text-vertical {
