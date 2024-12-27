@@ -28,13 +28,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <!--
     <style>
         /* Oculta todo el contenido inicialmente */
         #contenidoPrincipal {
             display: none;
         }
     </style>
-
+ -->
 
     <script>
         function ajustarContenido() {
@@ -64,14 +65,14 @@
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <!-- Contenedor para el vídeo de carga -->
+    <!-- Contenedor para el vídeo de carga 
     <div id="videoContenedorCarga" class="video-contenedor-carga w-100">
         <video id="videoCarga" class="video-carga w-100" muted autoplay playsinline preload loop>
-            <source src="/src/video/MagoCarga.mp4" type="video/mp4">
+            <source src="https://d17wmwjckt0fmo.cloudfront.net/videos/MagoCarga.mp4" type="video/mp4">
             Tu navegador no soporta videos HTML5.
         </video>
     </div>
-
+    -->
 
 
     <main id="contenidoPrincipal">
@@ -88,7 +89,7 @@
                         class="m-auto video-centered"></video>
                 </div>       
     
-                <nav id="nav" class="bottom-0 h-12 position-absolute navbar navbar-light">
+                <nav id="nav" class="bottom-0 h-12 navbar navbar-light">
 
                     <div class="container-fluid d-flex justify-content-center align-items-center">
                         <!-- Contenedor para logo y enlaces -->
@@ -242,12 +243,64 @@
                 </div>
             </header>
         
-            <section id="proyectosVertical" class="videoSection d-flex align-items-center bg-black w-100 position-relative container-fluid p-0 page1">
-                <div class="video-container h-100 align-items-center justify-content-center d-flex">
+            <section id="proyectosVertical" class="videoSection d-flex flex-column bg-black w-100 position-relative container-fluid p-0 page1">
+                <div class="video-container d-flex">
                     <video id="videoHomeVertical" alt="DUALITY" muted autoplay playsinline loop="true" preload="auto"
                         src="https://d17wmwjckt0fmo.cloudfront.net/videos/DUA%20CASINO_vertical.mp4"
                         class="m-auto video-centered">
                     </video>
+                </div>
+                <div class="text-container position-absolute bottom-0 start-50 translate-middle-x text-center">
+                    <a id="videoHomeLink" class="hover-effect" href="# ">
+                      <p id="overlay-text" class="w-100 text-center">
+                          <b>DÜADÜA - DUALITY</b><br>COMMERCIAL
+                         </p>
+                    </a>
+                </div>
+            </section>
+            <section id="proyectosVertical" class="videoSection d-flex bg-black w-100 position-relative container-fluid p-0 page1">
+                <div class="video-container d-flex">
+                    <video id="videoHomeVertical" alt="dua_boncalso" muted autoplay playsinline loop="true" preload="auto"
+                        src="https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosVerticalMP4/uno-de-uno-bon-calso_Vertical.mp4"
+                        class="m-auto video-centered">
+                    </video>
+                </div>
+                <div class="text-container position-absolute bottom-0 start-50 translate-middle-x text-center">
+                    <a id="videoHomeLink" class="hover-effect" href="# ">
+                      <p id="overlay-text" class="w-100 text-center">
+                          <b>DÜADÜA - BON CALSO</b><br>COMMERCIAL
+                         </p>
+                    </a>
+                </div>
+            </section>
+            <section id="proyectosVertical" class="videoSection d-flex bg-black w-100 position-relative container-fluid p-0 page1">
+                <div class="video-container d-flex">
+                    <video id="videoHomeVertical" alt="DUALITY" muted autoplay playsinline loop="true" preload="auto"
+                        src="https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosVerticalMP4/chiara-oliver-bucle-video-oficial_Vertical.mp4"
+                        class="m-auto video-centered">
+                    </video>
+                </div>
+                <div class="text-container position-absolute bottom-0 start-50 translate-middle-x text-center">
+                    <a id="videoHomeLink" class="hover-effect" href="# ">
+                      <p id="overlay-text" class="w-100 text-center">
+                          <b>CHIARA OLIVER - BUCLE</b><br>MUSIC VIDEO
+                         </p>
+                    </a>
+                </div>
+            </section>
+            <section id="proyectosVertical" class="videoSection d-flex bg-black w-100 position-relative container-fluid p-0 page1">
+                <div class="video-container d-flex">
+                    <video id="videoHomeVertical" alt="DUALITY" muted autoplay playsinline loop="true" preload="auto"
+                        src="https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosVerticalMP4/ReelSubli_Vertical.mp4"
+                        class="m-auto video-centered">
+                    </video>
+                </div>
+                <div class="text-container position-absolute bottom-0 start-50 translate-middle-x text-center">
+                    <a id="videoHomeLink" class="hover-effect" href="# ">
+                      <p id="overlay-text" class="w-100 text-center">
+                          <b>SUBLIMOTION</b><br>COMMERCIAL
+                         </p>
+                    </a>
                 </div>
             </section>
         
