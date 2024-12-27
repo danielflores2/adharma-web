@@ -166,6 +166,7 @@ a.hover-effect:hover::before {
 }
 
 #videoReel {
+    height: 100%;
     width: 100%;
     object-fit: cover; /* Mantiene el video cubriendo toda el área */
 
@@ -181,6 +182,7 @@ a.hover-effect:hover::before {
 
 #videoReelVertical {
     height: 100%;
+    width: 100%;
     object-fit: cover; /* Mantiene el video cubriendo toda el área */
 
 }
