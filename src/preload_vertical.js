@@ -10,7 +10,10 @@ if (isMobileDevice()) {
     const videosToPreload = [
       "/src/video/MagoCarga.mp4",
       "https://d17wmwjckt0fmo.cloudfront.net/videos/adharma__the_magician's_cut__-_demo_reel_2024%20(1080p)_vertical.mp4",
-      "https://d17wmwjckt0fmo.cloudfront.net/videos/DUA CASINO_vertical.mp4",
+      "https://d17wmwjckt0fmo.cloudfront.net/videos/DUA%20CASINO_vertical.mp4",
+      "https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosVerticalMP4/uno-de-uno-bon-calso_Vertical.mp4",
+      "https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosVerticalMP4/chiara-oliver-bucle-video-oficial_Vertical.mp4",
+      "https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosVerticalMP4/ReelSubli_Vertical.mp4",
       
   
     ];
