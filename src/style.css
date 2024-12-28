@@ -522,18 +522,40 @@ a#videoHomeLinkVertical {
     object-fit: cover;  /* Esto asegura que el video cubra completamente el área, sin dejar espacio vacío */
 }
 
+.text-subpagina-container {
+    text-align: left; /* Alinea todo el contenido del contenedor a la izquierda */
+    
+    padding: 1rem; /* Opcional: agrega un poco de espacio alrededor */
+    z-index: 999999;
+}
+
+
+#overlay-text-subpagina-vertical {
+    text-align: left; /* Asegura que el texto dentro del <p> esté alineado a la izquierda */
+    margin: 0; /* Elimina márgenes adicionales */
+    padding: 0; /* Elimina rellenos adicionales */
+    color: rgb(0, 0, 0);
+}
+
+a#tituloSubpaginaVertical {
+    text-decoration: none; /* Quita el subrayado del enlace */
+
+}
+  
+
+#overlay-text-subpagina {
+    text-align: left; /* Asegura que el texto dentro del <p> esté alineado a la izquierda */
+    margin: 0; /* Elimina márgenes adicionales */
+    padding: 0; /* Elimina rellenos adicionales */
+    color: white;
+}
+
 a#tituloSubpagina {
     text-decoration: none; /* Quita el subrayado del enlace */
 
 }
 
-#textotituloSubpaginaVertical {
-    transform: none; /* Elimina cualquier transformación previa */
-    text-align: left; /* Alinea el texto a la izquierda */
-    padding: 0; /* Espaciado interno para el texto */
-    color: white;
-}
-  
+
 /* Ajustes para pantallas móviles */
 @media (max-width: 800px) {
 
