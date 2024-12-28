@@ -491,7 +491,7 @@ a#videoHomeLinkVertical {
     top: 0;
     display: block;
     height: auto;
-    width: 100%;
+    height: 100%;
     
     object-fit: cover;  /* Esto asegura que el video cubra completamente el área, sin dejar espacio vacío */
 }
@@ -520,6 +520,18 @@ a#videoHomeLinkVertical {
     width: 100%;
     
     object-fit: cover;  /* Esto asegura que el video cubra completamente el área, sin dejar espacio vacío */
+}
+
+a#tituloSubpagina {
+    text-decoration: none; /* Quita el subrayado del enlace */
+
+}
+
+#textotituloSubpaginaVertical {
+    transform: none; /* Elimina cualquier transformación previa */
+    text-align: left; /* Alinea el texto a la izquierda */
+    padding: 0; /* Espaciado interno para el texto */
+    color: white;
 }
   
 /* Ajustes para pantallas móviles */
