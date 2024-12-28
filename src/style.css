@@ -304,7 +304,9 @@ a.hover-effect:hover::before {
 
 #videoHomeVertical {
     display: block;
-    height: 100vh;  /* Asegura que el video ocupe toda la altura de la pantalla */
+    height: 100%;
+    width: 100%;
+    
     object-fit: cover;  /* Esto asegura que el video cubra completamente el área, sin dejar espacio vacío */
 }
 
