@@ -43,7 +43,7 @@ function init() {
   document.getElementById('mini_duality').addEventListener('click', function() {
     changeVideo(
       'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Duality_1080_h264_45000kbs.mp4',
-      //'/proyectos/duality.html',
+      '/duality.html',
       '#',
 
       '<b>DÜADÜA - DUALITY</b><br>COMMERCIAL'
