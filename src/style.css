@@ -310,13 +310,7 @@ a.hover-effect:hover::before {
     object-fit: cover;  /* Esto asegura que el video cubra completamente el área, sin dejar espacio vacío */
 }
 
-#videoSubpagina {
-    display: block;
-    height: 100%;
-    width: 100%;
-    
-    object-fit: cover;  /* Esto asegura que el video cubra completamente el área, sin dejar espacio vacío */
-}
+
 
 .video-container {
     display: flex;
@@ -476,6 +470,57 @@ a#videoHomeLinkVertical {
 }
 
 
+/* SUBPAGINA */
+
+#subpagina {
+    position: sticky; 
+    top: 0; 
+    width: 100vw; /* Ocupa el 100% del ancho de la pantalla */
+    height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
+}
+
+.video-subpagina-container {
+    position: absolute;  /* Cambiado de absolute a fixed */
+    width: 100vw; /* Ocupa el 100% del ancho de la pantalla */
+    height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
+    overflow: hidden;
+    z-index: 1; /* Si quieres que el video quede al fondo, mantenlo con z-index negativo */
+}
+
+#videoSubpagina {
+    top: 0;
+    display: block;
+    height: auto;
+    width: 100%;
+    
+    object-fit: cover;  /* Esto asegura que el video cubra completamente el área, sin dejar espacio vacío */
+}
+
+/* Subpagina Vertical */
+
+#subpaginaVertical {
+    position: fixed; 
+    top: 0; 
+    width: 100vw; /* Ocupa el 100% del ancho de la pantalla */
+    height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
+}
+
+.video-subpagina-vertical-container {
+    position: absolute;  /* Cambiado de absolute a fixed */
+    width: 100vw; /* Ocupa el 100% del ancho de la pantalla */
+    height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
+    overflow: hidden;
+    z-index: 1; /* Si quieres que el video quede al fondo, mantenlo con z-index negativo */
+}
+
+#videoSubpaginaVertical {
+    top: 0;
+    display: block;
+    height: auto;
+    width: 100%;
+    
+    object-fit: cover;  /* Esto asegura que el video cubra completamente el área, sin dejar espacio vacío */
+}
   
 /* Ajustes para pantallas móviles */
 @media (max-width: 800px) {
