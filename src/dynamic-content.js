@@ -20,12 +20,7 @@ function init() {
     };
   }
 
-  // Función para restaurar el video a su estado inicial
-  function resetVideo() {
-    videoHome.src = 'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Duality_1080_h264_45000kbs.mp4'; // Video inicial
-    overlayText.innerHTML = '<b>DÜADÜA - DUALITY</b><br>COMMERCIAL';
-    overlayText.style.opacity = '1'; // Mostrar el texto original
-  }
+
 
   // Eventos para cambiar el video y el texto al poner el ratón sobre las miniaturas
   document.getElementById('mini_mala').addEventListener('mouseover', function() {
@@ -148,11 +143,7 @@ function init() {
     );
   });
 
-  // Evento para restablecer el video cuando el ratón sale de la miniatura
-  const miniaturas = document.querySelectorAll('.miniatura');
-  miniaturas.forEach(function(miniatura) {
-    miniatura.addEventListener('mouseout', resetVideo);
-  });
+
 }
 
 document.addEventListener("DOMContentLoaded", init);
