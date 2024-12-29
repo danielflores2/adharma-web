@@ -41,7 +41,7 @@ header{
 
 html, body {
     background-color: white;
-    overflow: hidden; /* Bloquear el scroll nativo */    color: rgb(255, 255, 255);
+    overflow: scroll; /* Bloquear el scroll nativo */    color: rgb(255, 255, 255);
     transition: background-color 0.5s  ease-in-out, color 0.5s  ease-in-out;
     scroll-behavior: smooth;
     margin: 0;
@@ -290,9 +290,7 @@ a.hover-effect:hover::before {
 }
 
 #proyectosVertical {
-    position: sticky; 
-    top: 0; /* Se mantendrá fija en la parte superior al hacer scroll */
-    width: 100vw; /* Ocupa el 100% del ancho de la pantalla */
+    width: 100%;
 }
 
 #videoHome {
@@ -317,7 +315,6 @@ a.hover-effect:hover::before {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100vh;
     overflow-x: hidden;
 }
 
@@ -335,22 +332,46 @@ a.hover-effect:hover::before {
     color: white;
 }
 
+/* Posiciona el texto dentro del contenedor de relación de aspecto */
 .text-container {
-    text-align: left; /* Alinea todo el contenido del contenedor a la izquierda */
-    padding: 1rem; /* Opcional: agrega un poco de espacio alrededor */
-    z-index: 999999;
+    position: absolute; /* Posición absoluta respecto a .aspect-ratio */
+    bottom: 1rem; /* Ajusta la distancia desde el borde inferior */
+    left: 1rem; /* Ajusta la distancia desde el borde izquierdo */
+    z-index: 10; /* Asegúrate de que el texto esté por encima del vídeo */
+    text-align: left;
+    color: white; /* Asegura que el texto sea visible sobre el vídeo */
+    padding: 0.5rem; /* Espaciado interno para el texto */
+    border-radius: 4px; /* Bordes redondeados opcionales */
 }
 
+/* Ajustes al texto en sí */
 #overlay-text-vertical {
-    text-align: left; /* Asegura que el texto dentro del <p> esté alineado a la izquierda */
-    margin: 0; /* Elimina márgenes adicionales */
-    padding: 0; /* Elimina rellenos adicionales */
-    color: white;
+    font-size: 1.vw; /* Tamaño relativo al ancho de la pantalla */
+    line-height: 1.5; /* Mejora la legibilidad */
+    margin: 0;
+    padding: 0;
 }
 
 a#videoHomeLinkVertical {
-    text-decoration: none; /* Quita el subrayado del enlace */
+    text-decoration: none; /* Sin subrayado */
+    color: inherit; /* Mantén el color del texto */
+}
 
+/* Estilo para asegurar la relación 16:9 */
+.aspect-ratio {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 = 9/16 = 56.25% */
+    overflow: hidden;
+}
+
+.aspect-ratio video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta el video para llenar el contenedor sin distorsión */
 }
 
 
