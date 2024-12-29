@@ -363,7 +363,7 @@ a.hover-effect:hover::before {
 
 /* Ajustes al texto en sí */
 #overlay-text-vertical {
-    font-size: 1.vw; /* Tamaño relativo al ancho de la pantalla */
+    font-size: 2vw; /* Tamaño relativo al ancho de la pantalla */
     line-height: 1.5; /* Mejora la legibilidad */
     margin: 0;
     padding: 0;
