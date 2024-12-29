@@ -499,8 +499,6 @@ a#videoHomeLinkVertical {
 /* Subpagina Vertical */
 
 #subpaginaVertical {
-    position: fixed; 
-    top: 0; 
     width: 100vw; /* Ocupa el 100% del ancho de la pantalla */
     height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
 }
@@ -514,34 +512,23 @@ a#videoHomeLinkVertical {
 }
 
 #videoSubpaginaVertical {
-    top: 0;
     display: block;
-    height: auto;
-    width: 100%;
-    
-    object-fit: cover;  /* Esto asegura que el video cubra completamente el área, sin dejar espacio vacío */
+    width: 100%; /* Ancho completo */
+    height: auto; /* Deja que la altura se ajuste automáticamente */
+    object-fit: cover; /* Mantén el video ajustado */
 }
 
 .text-subpagina-container {
-    text-align: left; /* Alinea todo el contenido del contenedor a la izquierda */
-    
-    padding: 1rem; /* Opcional: agrega un poco de espacio alrededor */
-    z-index: 999999;
+    position: relative; /* Asegúrate de que siga el flujo normal */
+    width: 100%; /* Ocupa el ancho completo */
+    padding: 1rem; /* Espaciado interno opcional */
+    z-index: 1; /* Asegúrate de que el texto esté visible */
 }
-
-
-#overlay-text-subpagina-vertical {
-    text-align: left; /* Asegura que el texto dentro del <p> esté alineado a la izquierda */
-    margin: 0; /* Elimina márgenes adicionales */
-    padding: 0; /* Elimina rellenos adicionales */
-    color: rgb(0, 0, 0);
-}
-
-a#tituloSubpaginaVertical {
+  
+a#tituloSubpagina {
     text-decoration: none; /* Quita el subrayado del enlace */
 
 }
-  
 
 #overlay-text-subpagina {
     text-align: left; /* Asegura que el texto dentro del <p> esté alineado a la izquierda */
@@ -550,10 +537,18 @@ a#tituloSubpaginaVertical {
     color: white;
 }
 
-a#tituloSubpagina {
+a#tituloSubpaginaVertical {
     text-decoration: none; /* Quita el subrayado del enlace */
 
 }
+
+#overlay-text-subpagina-vertical {
+    margin: 0 auto; /* Centra el texto horizontalmente */
+    color: rgb(0, 0, 0); /* Mantén el color deseado */
+    padding: 1rem 0; /* Opcional: espacio interno superior e inferior */
+}
+
+
 
 
 /* Ajustes para pantallas móviles */
