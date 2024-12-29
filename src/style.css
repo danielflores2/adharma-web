@@ -268,6 +268,23 @@ a.hover-effect:hover::before {
     transition: ease-in 0.2s transform;
 }
 
+/* Posición inicial en la parte inferior */
+#nav.bottom-navbar {
+    position: absolute; /* Se mueve con el contenido */
+    bottom: 0;
+    width: 100%;
+    background-color: inherit; /* Transparente o cualquier color */
+    z-index: 10000;
+}
+
+/* Posición sticky en la parte superior */
+#nav.sticky-navbar {
+    position: fixed; /* Se queda fijo al llegar arriba */
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+    background-color: inherit; /* Color de fondo al estar sticky */
+}
 
 
 
