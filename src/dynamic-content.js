@@ -25,7 +25,7 @@ function init() {
   // Eventos para cambiar el video y el texto al poner el ratón sobre las miniaturas
   document.getElementById('mini_mala').addEventListener('mouseover', function() {
     changeVideo(
-      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Myzz-Mala_1080_h264_45000kbs.mp4',
+      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Myzz-Mala_1080_h265.mp4',
       '/proyectos/myzz-mala.html',
       '<b>MYZZ - MALA</b><br>MUSIC VIDEO'
     );
@@ -33,7 +33,7 @@ function init() {
 
   document.getElementById('mini_myzz_medusa').addEventListener('mouseover', function() {
     changeVideo(
-      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Myzz-Medusa_1080_h264_45000kbs.mp4',
+      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Myzz-Medusa_1080_h265.mp4',
       '/proyectos/myzz-medusa.html',
       '<b>MYZZ - MEDUSA</b><br>MUSIC VIDEO'
     );
@@ -49,7 +49,7 @@ function init() {
 
   document.getElementById('mini_croschek').addEventListener('mouseover', function() {
     changeVideo(
-      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Jaydime-Croscheck_1080_h264_45000kbs.mp4',
+      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Jaydime-Croscheck_1080_h265.mp4',
       '/proyectos/jaydime-crosscheck.html',
       '<b>JAY DIME - CROSS CHECK</b><br>MUSIC VIDEO'
     );
@@ -65,7 +65,7 @@ function init() {
 
   document.getElementById('mini_subli').addEventListener('mouseover', function() {
     changeVideo(
-      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/ReelSubli_1080_h264.mp4',
+      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/ReelSubli_1080_h265.mp4',
       '/proyectos/sublimotion.html',
       '<b>SUBLIMOTION</b><br>COMMERCIAL'
     );
@@ -81,7 +81,7 @@ function init() {
 
   document.getElementById('mini_3wb').addEventListener('mouseover', function() {
     changeVideo(
-      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Everyone has their basketball_1080_v02.mov',
+      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Everyone has their basketball_1080_h265.mp4',
       '/proyectos/everyone-has-their-basketball.html',
       '<b>3WB EVERYONE HAS THEIR BASKETBALL</b><br>COMMERCIAL'
     );
@@ -105,7 +105,7 @@ function init() {
 
   document.getElementById('mini_footdistrict').addEventListener('mouseover', function() {
     changeVideo(
-      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/SINS_ENTREVISTACOMPLETA_1080_h264.mov',
+      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/SINS_ENTREVISTACOMPLETA_1080_h265.mp4',
       '/proyectos/footdistrict-sinsart.html',
       '<b>FOOT DISTRICT X SINS ART</b><br>INTERVIEW'
     );
@@ -113,7 +113,7 @@ function init() {
 
   document.getElementById('mini_kaños').addEventListener('mouseover', function() {
     changeVideo(
-      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Kaños_Color_h264_1920.mov',
+      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Kaños_Color_h265_1920.mp4',
       '/proyectos/kaños-besarte-los-labios.html',
       '<b>KAÑOS - BESARTE LOS LABIOS</b><br>MUSIC VIDEO'
     );
@@ -121,7 +121,7 @@ function init() {
 
   document.getElementById('mini_video_rafa').addEventListener('mouseover', function() {
     changeVideo(
-      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Cascorro_Enfadado_1080_h264_45000kbs.mov',
+      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Cascorro_Enfadado_1080_h265.mp4',
       '/proyectos/cascorro-enfermo.html',
       '<b>ANDREU SLIM - CASCORRO ENFERMO</b><br>COLOR'
     );
@@ -129,7 +129,7 @@ function init() {
 
   document.getElementById('mini_bucle').addEventListener('mouseover', function() {
     changeVideo(
-      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/chiara-oliver-bucle-video-oficial.mp4',
+      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/chiara-oliver-bucle-video-oficial_h265.mp4',
       '/proyectos/chiara-bucle.html',
       '<b>CHIARA OLIVER - BUCLE</b><br>MUSIC VIDEO'
     );
