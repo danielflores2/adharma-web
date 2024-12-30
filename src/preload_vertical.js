@@ -10,11 +10,17 @@ if (isMobileDevice()) {
     const videosToPreload = [
       "/src/video/MagoCarga.mp4",
       "https://d17wmwjckt0fmo.cloudfront.net/videos/adharma__the_magician's_cut__-_demo_reel_2024%20(1080p)_vertical.mp4",
-      "https://d17wmwjckt0fmo.cloudfront.net/videos/DUA%20CASINO_vertical.mp4",
-      "https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosVerticalMP4/uno-de-uno-bon-calso_Vertical.mp4",
-      "https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosVerticalMP4/chiara-oliver-bucle-video-oficial_Vertical.mp4",
-      "https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosVerticalMP4/ReelSubli_Vertical.mp4",
-      
+      "https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Duality_1080_h265_baja.mp4",
+      "https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/ReelSubli_1080_h265_baja.mp4",
+      "https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Everyone%20has%20their%20basketball_1080_h265_baja.mp4",
+      "https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Benzo - Paris 2 try 1.mp4",
+      "https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Jaydime-Croscheck_1080_h265_baja.mp4",
+      "https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Myzz-Medusa_1080_h265_baja.mp4",
+      "https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Myzz-Mala_1080_h265_baja.mp4",
+      "https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Distrue-The_Rebirth_1080_h264.mp4",
+      "https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Benzo - Paris 1.mp4",
+      "https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/SINS_ENTREVISTACOMPLETA_1080_h265_baja.mp4",
+      "https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/chiara-oliver-bucle-video-oficial_h265_baja.mp4",
   
     ];
   
