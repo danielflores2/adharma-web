@@ -114,7 +114,7 @@ function init() {
   document.getElementById('mini_kaños').addEventListener('mouseover', function() {
     changeVideo(
       'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Kaños_Color_h264_1920.mov',
-      '#',
+      '/proyectos/kaños-besarte-los-labios.html',
       '<b>KAÑOS - BESARTE LOS LABIOS</b><br>MUSIC VIDEO'
     );
   });
@@ -122,7 +122,7 @@ function init() {
   document.getElementById('mini_video_rafa').addEventListener('mouseover', function() {
     changeVideo(
       'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Cascorro_Enfadado_1080_h264_45000kbs.mov',
-      '#',
+      '/proyectos/cascorro-enfermo.html',
       '<b>ANDREU SLIM - CASCORRO ENFERMO</b><br>COLOR'
     );
   });
