@@ -7,7 +7,7 @@
 
     <link rel="icon" href="/src/images/logo/favicon.svg" type="image/svg+xml">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="src/styleproyectos.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
  
@@ -59,57 +59,38 @@
 
     <main id="contenidoPrincipal">
 
-    
 
         <!-- Aquí comienza el contenido horizontal -->
         <div id="contenidoHorizontal" style="display:none;">
-
-            <header id="subpagina" class="position-relative container-fluid d-flex page1 justify-content-center">
-                <div class="video-subpagina-container d-flex justify-content-center">
-                    <video id="videoSubpagina" alt="dua_boncalso" muted autoplay playsinline loop="true" preload="auto"
-                        src="https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/ReelSubli_1080_h264.mp4"
-                        class="m-auto video-centered">
+            <header id="subpagina" class="container-fluid d-flex justify-content-center">
+                <div class="video-container">
+                    <video 
+                        id="videoSubpagina" muted autoplay playsinline loop preload="auto"
+                        src="https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/ReelSubli_1080_h264.mp4">
                     </video>
+                    <div class="text-container">
+                        <p><b>SUBLIMOTION</b><br>COMMERCIAL</p>
+                    </div>
                 </div>
-                <div class="text-subpagina-container position-absolute bottom-0 start-0">
-                    <a id="tituloSubpagina">
-                      <p id="overlay-text-subpagina" class="w-100">
-                          <b>SUBLIMOTION</b><br>COMMERCIAL
-                         </p>
-                    </a>
-                </div>  
-    
+                
             </header>
-
         </div>
+
 
 
         <!-- Aquí puedes poner el contenido para pantallas verticales -->
         <div id="contenidoVertical" style="display:none;">
             <!-- Contenido para pantallas verticales -->
-
-            <header id="subpaginaVertical" class="position-relative container-fluid d-flex page1 justify-content-center">
-
-                <div class="video-subpagina-vertical-container">
-
-                    <video id="videoSubpaginaVertical" alt="reel" muted autoplay playsinline loop="true" preload="auto"
-                        src="https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/ReelSubli_1080_h264.mp4"
-                        class="m-auto video-centered">
-                    </video>
-
-                </div>
-
-                <div class="text-subpagina-container position-absolute bottom-0 start-0">
-                    <a id="tituloSubpaginaVertical">
-                      <p id="overlay-text-subpagina-vertical">
-                          <b>SUBLIMOTION</b><br>COMMERCIAL
-                         </p>
-                    </a>
-                </div>
-
-            </header>
+            <header id="subpaginaVertical">
+                <video id="videoSubpaginaVertical" alt="reel" muted autoplay playsinline loop="true" preload="auto"
+                    src="https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/ReelSubli_1080_h264.mp4"
+                    class="m-auto video-centered">
+                </video>
         
-           <script type="module" src="/app_vertical.js"></script>
+                <div class="text-container">
+                    <p><b>SUBLIMOTION</b><br>COMMERCIAL</p>
+                </div>
+            </header>
         </div>
 
 

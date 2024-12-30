@@ -241,77 +241,63 @@ a.hover-effect:hover::before {
 
 
 
+
 /* SUBPAGINA */
 
 #subpagina {
-    position: relative; /* Se mantiene en el flujo normal */
-    width: 100vw; /* 100% del ancho de la pantalla */
-    height: 100vh; /* 100% de la altura de la pantalla */
-    overflow: hidden; /* Evita que el contenido se desborde */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
-
-.video-subpagina-container {
-    position: relative; /* Para que se mantenga en el flujo normal */
-    width: 100vw; /* 100% del ancho de la pantalla */
-    height: 100vh; /* 100% de la altura de la pantalla */
-    overflow: hidden; /* Para evitar desbordamientos */
-    z-index: 1; /* Si necesitas que el video esté al fondo */
+/* Contenedor del video */
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
 }
 
 #videoSubpagina {
-    width: 100%; /* El video ocupará todo el ancho disponible */
-    height: 100%; /* El video ocupará toda la altura disponible */
-    object-fit: contain; /* Mantiene el formato del video sin recortes */
+    width: 100%;
+    object-fit: cover; /* Ajusta el video para cubrir toda el área */
+}
+
+.text-container {
+    position: relative; /* Opcional si necesitas posicionamiento específico */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    padding: 0.8rem; /* Espaciado opcional */
+    z-index: 9999; /* Asegura que el texto esté sobre el video */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.text-container p {
+    margin: 0; /* Elimina márgenes */
+    color: rgb(0, 0, 0); /* Estilo del texto */
+    font-size: 1.5rem; /* Ajusta el tamaño del texto según necesidad */
+    line-height: 1.5; /* Mejora la legibilidad */
 }
 
 /* Subpagina Vertical */
 
 #subpaginaVertical {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden; /* Evita el desbordamiento */
-}
-
-.video-subpagina-vertical-container {
-    position: relative; /* Cambiado de fixed a relative */
-    width: 100vw;
-    height: 100vh;
+    position: fixed; /* Hace que el header esté siempre visible */
+    top: 0; /* Lo pega a la parte superior */
+    left: 0; /* Lo alinea al borde izquierdo */
+    width: 100vw; /* Ocupa el ancho completo de la pantalla */
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
     z-index: 1;
 }
 
 #videoSubpaginaVertical {
-    width: 100%; /* El video ocupará todo el ancho disponible */
-    height: 100%; /* El video ocupará todo el alto disponible */
-    object-fit: contain; /* Ajusta el video sin recorte */
-}
-
-.text-subpagina-container {
-    position: relative; /* Asegúrate de que siga el flujo normal */
-    width: 100%; /* Ocupa el ancho completo */
-    padding: 1rem; /* Espaciado interno opcional */
-    z-index: 1; /* Asegúrate de que el texto esté visible */
-}
-  
-a#tituloSubpagina {
-    text-decoration: none; /* Quita el subrayado del enlace */
-
-}
-
-#overlay-text-subpagina {
-    text-align: left; /* Asegura que el texto dentro del <p> esté alineado a la izquierda */
-    margin: 0; /* Elimina márgenes adicionales */
-    padding: 0; /* Elimina rellenos adicionales */
-    color: white;
-}
-
-a#tituloSubpaginaVertical {
-    text-decoration: none; /* Quita el subrayado del enlace */
-
-}
-
-#overlay-text-subpagina-vertical {
-    margin: 0 auto; /* Centra el texto horizontalmente */
-    color: rgb(0, 0, 0); /* Mantén el color deseado */
-    padding: 1rem 0; /* Opcional: espacio interno superior e inferior */
+    width: 100%; /* Ocupará todo el ancho del contenedor */
+    object-fit: cover; /* Hace que el video cubra todo el espacio sin dejar huecos */
 }
