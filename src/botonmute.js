@@ -22,3 +22,4 @@ function toggleSound() {
 
 // Asignar el evento al botón
 soundButton.addEventListener('click', toggleSound);
+soundButton.addEventListener('touchstart', toggleSound);  // Para dispositivos móviles
