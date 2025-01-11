@@ -32,7 +32,7 @@ const soundButtonVertical = document.getElementById('soundButtonVertical');
 
 // Función para alternar el sonido en todos los videos
 function toggleSoundVertical() {
-    const videos = document.querySelectorAll('video'); // Seleccionamos todos los videos
+    const videos = document.getElementById('videoReelVertical'); // Seleccionamos todos los videos
 
     videos.forEach(video => {
         if (video.muted) {
