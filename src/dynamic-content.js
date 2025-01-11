@@ -142,6 +142,13 @@ function init() {
       '<b>BON CALSO - UNO DE UNO by DÜADÜA</b><br>MUSIC VIDEO'
     );
   });
+  document.getElementById('mini_suzet').addEventListener('mouseover', function() {
+    changeVideo(
+      'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/suzet-syab-h265-1920-1080.mp4',
+      '/proyectos/suzet-syab.html',
+      '<b>SUZET - SAL Y AGUA BENDITA</b><br>MUSIC VIDEO'
+    );
+  });
 
 
 }
