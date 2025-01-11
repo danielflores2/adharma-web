@@ -196,7 +196,8 @@ a.hover-effect:hover::before {
     padding: 10px;
     cursor: pointer;
     font-size: 1.5rem;
-    z-index: 10001;
+    z-index: 999999;
+    pointer-events: all; /* Asegura que el botón reciba eventos de puntero */
   }
   
   .sound-toggle:hover {
