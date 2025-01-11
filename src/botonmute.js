@@ -28,27 +28,15 @@ soundButton.addEventListener('click', toggleSound);
 
 
 //BOTON MOVIL
+const videoReelVertical = document.getElementById('videoReelVertical');
 const soundButtonVertical = document.getElementById('soundButtonVertical');
 
-// Función para alternar el sonido en todos los videos
-function toggleSoundVertical() {
-    const videos = document.getElementById('videoReelVertical'); // Seleccionamos todos los videos
-
-    videos.forEach(video => {
-        if (video.muted) {
-            video.muted = false; // Desactivar mute
-        } else {
-            video.muted = true; // Activar mute
-        }
-    });
-
-    // Cambiar el texto del botón dependiendo del estado del sonido
-    if (videos[0].muted) {
-        soundButtonVertical.textContent = 'volume_off'; // Icono de sonido apagado
-    } else {
-        soundButtonVertical.textContent = 'volume_up'; // Icono de sonido activado
-    }
-}
-
-// Asignar el evento al botón
-soundButtonVertical.addEventListener('click', toggleSoundVertical);
+soundButtonVertical.addEventListener('click', () => {
+  if (videoReelVertical.muted) {
+    videoReelVertical.muted = false;
+    soundButtonVertical.textContent = 'volume_up'; // Cambiar icono a sonido activado
+  } else {
+    videoReelVertical.muted = true;
+    soundButtonVertical.textContent = 'volume_off'; // Cambiar icono a sonido desactivado
+  }
+});
