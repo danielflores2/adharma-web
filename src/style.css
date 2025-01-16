@@ -214,10 +214,7 @@ a.hover-effect:hover::before {
 
 #logo-img {
     height: 2rem;
-    vertical-align: middle; /* Alinea el logo verticalmente al centro */
-
-    box-shadow: #282828 2px 1px;
-}
+    vertical-align: middle; /* Alinea el logo verticalmente al centro */}
 
 .sticky-navbar {
     position: fixed !important; /* Cambia a fixed cuando el nav debe ser sticky */
@@ -254,7 +251,7 @@ a.hover-effect:hover::before {
     text-align: center;
     padding: 10px;
     font-size: 1rem;
-    color: white; 
+    color: white !important;  
 }
 
 /* Alinea los textos en el navbar */
