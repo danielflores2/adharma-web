@@ -49,7 +49,7 @@ window.addEventListener('scroll', function() {
 
       // Cambiar el color del texto de los enlaces
       navLinks.forEach(function(link) {
-          link.style.setProperty('color', 'black'); // Cambiar color del texto a negro
+          link.style.setProperty('color', 'black !important'); // Cambiar color del texto a negro
       });
 
   } else {
