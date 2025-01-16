@@ -22,12 +22,12 @@
         function ajustarContenido() {
             if (window.innerWidth > window.innerHeight) {
                 // Mostrar contenido para pantallas horizontales
-                document.getElementById('contenidoHorizontal').style.display = 'block';
+                document.getElementById('contenidoHorizontal').style.display = 'flex';
                 document.getElementById('contenidoVertical').style.display = 'none';
             } else {
                 // Mostrar contenido para pantallas verticales
                 document.getElementById('contenidoHorizontal').style.display = 'none';
-                document.getElementById('contenidoVertical').style.display = 'block';
+                document.getElementById('contenidoVertical').style.display = 'flex';
             }
         }
 
@@ -35,7 +35,9 @@
         window.addEventListener('load', ajustarContenido);
     </script>
 
-    <script type="module" src="/app.js"></script>
+    <script type="module" src="/appSubpagina.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 </head>
 
@@ -52,15 +54,62 @@
 
         <!-- Aquí comienza el contenido horizontal -->
         <div id="contenidoHorizontal" style="display:none;">
+
+            <nav id="nav" class="bottom-navbar navbar navbar-light">
+
+                <div class="container-fluid d-flex justify-content-center align-items-center">
+
+                    <div class="d-flex justify-content-between align-items-center w-100">
+
+                      
+
+                        <div class="navbar-brand m-0">
+                            <a href="/index.html" id="logo-link">
+                                <img src="/src/images/logo/adhr_black.svg" id="logo-img" alt="Logo" class="d-inline-block align-text-top">
+                            </a>
+                        </div>
+
+                        <ul class="navbar-nav d-flex flex-row gap-4 justify-content-between align-items-center" id="nav-part2">
+                            <li class="nav-item hidden-nav-items">
+                                <a class="nav-link text-center w-100 hover-effect" href="/index.html#contacto">CONTACT</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </nav>
+
             <header id="subpagina" class="container-fluid d-flex justify-content-center">
+                
                 <div class="video-container">
-                    <video 
-                        id="videoSubpagina" muted autoplay playsinline loop preload="auto"
-                        src="https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Duality_1080_h265mp4">
+
+                    <video id="videoSubpagina" controls preload="auto"
+                        src="https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Duality_1080_h265.mp4">
                     </video>
+
                     <div class="text-container">
                         <p><b>DUALITY</b><br>COMMERCIAL</p>
                     </div>
+
+                    <section class="credits">
+                        <p class="subtitle"><strong>Collection by</strong> <a href="https://www.instagram.com/duadua.es" target="_blank">@duadua.es</a></p>
+                      
+                        <h3>Film produced by <a href="https://www.instagram.com/adharma.collective" target="_blank">@adharma.collective</a></h3>
+                      
+                        <p>
+                            <strong> Starring: </strong>
+                          <a href="https://www.instagram.com/gema_dlara" target="_blank">@gema_dlara</a> & 
+                          <a href="https://www.instagram.com/darioldman" target="_blank">@darioldman</a>
+                        </p>
+                      
+                        <ul class="creditosLista">
+                          <li><strong>Direction:</strong> Yan Basavilbaso <a href="https://www.instagram.com/yan.zzz___" target="_blank">@yan.zzz___</a></li>
+                          <li><strong>1AD:</strong> Matías Varas <a href="https://www.instagram.com/matiasvarasj" target="_blank">@matiasvarasj</a></li>
+                          <li><strong>DOP & 3D:</strong> Daniel Flores <a href="https://www.instagram.com/elombligodebuda" target="_blank">@elombligodebuda</a></li>
+                          <li><strong>Graphism & magic:</strong> Javi Laguna <a href="https://www.instagram.com/lagone.nolake" target="_blank">@lagone.nolake</a></li>
+                        </ul>
+                      </section>
+
                 </div>
                 
             </header>
@@ -71,6 +120,27 @@
         <!-- Aquí puedes poner el contenido para pantallas verticales -->
         <div id="contenidoVertical" style="display:none;">
             <!-- Contenido para pantallas verticales -->
+
+            <nav id="nav" class="bottom-navbar navbar navbar-light">
+                <div class="container-fluid d-flex justify-content-center align-items-center">
+                    <div class="d-flex justify-content-between align-items-center w-100">
+                        
+                        <div class="navbar-brand m-0">
+                            <a href="#proyectosVertical" id="logo-link">
+                                <img src="/src/images/logo/adhr_black.svg" id="logo-img" alt="Logo" class="d-inline-block align-text-top">
+                            </a>
+                        </div>
+                        <ul class="navbar-nav d-flex flex-row gap-4 justify-content-between align-items-center" id="nav-part2">
+                            <li class="">
+                                <button id="soundButtonVertical" class="sound-toggle material-symbols-outlined">
+                                    volume_off
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
             <header id="subpaginaVertical">
                 <video id="videoSubpaginaVertical" alt="reel" muted autoplay playsinline loop="true" preload="auto"
                     src="https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Duality_1080_h265.mp4"
@@ -81,6 +151,9 @@
                     <p><b>DUALITY</b><br>COMMERCIAL</p>
                 </div>
             </header>
+
+            
+
         </div>
 
 
