@@ -520,8 +520,8 @@ a#videoHomeLinkVertical {
 .texto-email-vertical {
     color: #282828;
     text-align: center;
-    font-size: clamp(1vw, 1vw, 1rem);
-    font-weight: 3000;
+    font-size: clamp(4vw, 4vw, 4rem);
+    font-weight: 300;
 }
 
 #contacto {
