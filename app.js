@@ -3,7 +3,6 @@ import "./src/loading.js";
 import "./src/loading_vertical.js";
 import "./src/preload.js";
 import "./src/preload_vertical.js";
-import "./src/cambiarcolornav.js";
 import "./src/nav.js";
 import "./src/control_de_reproductor.js";
 import "./src/botonmute.js";
