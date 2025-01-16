@@ -517,6 +517,13 @@ a#videoHomeLinkVertical {
     font-weight: 300;
 }
 
+.texto-email-vertical {
+    color: #282828;
+    text-align: center;
+    font-size: clamp(1vw, 1vw, 1rem);
+    font-weight: 3000;
+}
+
 #contacto {
     position: sticky; 
     top: 0; /* Se mantendrá fija en la parte superior al hacer scroll */
