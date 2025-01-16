@@ -238,6 +238,8 @@ a.hover-effect:hover::before {
 #logo-img {
     height: 2rem;
     vertical-align: middle; /* Alinea el logo verticalmente al centro */
+
+    box-shadow: #282828 2px 1px;
 }
 
 .sticky-navbar {
