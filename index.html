@@ -60,13 +60,16 @@
      
     
     <!--Contenedor para el vídeo de carga -->
-    <div id="videoContenedorCarga" class="video-contenedor-carga w-100">
+    <!--<div id="videoContenedorCarga" class="video-contenedor-carga w-100">
         <video id="videoCarga" class="video-carga w-100" muted autoplay playsinline preload loop>
             <source src="https://d17wmwjckt0fmo.cloudfront.net/videos/MagoCarga.mp4" type="video/mp4">
             Tu navegador no soporta videos HTML5.
         </video>
-    </div>
+    </div>-->
     
+    <div id="videoContenedorCarga" class="video-contenedor-carga w-100">
+        <img id="videoCarga" class="video-carga"src="/src/Images/logo/MagomajeteWeb.gif"></img>
+    </div>
     
     
 
@@ -188,12 +191,12 @@
                                 </picture>
                             </a>
                             
-                            <a href="/proyectos/ambar-tormenta.html">
+                            <!-- <a href="/proyectos/ambar-tormenta.html">
                                 <picture>
                                     <source srcset="https://d17wmwjckt0fmo.cloudfront.net/miniaturas/mini_ambar_tormentaa.webp" type="image/webp">
                                     <img class="miniatura" id="mini_ambar_tormenta" src="https://d17wmwjckt0fmo.cloudfront.net/miniaturas/mini_ambar_tormentaa.jpg" alt="mini_ambar_tormenta">
                                 </picture>
-                            </a>
+                            </a> -->
                             
                             <a href="/proyectos/benzo-paris-noche.html">
                                 <picture>
@@ -256,7 +259,7 @@
             <section id="contacto" class="videoSection d-flex position-relative container-fluid p-0">
 
                 <div class="email">
-                    <a class="hover-effect texto-email" href="mailto:info@adharma.es">INFO@ADHARMA.ES</a>
+                    <a class="hover-effect texto-email" href="mailto:info@adharma.es"><h2>INFO@ADHARMA.ES</h2></a>
                 </div>
                 
            </section>
@@ -568,7 +571,7 @@
             <section id="contacto" class="videoSection d-flex position-relative container-fluid p-0">
 
                 <div class="email">
-                    <a class="hover-effect texto-email-vertical" href="mailto:info@adharma.es">INFO@ADHARMA.ES</a>
+                    <a class="hover-effect texto-email-vertical" href="mailto:info@adharma.es?subject=Consulta%20sobre%20producción%20de%20videos"><h2>INFO@ADHARMA.ES</h2></a>
                 </div>
                 
            </section>
@@ -582,26 +585,27 @@
 
 
 </body>
-<footer>
-    <div class="footer-container">
-      <img src="/src/images/logo/adhr_white.svg" alt="Logo" class="footer-logo" />
-      <ul class="footer-links">
-        <li><a href="#about">Sobre Nosotros</a></li>
-        <li><a href="#services">Servicios</a></li>
-        <li><a href="#contact">Contacto</a></li>
-      </ul>
-      <div class="footer-social">
-        <a href="https://facebook.com" target="_blank" aria-label="Facebook">
-          <img src="/src/images/icons/facebook.svg" alt="Facebook" />
-        </a>
-        <a href="https://twitter.com" target="_blank" aria-label="Twitter">
-          <img src="/src/images/icons/twitter.svg" alt="Twitter" />
-        </a>
-        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
-          <img src="/src/images/icons/instagram.svg" alt="Instagram" />
-        </a>
-      </div>
-      <p class="footer-copy">© 2025 ADHR. Todos los derechos reservados.</p>
+<footer id="footer" style="display:none">
+    <div class="footer-container d-flex justify-content-between">
+        <div class="d-flex flex-column align-items-start">
+            <h1 class="footer-lettering">adharma</h1>
+            <p class="footer-copy">© 2025 magicians. Todos los derechos reservados.</p>
+
+        </div>
+       
+
+        <div class="d-flex flex-column align-items-end footer-social">
+              <a href="https://instagram.com/adharma.collective" target="_blank" aria-label="Instagram">
+                <img src="/src/images/logo/instagram.svg" alt="Instagram" />
+              </a>
+                <a href="mailto:info@adharma.es?subject=Consulta%20sobre%20producción%20de%20videos">
+                  <img src="/src/Images/logo/mailto.svg" alt="Enviar correo">
+                </a>
+
+          </div>
+        
+      
+      
     </div>
   </footer>
 

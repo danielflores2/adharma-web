@@ -8,8 +8,8 @@ function isMobileDevice() {
 if (isMobileDevice()) {
   document.addEventListener("DOMContentLoaded", () => {
     const videosToPreload = [
-      "https://d17wmwjckt0fmo.cloudfront.net/videos/MagoCarga.mp4",
-      "https://d17wmwjckt0fmo.cloudfront.net/videos/REEL_TRY1_16mbps.mp4.mp4",
+      //"https://d17wmwjckt0fmo.cloudfront.net/videos/MagoCarga.mp4",
+      "https://d17wmwjckt0fmo.cloudfront.net/videos/REEL_TRY1_16mbps.mp4",
   
     ];
   

@@ -5,18 +5,12 @@ function isMobileDevice() {
 
 // Solo ejecuta el script si no es un dispositivo móvil
 if (!isMobileDevice()) {
-    // Selecciona el video de carga y el contenido principal
+    // Selecciona el video de carga, el contenido principal y el footer
     var videoCarga = document.getElementById('videoCarga');
     var contenidoPrincipal = document.getElementById('contenidoPrincipal');
     var videoContenedor = document.getElementById('videoContenedorCarga');
     var videoReel = document.getElementById('videoReel');  // Video principal que se está cargando
-
-    // Detecta cuando el video de carga está a 2 segundos de terminar
-    videoCarga.addEventListener('timeupdate', function() {
-        if (videoCarga.currentTime >= videoCarga.duration - 2.5) {
-            // No es necesario hacer nada aquí, ya que ocultamos la animación de carga después
-        }
-    });
+    var footer = document.getElementById("footer");
 
     // Detecta cuando el video principal (videoReel) está listo para reproducirse
     videoReel.addEventListener('canplaythrough', function() {
@@ -28,6 +22,12 @@ if (!isMobileDevice()) {
             videoContenedor.style.display = 'none';
             // Muestra el contenido principal
             contenidoPrincipal.style.display = 'block';
-        }, 2500); // 2.5 segundos
+            // Muestra el footer después de que se haya cargado el contenido
+            footer.style.display = "block";
+        }, 1500); // 2.5 segundos
     });
 }
+
+
+
+

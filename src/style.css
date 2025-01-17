@@ -15,6 +15,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Grold Rounded Extrabold'; 
+    src: url('/src/fonts/grold-rounded-extrabold.otf') format('');
+    font-weight: normal;
+    font-style: normal;
+}
+
 #spinner {
     position: absolute;
     top: 50%;
@@ -132,14 +139,19 @@ a.hover-effect:hover::before {
 
 
 /* VIDEO CARGA */
-.video-carga, .video-contenedor-carga{
-    height: 100vh;
+.video-contenedor-carga{
+   height: 100vh;
+   width: 100vw;
+   display: flex;
+   align-items: center;
 }
 
 .video-carga{
     position: relative;
+    width: 300px;
     display: block;
     object-fit: cover;
+    left: calc(50% - 150px);
 }
 
 #landing {
@@ -527,4 +539,8 @@ a#videoHomeLinkVertical {
 #contacto {
     position: sticky; 
     top: 0; /* Se mantendrá fija en la parte superior al hacer scroll */
+}
+
+#footer {
+    display: none;
 }

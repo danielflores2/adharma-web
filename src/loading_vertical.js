@@ -30,4 +30,6 @@ if (isMobileDevice()) {
             contenidoPrincipal.style.display = 'block';
         }, 2500); // 2.5 segundos
     });
+
+
 }
