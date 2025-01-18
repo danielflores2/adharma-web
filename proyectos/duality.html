@@ -19,22 +19,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <script>
-        function ajustarContenido() {
-            if (window.innerWidth > window.innerHeight) {
-                // Mostrar contenido para pantallas horizontales
-                document.getElementById('contenidoHorizontal').style.display = 'flex';
-                document.getElementById('contenidoVertical').style.display = 'none';
-            } else {
-                // Mostrar contenido para pantallas verticales
-                document.getElementById('contenidoHorizontal').style.display = 'none';
-                document.getElementById('contenidoVertical').style.display = 'flex';
-            }
-        }
-
-        window.addEventListener('resize', ajustarContenido);
-        window.addEventListener('load', ajustarContenido);
-    </script>
 
     <script type="module" src="/appSubpagina.js"></script>
 
@@ -52,6 +36,22 @@
 
     <main id="contenidoPrincipal">
 
+        <script>
+            function ajustarContenido() {
+                if (window.innerWidth > window.innerHeight) {
+                    // Mostrar contenido para pantallas horizontales
+                    document.getElementById('contenidoHorizontal').style.display = 'flex';
+                    document.getElementById('contenidoVertical').style.display = 'none';
+                } else {
+                    // Mostrar contenido para pantallas verticales
+                    document.getElementById('contenidoHorizontal').style.display = 'none';
+                    document.getElementById('contenidoVertical').style.display = 'flex';
+                }
+            }
+    
+            window.addEventListener('resize', ajustarContenido);
+            window.addEventListener('load', ajustarContenido);
+        </script>
 
         <!-- Aquí comienza el contenido horizontal -->
         <div id="contenidoHorizontal" style="display:none;">
@@ -111,9 +111,79 @@
                         </ul>
                       </section>
 
+
+                      <section id="recomendados" class="container-fluid d-flex flex-column align-items-center">
+        <h2 class="text-center mb-4">Recomendados</h2>
+        <div class="row justify-content-center gap-4" id="video-container">
+            <!-- Los videos recomendados se insertarán aquí dinámicamente -->
+        </div>
+    </section>
+
+    <!-- Incluir el script al final del body para que cargue después del HTML -->
+    <script>
+        // Función para obtener videos aleatorios
+        function obtenerVideosAleatorios() {
+            // Cargar el archivo JSON desde el servidor
+            fetch('/videos-recomendados.json')  // Asegúrate de que la ruta del archivo sea correcta
+                .then(response => response.json())
+                .then(videos => {
+                    // Seleccionar dos videos aleatorios
+                    const videosAleatorios = [];
+                    while (videosAleatorios.length < 2) {
+                        const video = videos[Math.floor(Math.random() * videos.length)];
+                        if (!videosAleatorios.includes(video)) {
+                            videosAleatorios.push(video);
+                        }
+                    }
+
+                    // Insertar los videos recomendados en el HTML
+                    const container = document.getElementById("video-container");
+                    container.innerHTML = ""; // Limpiar contenido previo
+
+                    videosAleatorios.forEach(video => {
+                        const col = document.createElement("div");
+                        col.classList.add("col-md-5", "col-sm-12");
+
+                        const enlace = document.createElement("a");
+                        enlace.href = video.subpagina;
+                        enlace.classList.add("d-block", "text-normal-link");
+
+                        const videoContenedor = document.createElement("div");
+                        videoContenedor.classList.add("video-recomendado");
+
+                        const videoElement = document.createElement("video");
+                        videoElement.muted = true;
+                        videoElement.autoplay = true;
+                        videoElement.loop = true;
+                        videoElement.preload = "auto";
+                        videoElement.classList.add("w-100");
+                        videoElement.src = video.url;
+
+                        const descripcion = document.createElement("div");
+                        descripcion.classList.add("video-description", "mt-2");
+                        descripcion.innerHTML = `<p><b>${video.titulo}</b><br>${video.descripcion}</p>`;
+
+                        videoContenedor.appendChild(videoElement);
+                        videoContenedor.appendChild(descripcion);
+                        enlace.appendChild(videoContenedor);
+                        col.appendChild(enlace);
+                        container.appendChild(col);
+                    });
+                })
+                .catch(error => console.error('Error cargando los videos:', error));
+        }
+
+        // Cargar los videos aleatorios al cargar la página
+        window.onload = obtenerVideosAleatorios;
+    </script>
+
                 </div>
                 
             </header>
+
+            
+
+
 
         </div>
 
@@ -128,30 +198,41 @@
                     <div class="d-flex justify-content-between align-items-center w-100">
                         
                         <div class="navbar-brand m-0">
-                            <a href="#proyectosVertical" id="logo-link">
+                            <a href="/index.html" id="logo-link">
                                 <img src="/src/images/logo/adhr_black.svg" id="logo-img" alt="Logo" class="d-inline-block align-text-top">
                             </a>
                         </div>
-                        <ul class="navbar-nav d-flex flex-row gap-4 justify-content-between align-items-center" id="nav-part2">
-                            <li class="">
-                                <button id="soundButtonVertical" class="sound-toggle material-symbols-outlined">
-                                    volume_off
-                                </button>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </nav>
 
             <header id="subpaginaVertical">
-                <video id="videoSubpaginaVertical" alt="reel" muted autoplay playsinline loop="true" preload="auto"
-                    src="https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Duality_1080_h265.mp4"
-                    class="m-auto video-centered">
+                <video id="videoSubpagina" controls preload="auto"
+                src="https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Duality_1080_h265.mp4">
                 </video>
         
                 <div class="text-container">
                     <p><b>DUALITY</b><br>COMMERCIAL</p>
                 </div>
+                <section class="creditsMovil">
+                    <p class="subtitle"><strong>Collection by</strong> <a href="https://www.instagram.com/duadua.es" target="_blank">@duadua.es</a></p>
+                  
+                    <p><strong>Film produced by</strong> <a href="https://www.instagram.com/adharma.collective" target="_blank">@adharma.collective</a></p>
+                  
+                    <p>
+                        <strong> Starring: </strong>
+                      <a href="https://www.instagram.com/gema_dlara" target="_blank">@gema_dlara</a> & 
+                      <a href="https://www.instagram.com/darioldman" target="_blank">@darioldman</a>
+                    </p>
+                  
+                    <ul class="creditosMovilLista">
+                    
+                      <li><strong>Direction:</strong> Yan Basavilbaso <a href="https://www.instagram.com/yan.zzz___" target="_blank">@yan.zzz___</a></li>
+                      <li><strong>1AD:</strong> Matías Varas <a href="https://www.instagram.com/matiasvarasj" target="_blank">@matiasvarasj</a></li>
+                      <li><strong>DOP & 3D:</strong> Daniel Flores <a href="https://www.instagram.com/elombligodebuda" target="_blank">@elombligodebuda</a></li>
+                      <li><strong>Graphism & magic:</strong> Javi Laguna <a href="https://www.instagram.com/lagone.nolake" target="_blank">@lagone.nolake</a></li>
+                    </ul>
+                  </section>
             </header>
 
             

@@ -27,22 +27,7 @@
     </style>
 
 
-    <script>
-        function ajustarContenido() {
-            if (window.innerWidth > window.innerHeight) {
-                // Mostrar contenido para pantallas horizontales
-                document.getElementById('contenidoHorizontal').style.display = 'block';
-                document.getElementById('contenidoVertical').style.display = 'none';
-            } else {
-                // Mostrar contenido para pantallas verticales
-                document.getElementById('contenidoHorizontal').style.display = 'none';
-                document.getElementById('contenidoVertical').style.display = 'block';
-            }
-        }
 
-        window.addEventListener('resize', ajustarContenido);
-        window.addEventListener('load', ajustarContenido);
-    </script>
 
     <script type="module" src="/app.js"></script>
 
@@ -76,7 +61,22 @@
 
     <main id="contenidoPrincipal">
 
+        <script>
+            function ajustarContenido() {
+                if (window.innerWidth > window.innerHeight) {
+                    // Mostrar contenido para pantallas horizontales
+                    document.getElementById('contenidoHorizontal').style.display = 'block';
+                    document.getElementById('contenidoVertical').style.display = 'none';
+                } else {
+                    // Mostrar contenido para pantallas verticales
+                    document.getElementById('contenidoHorizontal').style.display = 'none';
+                    document.getElementById('contenidoVertical').style.display = 'block';
+                }
+            }
     
+            window.addEventListener('resize', ajustarContenido);
+            window.addEventListener('load', ajustarContenido);
+        </script>
 
         <!-- Aquí comienza el contenido horizontal -->
         <div id="contenidoHorizontal" style="display:none;">

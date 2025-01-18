@@ -19,6 +19,16 @@ footer {
     display: none;
   }
   
+  footer h1 {
+    font-size: 200%; /* Cambia el tamaño a lo que necesites */
+  }
+
+  .footer-copy {
+    font-size: 14px; /* Cambia este valor al tamaño que prefieras */
+    color: #fff; /* Color del texto, ajusta si es necesario */
+    margin: 0; /* Opcional: Elimina márgenes si no quieres espacio adicional */
+  }
+
   .footer-lettering{
     font-family: 'Grold Rounded Extrabold' !important; 
   }

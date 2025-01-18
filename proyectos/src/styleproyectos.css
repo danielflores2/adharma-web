@@ -283,14 +283,56 @@ a.hover-effect:hover::before {
     line-height: 1.5; /* Mejora la legibilidad */
 }
 
+
+/*CREDITOS*/ 
 .credits{
     margin-top: 6rem;
+
 }
 .credits a {
     color: #004e66;
 }
 .creditosLista {
 list-style: none;
+}
+
+.creditsMovil{
+    margin-top: 6rem;
+    font-size: 0.75rem;
+    text-align: left; /* Alinea el texto al borde izquierdo */
+}
+.creditsMovil a {
+    color: #004e66;
+}
+.creditsMovil p {
+    margin-left: 20px;
+  }
+.creditsMovil ul {
+    margin-left: 20px; /* Ajusta el valor según sea necesario */
+    word-wrap: break-word; /* Fuerza a que el texto se divida en varias líneas si es necesario */
+  }
+.creditosMovilLista {
+    list-style: none;
+    padding-left: 0;
+}
+
+
+#recomendados {
+    margin-top: 10rem; /* Ajusta el valor según el espacio deseado */
+}
+
+#recomendados .row {
+    margin-top: 2rem ; /* Aumenta el margen superior de los videos */
+}
+
+
+.text-normal-link {
+    text-decoration: none; /* Elimina el subrayado */
+    color: inherit; /* Hereda el color del texto normal */
+}
+
+.text-normal-link:hover {
+    color: inherit; /* Mantiene el color original al hacer hover */
 }
 
 /* Subpagina Vertical */
