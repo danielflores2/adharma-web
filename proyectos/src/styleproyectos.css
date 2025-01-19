@@ -131,7 +131,7 @@ a.hover-effect:hover::before {
 /* NAVEGADOR */
 #nav {
     z-index: 10000;
-    background-color: inherit;
+    background-color: #fffdf6;
     height: 6rem;
     width: 100%;
     display: flex;

@@ -3,11 +3,12 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Adharma Collective</title> 
+    <title>Adharma</title> 
 
     <link rel="icon" href="/src/images/logo/favicon.svg" type="image/svg+xml">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/styleproyectos.css">
+    <link rel="stylesheet" href="/src/footer.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
@@ -18,24 +19,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <script>
-        function ajustarContenido() {
-            if (window.innerWidth > window.innerHeight) {
-                // Mostrar contenido para pantallas horizontales
-                document.getElementById('contenidoHorizontal').style.display = 'block';
-                document.getElementById('contenidoVertical').style.display = 'none';
-            } else {
-                // Mostrar contenido para pantallas verticales
-                document.getElementById('contenidoHorizontal').style.display = 'none';
-                document.getElementById('contenidoVertical').style.display = 'block';
-            }
-        }
 
-        window.addEventListener('resize', ajustarContenido);
-        window.addEventListener('load', ajustarContenido);
-    </script>
+    <script type="module" src="/appSubpagina.js"></script>
 
-    <script type="module" src="/app.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 </head>
 
@@ -49,21 +36,179 @@
 
     <main id="contenidoPrincipal">
 
+        <script>
+            function ajustarContenido() {
+                if (window.innerWidth > window.innerHeight) {
+                    // Mostrar contenido para pantallas horizontales
+                    document.getElementById('contenidoHorizontal').style.display = 'flex';
+                    document.getElementById('contenidoVertical').style.display = 'none';
+                } else {
+                    // Mostrar contenido para pantallas verticales
+                    document.getElementById('contenidoHorizontal').style.display = 'none';
+                    document.getElementById('contenidoVertical').style.display = 'flex';
+                }
+            }
+    
+            window.addEventListener('resize', ajustarContenido);
+            window.addEventListener('load', ajustarContenido);
+        </script>
 
         <!-- Aquí comienza el contenido horizontal -->
         <div id="contenidoHorizontal" style="display:none;">
+
+            <nav id="nav" class="bottom-navbar navbar navbar-light">
+
+                <div class="container-fluid d-flex justify-content-center align-items-center">
+
+                    <div class="d-flex justify-content-between align-items-center w-100">
+
+                      
+
+                        <div class="navbar-brand m-0">
+                            <a href="/index.html" id="logo-link">
+                                <img src="/src/images/logo/adhr_black.svg" id="logo-img" alt="Logo" class="d-inline-block align-text-top">
+                            </a>
+                        </div>
+
+                        <ul class="navbar-nav d-flex flex-row gap-4 justify-content-between align-items-center" id="nav-part2">
+                            <li class="nav-item hidden-nav-items">
+                                <a class="nav-link text-center w-100 hover-effect" href="/index.html#contacto">CONTACT</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </nav>
+
             <header id="subpagina" class="container-fluid d-flex justify-content-center">
+                
                 <div class="video-container">
-                    <video 
-                        id="videoSubpagina" muted autoplay playsinline loop preload="auto"
+
+                    <video id="videoSubpagina" controls preload="auto"
                         src="https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Myzz-Medusa_1080_h265.mp4">
                     </video>
+
                     <div class="text-container">
                         <p><b>MYZZ - MEDUSA</b><br>MUSIC VIDEO</p>
                     </div>
+
+                    <section class="credits">
+                        <p><strong>Composición:</strong> Myzz <a href="https://www.instagram.com/myzz.055" target="_blank">@myzz.055</a></p>
+                        <p><strong>Producción musical:</strong> Nnytien <a href="https://www.instagram.com/nnytien" target="_blank">@nnytien</a></p>
+                        <p><strong>Mix & Máster:</strong> Sunday Panic <a href="https://www.instagram.com/sundaypanic" target="_blank">@sundaypanic</a></p>
+                        
+                        <p class="subtitle"><strong>Starring:</strong> 
+                          <a href="https://www.instagram.com/myzz.055" target="_blank">@myzz.055</a> & 
+                          <a href="https://www.instagram.com/ouyang_zhu" target="_blank">@ouyang_zhu</a>
+                        </p>
+                      
+                        <p><strong>Produced by:</strong> Adharma <a href="https://www.instagram.com/adharma.collective" target="_blank">@adharma.collective</a></p>
+                      
+                        <ul class="creditosLista">
+                          <li><strong>Directed by:</strong> Lucía Recuenco <a href="https://www.instagram.com/luciarecuenco_" target="_blank">@luciarecuenco_</a> & Yan Basavilbaso <a href="https://www.instagram.com/yan.zzz___" target="_blank">@yan.zzz___</a></li>
+                          <li><strong>1AD:</strong> Matías Varas <a href="https://www.instagram.com/matiasvarasj" target="_blank">@matiasvarasj</a></li>
+                          <li><strong>DOP:</strong> Daniel Flores <a href="https://www.instagram.com/elombligodebuda" target="_blank">@elombligodebuda</a></li>
+                        </ul>
+                      
+                        <!-- Espacio entre departamentos -->
+                        <p>&nbsp;</p>
+                      
+                        <ul class="creditosLista">
+                          <li><strong>Auxiliar de producción:</strong> Laura Sánchez <a href="https://www.instagram.com/laurasanch3z" target="_blank">@laurasanch3z</a></li>
+                          <li><strong>MUAH:</strong> Dunkel Black <a href="https://www.instagram.com/dunkelblack_mua" target="_blank">@dunkelblack_mua</a></li>
+                          <li><strong>BTS:</strong> Jeisson Ramírez <a href="https://www.instagram.com/jeisson_ramirez25" target="_blank">@jeisson_ramirez25</a></li>
+                        </ul>
+                      
+                        <!-- Espacio entre departamentos -->
+                        <p>&nbsp;</p>
+                      
+                        <ul class="creditosLista">
+                          <li><strong>Special thanks:</strong> 
+                            <a href="https://www.instagram.com/fervent.es" target="_blank">@fervent.es</a> & 
+                            <a href="https://www.instagram.com/alraimon.garage" target="_blank">@alraimon.garage</a>
+                          </li>
+                          <li><strong>Rentals:</strong> 
+                            <a href="https://www.instagram.com/fervent.es" target="_blank">@fervent.es</a>, 
+                            <a href="https://www.instagram.com/kinoluxspain" target="_blank">@kinoluxspain</a>, 
+                            <a href="https://www.instagram.com/falcofilms" target="_blank">@falcofilms</a>
+                          </li>
+                        </ul>
+                      </section>
+
+
+                      <section id="recomendados" class="container-fluid d-flex flex-column align-items-center">
+        <h2 class="text-center mb-4">Recomendados</h2>
+        <div class="row justify-content-center gap-4" id="video-container">
+            <!-- Los videos recomendados se insertarán aquí dinámicamente -->
+        </div>
+    </section>
+
+    <!-- Incluir el script al final del body para que cargue después del HTML -->
+    <script>
+        // Función para obtener videos aleatorios
+        function obtenerVideosAleatorios() {
+            // Cargar el archivo JSON desde el servidor
+            fetch('/videos-recomendados.json')  // Asegúrate de que la ruta del archivo sea correcta
+                .then(response => response.json())
+                .then(videos => {
+                    // Seleccionar dos videos aleatorios
+                    const videosAleatorios = [];
+                    while (videosAleatorios.length < 2) {
+                        const video = videos[Math.floor(Math.random() * videos.length)];
+                        if (!videosAleatorios.includes(video)) {
+                            videosAleatorios.push(video);
+                        }
+                    }
+
+                    // Insertar los videos recomendados en el HTML
+                    const container = document.getElementById("video-container");
+                    container.innerHTML = ""; // Limpiar contenido previo
+
+                    videosAleatorios.forEach(video => {
+                        const col = document.createElement("div");
+                        col.classList.add("col-md-5", "col-sm-12");
+
+                        const enlace = document.createElement("a");
+                        enlace.href = video.subpagina;
+                        enlace.classList.add("d-block", "text-normal-link");
+
+                        const videoContenedor = document.createElement("div");
+                        videoContenedor.classList.add("video-recomendado");
+
+                        const videoElement = document.createElement("video");
+                        videoElement.muted = true;
+                        videoElement.autoplay = true;
+                        videoElement.loop = true;
+                        videoElement.preload = "auto";
+                        videoElement.classList.add("w-100");
+                        videoElement.src = video.url;
+
+                        const descripcion = document.createElement("div");
+                        descripcion.classList.add("video-description", "mt-2");
+                        descripcion.innerHTML = `<p><b>${video.titulo}</b><br>${video.descripcion}</p>`;
+
+                        videoContenedor.appendChild(videoElement);
+                        videoContenedor.appendChild(descripcion);
+                        enlace.appendChild(videoContenedor);
+                        col.appendChild(enlace);
+                        container.appendChild(col);
+                    });
+                })
+                .catch(error => console.error('Error cargando los videos:', error));
+        }
+
+        // Cargar los videos aleatorios al cargar la página
+        window.onload = obtenerVideosAleatorios;
+    </script>
+
                 </div>
                 
             </header>
+
+            
+
+
+
         </div>
 
 
@@ -71,16 +216,77 @@
         <!-- Aquí puedes poner el contenido para pantallas verticales -->
         <div id="contenidoVertical" style="display:none;">
             <!-- Contenido para pantallas verticales -->
+
+            <nav id="nav" class="bottom-navbar navbar navbar-light">
+                <div class="container-fluid d-flex justify-content-center align-items-center">
+                    <div class="d-flex justify-content-between align-items-center w-100">
+                        
+                        <div class="navbar-brand m-0">
+                            <a href="/index.html" id="logo-link">
+                                <img src="/src/images/logo/adhr_black.svg" id="logo-img" alt="Logo" class="d-inline-block align-text-top">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
             <header id="subpaginaVertical">
-                <video id="videoSubpaginaVertical" alt="reel" muted autoplay playsinline loop="true" preload="auto"
-                    src="https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Myzz-Medusa_1080_h265.mp4"
-                    class="m-auto video-centered">
+
+                <video id="videoSubpagina" controls preload="auto"
+                src="https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Myzz-Medusa_1080_h265.mp4">
                 </video>
         
                 <div class="text-container">
                     <p><b>MYZZ - MEDUSA</b><br>MUSIC VIDEO</p>
                 </div>
+                
+                <section class="creditsMovil">
+                    <p><strong>Composición:</strong> <a href="https://www.instagram.com/myzz.055" target="_blank">@myzz.055</a></p>
+                    <p><strong>Producción musical:</strong> <a href="https://www.instagram.com/nnytien" target="_blank">@nnytien</a></p>
+                    <p><strong>Mix & Máster:</strong> <a href="https://www.instagram.com/sundaypanic" target="_blank">@sundaypanic</a></p>
+                  
+                    <p class="subtitle"><strong>Starring:</strong> 
+                      <a href="https://www.instagram.com/myzz.055" target="_blank">@myzz.055</a> & 
+                      <a href="https://www.instagram.com/ouyang_zhu" target="_blank">@ouyang_zhu</a>
+                    </p>
+                  
+                    <p><strong>Produced by:</strong> <a href="https://www.instagram.com/adharma.collective" target="_blank">@adharma.collective</a></p>
+                  
+                    <ul class="creditosMovilLista">
+                      <li><strong>Directed by:</strong> <a href="https://www.instagram.com/luciarecuenco_" target="_blank">@luciarecuenco_</a> & 
+                      <a href="https://www.instagram.com/yan.zzz___" target="_blank">@yan.zzz___</a></li>
+                      <li><strong>1AD:</strong> <a href="https://www.instagram.com/matiasvarasj" target="_blank">@matiasvarasj</a></li>
+                      <li><strong>DOP:</strong> Daniel Flores <a href="https://www.instagram.com/elombligodebuda" target="_blank">@elombligodebuda</a></li>
+                    </ul>
+                  
+                    <!-- Espacio entre departamentos -->
+                    <p>&nbsp;</p>
+                  
+                    <ul class="creditosMovilLista">
+                      <li><strong>Auxiliar de producción:</strong> Laura Sánchez <a href="https://www.instagram.com/laurasanch3z" target="_blank">@laurasanch3z</a></li>
+                      <li><strong>MUAH:</strong> <a href="https://www.instagram.com/dunkelblack_mua" target="_blank">@dunkelblack_mua</a></li>
+                      <li><strong>BTS:</strong> <a href="https://www.instagram.com/jeisson_ramirez25" target="_blank">@jeisson_ramirez25</a></li>
+                    </ul>
+                  
+                    <!-- Espacio entre departamentos -->
+                    <p>&nbsp;</p>
+                  
+                    <ul class="creditosMovilLista">
+                      <li><strong>Special thanks:</strong> 
+                        <a href="https://www.instagram.com/fervent.es" target="_blank">@fervent.es</a> & 
+                        <a href="https://www.instagram.com/alraimon.garage" target="_blank">@alraimon.garage</a>
+                      </li>
+                      <li><strong>Rentals:</strong> 
+                        <a href="https://www.instagram.com/fervent.es" target="_blank">@fervent.es</a>, 
+                        <a href="https://www.instagram.com/kinoluxspain" target="_blank">@kinoluxspain</a>, 
+                        <a href="https://www.instagram.com/falcofilms" target="_blank">@falcofilms</a>
+                      </li>
+                    </ul>
+                  </section>
             </header>
+
+            
+
         </div>
 
 
@@ -90,5 +296,28 @@
 
 
 </body>
+<footer>
+    <div class="footer-container d-flex justify-content-between">
+        <div class="d-flex flex-column align-items-start">
+            <h1 class="footer-lettering">adharma</h1>
+            <p class="footer-copy">© 2025 magicians. Todos los derechos reservados.</p>
+
+        </div>
+       
+
+        <div class="d-flex flex-column align-items-end footer-social">
+              <a href="https://instagram.com/adharma.collective" target="_blank" aria-label="Instagram">
+                <img src="/src/images/logo/instagram.svg" alt="Instagram" />
+              </a>
+                <a href="mailto:info@adharma.es?subject=Consulta%20sobre%20producción%20de%20videos">
+                  <img src="/src/Images/logo/mailto.svg" alt="Enviar correo">
+                </a>
+
+          </div>
+        
+      
+      
+    </div>
+  </footer>
 
 </html>
