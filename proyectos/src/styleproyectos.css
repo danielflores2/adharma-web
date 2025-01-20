@@ -248,17 +248,25 @@ a.hover-effect:hover::before {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 60%;
+ 
 }
 
 /* Contenedor del video */
-.video-container {
+.video-container-detail {
     display: flex;
     flex-direction: column; /* Asegura que el contenido esté en columna */
     align-items: center; /* Centra horizontalmente el contenido */
     justify-content: center; /* Centra verticalmente el contenido */
     z-index: 1;
     text-align: center; /* Centra el texto horizontalmente */
+    width: 60%;
+}
+
+.videoSrc{
+    width: 100%;
+
+
+
 }
 
 #videoSubpagina {

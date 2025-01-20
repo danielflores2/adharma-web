@@ -7,3 +7,4 @@ import "./src/control_de_reproductor.js";
 import "./src/botonmute.js";
 import "./src/googleanalitycs.js";
 import "./src/playcambiocolor.js";
+import "./src/recomendados.js";

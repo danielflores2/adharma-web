@@ -7,3 +7,4 @@ import "./src/nav.js";
 import "./src/control_de_reproductor.js";
 import "./src/botonmute.js";
 import "./src/googleanalitycs.js";
+

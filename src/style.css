@@ -263,7 +263,7 @@ a.hover-effect:hover::before {
     text-align: center;
     padding: 10px;
     font-size: 1rem;
-    color: white !important;  
+    color: white;  
 }
 
 /* Alinea los textos en el navbar */

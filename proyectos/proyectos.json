@@ -1,0 +1,228 @@
+{
+  "projects": [
+    {
+      "id": "myzz-mala",
+      "title": "MYZZ - MALA",
+      "category": "MUSIC VIDEO",
+      "videoSrc": "https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Myzz-Mala_1080_h265.mp4",
+      "credits": {
+    "Artistas principales": "@myzz.055 ft @itzanbenitez",
+    "Producido por": "Adharma @adharma.collective",
+    "Director": "Yan Basavilbaso @yan.zzz___",
+    "1AD": "Matías Varas @matiasvarasj",
+    "DOP": "Daniel Flores @elombligodebuda",
+    "Director de Arte": "Lagone Nolake @lagone.nolake",
+    "Grafismo": "Pau Fabrella @paufabrellax",
+    "Prod. Support": "Miguel González @miguelgnzz_",
+    "Gimnastas": "Alba Cañes San Juan & Marta Hoyos Cabezas",
+    "Tenistas": "Lucía Casas Blas & Almudena Román",
+    "Tiradoras": "Paula García & Helena Gómez"
+  }
+    },
+    {
+      "id": "duality",
+      "title": "DUALITY",
+      "category": "COMMERCIAL",
+      "videoSrc": "https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/Duality_1080_h265.mp4",
+      "credits": {
+        "Collection by": "Düa Düa",
+        "Film produced": "Adharma",
+        "Starring": "Gema de Lara y Dario Vega",
+        "Direction": "Yan Rodriguez",
+        "1AD": "Matías Varas",
+        "DOP": "Daniel Flores",
+        "Graphism & magic": "Javi Laguna"
+      }
+    },
+    {
+      "id": "suzet-syab",
+      "title": "SUZET - SAL Y AGUA BENDITA",
+      "category": "MUSIC VIDEO",
+      "videoSrc": "https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/recomendados/suzet-recomendado.mp4",
+      "credits": {
+        "Director": "Director Name",
+        "Productor": "Producer Name",
+        "DOP": "DOP Name",
+        "1AD": "1AD Name"
+      }
+    },
+    {
+      "id": "therebirth",
+      "title": "DISTRUE - THE REBIRTH",
+      "category": "MUSIC VIDEO",
+      "videoSrc": "https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/recomendados/distrue-recomendado.mp4",
+      "credits": {
+        "Produced by": "Adharma @adharma.collective",
+        "Written by": "Pau Fabrella @paufabrellax",
+        "Direction": "Yan Basavilbaso @yan.zzz___",
+        "Co-Direction": "Pau Fabrella @paufabrellax",
+        "DOP": "Daniel Flores @elombligodebuda",
+        "VFX Compositing & Direction": "Lagone Nolake @lagone.nolake",
+        "Still Photography & Art": "El Segundo Antes De @elsegundoantesde",
+        "Styling": "Kavian @__kavian_",
+        "Script": "Bland P05 @blandp05",
+        "Props": "Digital Sawl @digitalsawl",
+        "Sound Design": "Miguel González @miguelgnzz_",
+        "Music": "Chego Beatz @chegobeatz_",
+        "Main Characters": "@nxrizxc & @jgarciafdez_",
+        "Distrue Gang": "@__kavian_, @matiasvarasj & @fumasaa_",
+        "Sweet": "Sugamore @sugamore"
+      }
+    },
+    {
+      "id": "footdistrict-sinsart",
+      "title": "FOOTDISTRICT - SINSART",
+      "category": "COMMERCIAL",
+      "videoSrc": "https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/recomendados/sins-recomendado.mp4",
+      "credits": {
+        "Directora": "Violeta Dai @violeta.dai",
+        "Producido por": "Adharma @adharma.collective",
+        "DOP": "Daniel Flores @elombligodebuda",
+        "1AD": "1AD Name"
+      }
+    },
+    {
+      "id": "sublimotion",
+      "title": "SUBLIMOTION",
+      "category": "COMMERCIAL",
+      "videoSrc": "https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/recomendados/subli-recomendado.mp4",
+      "credits": {
+    "Campaña para Sublimotion": "@sublimotionibiza",
+    "Producido por": "Adharma @adharma.collective",
+    "Productor": "Lagone Nolake @lagone.nolake",
+    "Director": "Yan Basavilbaso @yan.zzz___",
+    "1AD": "Matías Varas @matiasvarasj",
+    "DOP": "Daniel Flores @elombligodebuda"
+  }
+    },
+    {
+      "id": "everyone-has-their-basketball",
+      "title": "THIRDWORLDBABYS",
+      "category": "MUSIC VIDEO",
+      "videoSrc": "https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/recomendados/3wb-recomendado.mp4",
+      "credits": {
+    "Talent": "@_w.a.d.e_deng14_",
+    "Directed by": "@jose.rsm & @philip_koth",
+    "Cinematography by": "@ismail_fangary",
+    "Executive Producer": "@philip_koth",
+    "Edited by": "@adharma.collective"
+  }
+    },
+    {
+      "id": "ambar-tormenta",
+      "title": "AMBAR GARCÉS - TORMENTA",
+      "category": "MUSIC VIDEO",
+      "videoSrc": "https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/recomendados/ambar-recomendado.mp4",
+      "credits": {
+        "Director": "Director Name",
+        "Productor": "Producer Name",
+        "DOP": "DOP Name",
+        "1AD": "1AD Name"
+      }
+    },
+    {
+      "id": "chiara-bucle",
+      "title": "CHIARA OLVIER - BUCLE",
+      "category": "MUSIC VIDEO",
+      "videoSrc": "https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/recomendados/bucle-recomendado.mp4",
+      "credits": {
+    "“BUCLE” de": "@chiaraoliver",
+    "Producción ejecutiva por": "Emociona Clips",
+    "Producido por": "Adharma @adharma.collective",
+    "Director": "Matías Varas @matiasvarasj",
+    "Director Creativo": "Yan Basavilbaso @yan.zzz___",
+    "Productor": "Lagone @lagone.nolake",
+    "DOP": "Gabriel Sandineredes @gsandineredes",
+    "Gaffer": "Julio Fernández @_juliofernandezz",
+    "Eléctrica": "Gasset @its.gasset",
+    "Artes visuales en Set": "Cypher M @cypherm.infinity",
+    "Edit": "Matías Varas @matiasvarasj",
+    "VFX": "Lagone @lagone.nolake",
+    "Foto fija": "Miriam Fernández @miriam.fg_",
+    "Estilista": "Raúl Rodríguez @raulrguezstylist",
+    "MUAH": "Burdampi @burdampi",
+    "Localización": "@el.templo.del.arcade & @atlanticoestudios",
+    "Agradecimientos": "@mikitoran, @tamaraavila1, @visualrent.es"
+  }
+    },
+    {
+      "id": "cascorro-enfermo",
+      "title": "CASCORRO ENFERMO",
+      "category": "MUSIC VIDEO",
+      "videoSrc": "https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/recomendados/cascorro-recomendado.mp4",
+      "credits": {
+    "Dirigido y escrito por": "@andreuslim",
+    "DOP": "@germansandineredes",
+    "Color": "@adharma.collective",
+    "Producción y AD": "@_carmelafernandez_",
+    "Cast": "@javierlagoactor63, @bitchimintense"
+  }
+    },
+    {
+      "id": "jaydime-crosscheck",
+      "title": "JAY DIME - CHROSSCHECK",
+      "category": "MUSIC VIDEO",
+      "videoSrc": "https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/recomendados/chrosscheck-recomendado.mp4",
+      "credits": {
+    "CROSS CHECK ✈️": "@dimeanarchy & @jaycasbeats",
+    "A production by": "@adharma.collective",
+    "Shot, edit & VFX": "@lagone.nolake",
+    "Mixed media, color grade & 3D photo": "@yan.zzz___"
+  }
+    },
+    {
+      "id": "kanos-bes",
+      "title": "KAÑOS - BESARTE LOS LABIOS",
+      "category": "MUSIC VIDEO",
+      "videoSrc": "https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/recomendados/kaños-recomendado.mp4",
+      "credits": {
+    "Producción musical": "Geckodelarue @geckodelarue",
+    "Dirigido y producido por": "Duo Biondi @duobiondi",
+    "DOP y Color": "Adharma @adharma.collective",
+    "BTS": "Álvaro Gars @alvarogars",
+    "Lettering": "Rafa Frito @rafa_frito",
+    "Logo": "Acid @acid.tt",
+    "Gracias a toda la gente pura de Villasequilla": "",
+    "Jotas manchegas": "Raquel Huete Santiago & Julián Martín Santiago",
+    "Mozo": "Jose Isidro Merino 'Chano'",
+    "Padre e hija": "Víctor Muñoz & Isabel Muñoz",
+    "Bailaoras": "Ana Fernández & María Marcos García",
+    "Culturista": "Josué Ruiz Merino",
+    "Special thanks": "@canibal.pro, @spotifyspain, @spotify"
+  }
+    },
+    {
+      "id": "duadua_boncalso",
+      "title": "DüaDüa ÜnodeÜno - Bon Calso",
+      "category": "COMMERCIAL",
+      "videoSrc": "https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/uno-de-uno-bon-calso.mp4",
+      "credits": {
+        "Campaña para DüaDüa": "@duadua.es",
+        "Producido por": "Adharma @adharma.collective",
+        "Director": "Matías Varas @matiasvarasj",
+        "DOP": "Daniel Flores @elombligodebuda"
+      }
+    },
+    {
+      "id": "myzz-medusa",
+      "title": "MYZZ - MEDUSA",
+      "category": "MUSIC VIDEO",
+      "videoSrc": "https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/recomendados/medusa-recomendado.mp4",
+      "credits": {
+    "Composición": "Myzz @myzz.055",
+    "Producción musical": "Nnytien @nnytien",
+    "Mix & Máster": "Sunday Panic @sundaypanic",
+    "Starring": "@myzz.055 & @ouyang_zhu",
+    "Produced by": "Adharma @adharma.collective",
+    "Directed by": "Lucía Recuenco @luciarecuenco_ & Yan Basavilbaso @yan.zzz___",
+    "1AD": "Matías Varas @matiasvarasj",
+    "DOP": "Daniel Flores @elombligodebuda",
+    "Auxiliar de producción": "Laura Sánchez @laurasanch3z",
+    "MUAH": "Dunkel Black @dunkelblack_mua",
+    "BTS": "Jeisson Ramírez @jeisson_ramirez25",
+    "Special thanks": "@fervent.es & @alraimon.garage",
+    "Rentals": "@fervent.es, @kinoluxspain, @falcofilms"
+  }
+    }
+  ]
+}

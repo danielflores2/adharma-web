@@ -1,4 +1,5 @@
-function init() {
+document.addEventListener("DOMContentLoaded", function() {
+  
   const videoHome = document.getElementById('videoHome');
   const videoHomeHref = document.getElementById('videoHomeLink');
   const overlayText = document.getElementById('overlay-text');
@@ -48,6 +49,4 @@ function init() {
   addMouseOverEvent('mini_bucle', 'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/chiara-oliver-bucle-video-oficial_h265.mp4', '/proyectos/chiara-bucle.html', '<b>CHIARA OLIVER - BUCLE</b><br>MUSIC VIDEO');
   addMouseOverEvent('mini_dua_boncalso', 'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/uno-de-uno-bon-calso.mp4', '/proyectos/duaduaboncalso.html', '<b>BON CALSO - UNO DE UNO by DÜADÜA</b><br>MUSIC VIDEO');
   addMouseOverEvent('mini_suzet', 'https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/suzet-syab-h265-1920-1080.mp4', '/proyectos/suzet-syab.html', '<b>SUZET - SAL Y AGUA BENDITA</b><br>MUSIC VIDEO');
-}
-
-document.addEventListener("DOMContentLoaded", init);
+});

@@ -49,7 +49,7 @@ window.addEventListener('scroll', function() {
 
       // Cambiar el color del texto de los enlaces
       navLinks.forEach(function(link) {
-          link.style.setProperty('color', 'black !important'); // Cambiar color del texto a negro
+          link.style.setProperty('color', 'black'); // Cambiar color del texto a negro
       });
 
   } else {
@@ -62,3 +62,40 @@ window.addEventListener('scroll', function() {
       });
   }
 });
+
+// Obtener el enlace y las secciones
+const logoLink = document.getElementById('logo-link');
+const sections = document.querySelectorAll('section'); // Asegúrate de que las secciones tengan un <section> con un id o clase.
+
+// Función para detectar la sección actual
+const updateHrefBasedOnScroll = () => {
+    let currentSection = null;
+
+    sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+
+        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+            currentSection = section;
+        }
+    });
+
+    // Cambiar el href del logo según la sección actual
+    if (currentSection) {
+        if (currentSection.id === 'landing') {
+            logoLink.href = '#proyectos';
+        } else if (currentSection.id === 'proyectos') {
+            logoLink.href = '#landing';
+        } else if (currentSection.id === 'contacto') {
+            logoLink.href = '#proyectos';
+        } else {
+            logoLink.href = '#proyectos'; // Valor por defecto
+        }
+    }
+};
+
+// Escuchar el evento de scroll
+window.addEventListener('scroll', updateHrefBasedOnScroll);
+
+// Llamar la función inicialmente para establecer el href correcto
+updateHrefBasedOnScroll();
