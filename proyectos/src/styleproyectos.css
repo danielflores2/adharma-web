@@ -324,6 +324,11 @@ list-style: none;
     padding-left: 0;
 }
 
+.creditsMov h2{
+    margin : 2rem 0rem 2rem 0rem;
+
+    padding-left: 0.8rem;
+}
 
 #recomendados {
     margin-top: 10rem; /* Ajusta el valor según el espacio deseado */

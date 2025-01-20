@@ -127,17 +127,21 @@
             </nav>
 
             <header id="subpaginaVertical">
-                <video id="videoSubpagina" controls preload="auto"></video>
-                <div class="text-container">
-                    <p id="tituloVertical"><b></b><br></p>
-                </div>
+                <video class="videoSrc" ="videoSrc" src="{videoSrc}" controls preload="auto"></video>
 
-                <section class="creditsMovil">
-                    <p id="creditsCollectionVertical" class="subtitle"></p>
-                    <p id="creditsProducedByVertical"></p>
-                    <p id="creditsStarringVertical"></p>
-                    <ul id="creditosMovilLista"></ul>
-                </section>
+                    <div class="text-container">
+                        <p id="tituloProyecto"><br></p>
+                        <h1>{title}</h1>
+                        <p id="categoriaProyecto"></p>
+                        <h2>{category}</h2>
+                    </div>
+
+                    <section id="credits-container" class="creditsMov">
+                        <h2>Créditos</h2>
+                        <ul id="creditosProyecto">
+                            {credits}
+                        </ul>
+                    </section>
             </header>
         </div>
 
