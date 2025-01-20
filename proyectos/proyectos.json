@@ -40,11 +40,35 @@
       "category": "MUSIC VIDEO",
       "videoSrc": "https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/recomendados/suzet-recomendado.mp4",
       "credits": {
-        "Director": "Director Name",
-        "Productor": "Producer Name",
-        "DOP": "DOP Name",
-        "1AD": "1AD Name"
-      }
+    "Vídeo musical por": "Suzete @suzetegram",
+    "Producción ejecutiva por": "Emociona Clips",
+    "Producción por": "Adharma @adharma.collective",
+    "Director": "Yan Basavilbaso @yan.zzz___",
+    "AD": "Matías Varas @matiasvarasj",
+    "DOP": "Germán Sandín @gsandineredes",
+    "Productor": "Javi Laguna @lagone.nolake",
+    "1AC": "María Cardeña @its.gasset",
+    "Gaffer": "Julio Fernández @_juliofernandezz",
+    "Arte": "Desiree Huerta @desihache",
+    "Foto fija y BTS": "Carlos Ignacio Vázquez @westsidetommy",
+    "Diseño de vestuario": "Marina Gomes @marinananke",
+    "Asistente de vestuario": "Jose Fearless @josefearless, María Suárez @masu_spain",
+    "MUAH": "Lola Peñálver @lolapenalvers",
+    "Asistente de maquillaje": "Paula Conde @paulacmarquez.muah",
+    "Coreografía": "Galina Rodríguez @galinarc_",
+    "Bailarinas": "Danielle Mesquita @danimqt, Obonita @aslegior, Lovely Dominguez @lovelydomz, Dahiana Betancourt @beta__co",
+    "Management": "Sara Rosati @sarasararosati",
+    "A&R": "Azahara Villén @aza_________________________, Leire Robledo @i.netbby",
+    "Montaje": "Yan Basavilbaso @yan.zzz___",
+    "IA & VFX": "Javi Laguna @lagone.nolake",
+    "Etalonaje": "Yan Basavilbaso @yan.zzz___",
+    "Producción musical": "Ariel @arieletcetc & Migz @migz___111",
+    "Mix": "Kabasaki @kabasakiprod",
+    "Master": "Slatin.pro @slatin.pro",
+    "Compuesto por": "Suzete @suzetegram & Munic Hb @munic_hb",
+    "Rentals": "@fervent.es, @visualrent.es",
+    "Agradecimientos": "@casa.carvajal, @universalspain"
+  }
     },
     {
       "id": "therebirth",
@@ -75,7 +99,7 @@
       "category": "COMMERCIAL",
       "videoSrc": "https://d17wmwjckt0fmo.cloudfront.net/videos/ProyectosMP4/recomendados/sins-recomendado.mp4",
       "credits": {
-        "Directora": "Violeta Dai @violeta.dai",
+        "Co-dirección": "Violeta Dai @violeta.dai, Matías Varas y Yan Basavilbaso",
         "Producido por": "Adharma @adharma.collective",
         "DOP": "Daniel Flores @elombligodebuda",
         "1AD": "1AD Name"
