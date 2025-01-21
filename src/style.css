@@ -139,19 +139,22 @@ a.hover-effect:hover::before {
 
 
 /* VIDEO CARGA */
-.video-contenedor-carga{
-   height: 100vh;
-   width: 100vw;
-   display: flex;
-   align-items: center;
+.video-contenedor-carga {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Asegura que no haya desbordamiento */
 }
 
-.video-carga{
-    position: relative;
-    width: 300px;
-    display: block;
-    object-fit: cover;
-    left: calc(50% - 150px);
+.video-carga {
+    position: absolute; /* Para que ocupe todo el contenedor */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que el video se recorte para llenar toda la pantalla */
 }
 
 #landing {
